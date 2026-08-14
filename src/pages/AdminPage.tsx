@@ -834,10 +834,35 @@ function LegalView() {
   );
 }
 
+type WellnessProduct = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  category_label: string | null;
+  format: string | null;
+  description: string | null;
+  why_ask: string | null;
+  learn_more: string | null;
+  image_url: string | null;
+  labs_required: boolean;
+  visible: boolean;
+  featured: boolean;
+  sort_order: number;
+  clinical_approved: boolean;
+  pharmacy_approved: boolean;
+  merchant_approved: boolean;
+  legal_reviewed: boolean;
+  state_availability: string | null;
+  intake_url: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
 function CatalogAdminView() {
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<WellnessProduct[]>([]);
   const [loading, setLoading] = useState(true);
-  const [editing, setEditing] = useState<any | null>(null);
+  const [editing, setEditing] = useState<WellnessProduct | null>(null);
   const [cloningId, setCloningId] = useState<string | null>(null);
   const [cloneError, setCloneError] = useState<string | null>(null);
 
@@ -847,7 +872,7 @@ function CatalogAdminView() {
       .select('*')
       .order('sort_order')
       .then(({ data }) => {
-        setItems(data || []);
+        setItems((data as WellnessProduct[] | null) || []);
         setLoading(false);
       });
   };
@@ -867,13 +892,13 @@ function CatalogAdminView() {
     load();
   };
 
-  const cloneProduct = async (item: Record<string, unknown>) => {
+  const cloneProduct = async (item: WellnessProduct) => {
     const id = String(item.id ?? '');
     if (!id || cloningId) return;
     setCloningId(id);
     setCloneError(null);
     try {
-      const payload = cloneObject(item, {
+      const payload = cloneObject(item as unknown as Record<string, unknown>, {
         name: copyLabel(String(item.name ?? 'Untitled')),
         slug: uniqueCopySlug(String(item.slug ?? 'item'), items.map((i) => String(i.slug))),
         visible: false,
@@ -899,7 +924,7 @@ function CatalogAdminView() {
 
   if (loading) return <p className="text-ink-500 text-sm">Loading catalog...</p>;
 
-  const grouped = items.reduce<Record<string, any[]>>((acc, item) => {
+  const grouped = items.reduce<Record<string, WellnessProduct[]>>((acc, item) => {
     const cat = item.category_label || item.category || 'Uncategorized';
     if (!acc[cat]) acc[cat] = [];
     acc[cat].push(item);
@@ -968,7 +993,7 @@ function CatalogAdminView() {
         <div key={cat} className="mb-8">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-ink-500 mb-3">{cat}</h3>
           <div className="space-y-3">
-            {catItems.map((item: any) => (
+            {catItems.map((item) => (
               <div key={item.id} className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-xl border border-ink-900/10 bg-white p-4">
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-ink-900 truncate">{item.name}</p>
