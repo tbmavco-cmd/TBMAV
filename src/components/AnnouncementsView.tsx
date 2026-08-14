@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Plus, Pencil, Trash2, Save, X } from 'lucide-react';
+import { Plus, Pencil, Trash2, Save, X, Copy } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { cloneObject, copyLabel } from '@/lib/cloneObject';
 
 type AnnouncementRow = {
   id: string;
@@ -43,6 +44,8 @@ export default function AnnouncementsView() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>(emptyForm);
   const [showNew, setShowNew] = useState(false);
+  const [cloningId, setCloningId] = useState<string | null>(null);
+  const [cloneError, setCloneError] = useState<string | null>(null);
 
   const fetchAll = async () => {
     setLoading(true);
@@ -82,6 +85,28 @@ export default function AnnouncementsView() {
   const handleDelete = async (id: string) => {
     await supabase.from('announcements').delete().eq('id', id);
     fetchAll();
+  };
+
+  const handleClone = async (row: AnnouncementRow) => {
+    if (cloningId) return;
+    setCloningId(row.id);
+    setCloneError(null);
+    try {
+      const payload = cloneObject(row as unknown as Record<string, unknown>, {
+        headline: copyLabel(row.headline),
+        is_active: false,
+      });
+      const { error } = await supabase.from('announcements').insert(payload);
+      if (error) {
+        setCloneError(error.message);
+        return;
+      }
+      fetchAll();
+    } catch (err) {
+      setCloneError(err instanceof Error ? err.message : 'Clone failed');
+    } finally {
+      setCloningId(null);
+    }
   };
 
   const startEdit = (row: AnnouncementRow) => {
@@ -194,7 +219,10 @@ export default function AnnouncementsView() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-display font-semibold text-ink-900">Announcements</h2>
+        <div>
+          <h2 className="text-xl font-display font-semibold text-ink-900">Announcements</h2>
+          <p className="mt-1 text-sm text-ink-500">Clone an announcement to start from an existing headline and schedule as an inactive draft.</p>
+        </div>
         {!showNew && !editingId && (
           <button
             onClick={() => { setShowNew(true); setForm(emptyForm); }}
@@ -204,6 +232,12 @@ export default function AnnouncementsView() {
           </button>
         )}
       </div>
+
+      {cloneError && (
+        <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          Could not clone announcement: {cloneError}
+        </div>
+      )}
 
       {/* New form */}
       {showNew && (
@@ -269,6 +303,15 @@ export default function AnnouncementsView() {
                     </div>
                   </div>
                   <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => handleClone(row)}
+                      disabled={cloningId === row.id}
+                      className="p-2 rounded-lg text-ink-500 hover:text-ink-900 hover:bg-ink-50 transition-colors disabled:opacity-50"
+                      aria-label="Clone"
+                      title="Clone"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
                     <button
                       onClick={() => startEdit(row)}
                       className="p-2 rounded-lg text-ink-500 hover:text-ink-900 hover:bg-ink-50 transition-colors"

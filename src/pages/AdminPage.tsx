@@ -1,7 +1,8 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { LogOut, LayoutDashboard, FileText, Mail, Settings, Shield, Scale, Megaphone, ShoppingBag } from 'lucide-react';
+import { Copy, LogOut, LayoutDashboard, FileText, Mail, Settings, Shield, Scale, Megaphone, ShoppingBag } from 'lucide-react';
 import { supabase, wellnessStatusLabels, contactStatusLabels } from '@/lib/supabase';
+import { cloneObject, copyLabel, uniqueCopySlug } from '@/lib/cloneObject';
 import { siteConfig } from '@/config/site';
 import { legalEntitySettings } from '@/config/legalEntity';
 import AnnouncementsView from '@/components/AnnouncementsView';
@@ -837,6 +838,8 @@ function CatalogAdminView() {
   const [items, setItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState<any | null>(null);
+  const [cloningId, setCloningId] = useState<string | null>(null);
+  const [cloneError, setCloneError] = useState<string | null>(null);
 
   const load = () => {
     supabase
@@ -864,6 +867,36 @@ function CatalogAdminView() {
     load();
   };
 
+  const cloneProduct = async (item: Record<string, unknown>) => {
+    const id = String(item.id ?? '');
+    if (!id || cloningId) return;
+    setCloningId(id);
+    setCloneError(null);
+    try {
+      const payload = cloneObject(item, {
+        name: copyLabel(String(item.name ?? 'Untitled')),
+        slug: uniqueCopySlug(String(item.slug ?? 'item'), items.map((i) => String(i.slug))),
+        visible: false,
+        featured: false,
+        clinical_approved: false,
+        pharmacy_approved: false,
+        merchant_approved: false,
+        legal_reviewed: false,
+        sort_order: Number(item.sort_order ?? 0) + 1,
+      });
+      const { error } = await supabase.from('wellness_products').insert(payload);
+      if (error) {
+        setCloneError(error.message);
+        return;
+      }
+      load();
+    } catch (err) {
+      setCloneError(err instanceof Error ? err.message : 'Clone failed');
+    } finally {
+      setCloningId(null);
+    }
+  };
+
   if (loading) return <p className="text-ink-500 text-sm">Loading catalog...</p>;
 
   const grouped = items.reduce<Record<string, any[]>>((acc, item) => {
@@ -878,7 +911,13 @@ function CatalogAdminView() {
       <h2 className="text-xl font-semibold text-ink-900 mb-2">Wellness Catalog</h2>
       <p className="text-sm text-ink-600 mb-6">
         Manage product visibility, approvals, and details. Products default to hidden until you set them as visible.
+        Use Clone to duplicate a product as a hidden draft with a new slug — approvals are reset so the copy can be reviewed before it goes live.
       </p>
+      {cloneError && (
+        <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          Could not clone product: {cloneError}
+        </div>
+      )}
 
       {/* Editing modal */}
       {editing && (
@@ -943,6 +982,14 @@ function CatalogAdminView() {
                   <ToggleBtn label="Pharmacy" active={item.pharmacy_approved} onClick={() => toggleField(item.id, 'pharmacy_approved', item.pharmacy_approved)} />
                   <ToggleBtn label="Merchant" active={item.merchant_approved} onClick={() => toggleField(item.id, 'merchant_approved', item.merchant_approved)} />
                   <ToggleBtn label="Legal" active={item.legal_reviewed} onClick={() => toggleField(item.id, 'legal_reviewed', item.legal_reviewed)} />
+                  <button
+                    onClick={() => cloneProduct(item)}
+                    disabled={cloningId === item.id}
+                    className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium bg-ink-100 text-ink-700 hover:bg-ink-200 transition-colors disabled:opacity-50"
+                  >
+                    <Copy className="h-3 w-3" />
+                    {cloningId === item.id ? 'Cloning…' : 'Clone'}
+                  </button>
                   <button onClick={() => setEditing({ ...item })} className="rounded-full px-3 py-1 text-xs font-medium bg-gold-400/20 text-gold-600 hover:bg-gold-400/30 transition-colors">
                     Edit
                   </button>
