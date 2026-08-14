@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-nude-50: #FBF7F3;
+  --color-cream-100: #FAF5EF;
+  --color-ink-900: #1A1614;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FBF7F3;
+  color: #1A1614;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+::selection {
+  background-color: #C4A35A;
+  color: #1A1614;
+}
+
+@layer components {
+  .container-bare {
+    @apply mx-auto w-full max-w-8xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-nude-50 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink-900 text-cream-50 hover:bg-ink-800 hover:shadow-lg;
+  }
+
+  .btn-gold {
+    @apply btn bg-gradient-to-b from-[#c9a96e] to-[#a8863f] text-white shadow-md hover:from-[#d4b872] hover:to-[#b8944f] hover:shadow-lg;
+  }
+
+  .btn-green {
+    @apply btn bg-gradient-to-b from-[#3a9e6e] to-[#2a7d55] text-white shadow-md hover:from-[#45b07d] hover:to-[#339462] hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply btn border border-ink-900/20 bg-transparent text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50;
+  }
+
+  .btn-ghost {
+    @apply btn text-ink-900 hover:bg-ink-900/5;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-900/10 bg-white shadow-sm transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-xl hover:border-gold-400/40;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-gold-600;
+  }
+
+  .section {
+    @apply py-20 lg:py-28;
+  }
+
+  .heading-display {
+    @apply font-display font-medium tracking-tightest leading-[1.1];
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-ink-900/15 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-700/40 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400;
+  }
+
+  .input-bare {
+    @apply w-full rounded-lg border border-ink-900/15 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-700/40 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-700;
+  }
+
+  .prose-bare p {
+    @apply text-ink-700 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
