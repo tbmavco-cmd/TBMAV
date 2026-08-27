@@ -81,8 +81,8 @@ export function PrivacyRequestPage() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
                 <p className="text-sm text-amber-800">
-                  Do not submit medical information through this form. Medical information must be
-                  submitted through the secure patient portal.
+                  Do not submit sensitive health information through this form. This request page is
+                  for website privacy requests; My Bare Method wellness matters are handled separately.
                 </p>
               </div>
               <div className="grid gap-5 sm:grid-cols-2">

@@ -1,7 +1,7 @@
 import { Calendar, HeartPulse, ExternalLink } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
-const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
+const MYBAREMETHOD_URL = siteConfig.myBareMethodUrl;
 
 export function FinalCTA() {
   return (
@@ -11,7 +11,7 @@ export function FinalCTA() {
           Which Experience Is Right for You?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-cream-200/70 text-balance">
-          The Bare Method for luxury esthetics. My Bare Method for provider-led wellness.
+          The Bare Method for local esthetics. My Bare Method for provider-guided wellness.
         </p>
         <div className="mx-auto mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
@@ -21,7 +21,7 @@ export function FinalCTA() {
             className="btn-gold"
           >
             <Calendar className="mr-2 h-4 w-4" />
-            Book Esthetics
+            Book Esthetic Services via Vagaro
           </a>
           <a
             href={MYBAREMETHOD_URL}
@@ -30,12 +30,12 @@ export function FinalCTA() {
             className="btn-green inline-flex items-center gap-1.5"
           >
             <HeartPulse className="mr-2 h-4 w-4" />
-            Provider-Led Wellness
+            Explore My Bare Method
             <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
         <p className="mt-4 text-xs text-cream-200/40 max-w-sm mx-auto">
-          MyBareMethod.com is a separate company with its own providers, policies, and patient portal.
+          My Bare Method is a separate experience with its own website, team, policies, and customer journey.
         </p>
       </div>
     </section>

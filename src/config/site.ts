@@ -3,14 +3,14 @@
  *  THE BARE METHOD — CENTRAL SETTINGS FILE
  * ============================================================================
  *
- *  This is the ONE file you need to edit to update your website's links,
- *  contact info, booking URLs, patient-portal URLs, payment links, and
+ *  This is the ONE file you need to edit to update the public hub's links,
+ *  contact info, booking URLs, the My Bare Method destination, and
  *  social-media settings.
  *
  *  HOW TO EDIT:
  *    1. Open this file (src/config/site.ts) in your editor.
- *    2. Find the line that says "PASTE YOUR ... HERE".
- *    3. Replace the placeholder text between the quotes with your real URL.
+ *    2. Find the setting you need to review.
+ *    3. Preserve verified destination structures unless the owner confirms a change.
  *    4. Save the file. Your changes go live the next time the site builds.
  *
  *  WHAT NOT TO DO:
@@ -21,15 +21,15 @@
  *    - Do NOT remove the quotes around your URLs.
  *
  *  PHASES:
- *    Phase 1 (now): Vagaro + Legend links, contact info, social links.
- *    Phase 2 (now): Wellness Plan request form, admin request list, invoice links.
- *    Phase 3 (later): Hosted payment checkout, recurring billing, automation.
- *    Phase 3 settings are included below but left blank — do not fill them
- *    in until your merchant account is set up through Organic Payment Gateways.
+ *    Current hub: local esthetics discovery and Vagaro booking, with a separate
+ *    outbound handoff to My Bare Method wellness.
+ *    Legacy wellness, medical-platform, and payment fields remain below for
+ *    historical reference only; they are not public hub workflows.
  * ============================================================================
  */
 
 export const siteConfig = {
+  myBareMethodUrl: 'https://mybaremethod.com',
 
   // ==========================================================================
   //  1. BUSINESS INFORMATION
@@ -73,42 +73,40 @@ export const siteConfig = {
 
   // ==========================================================================
   //  2. VAGARO — ESTHETIC BOOKING (Phase 1)
-  //  Paste your Vagaro URLs below. These are the public booking pages
-  //  that clients are sent to when they click "Book Esthetics".
-  //  Find them in your Vagaro dashboard under Business > Booking Page.
+  //  These are the verified active Vagaro MySite destinations for The Bare
+  //  Method. Keep the shared /thebaremethod path structure intact.
   // ==========================================================================
   vagaro: {
-    // PASTE YOUR VAGARO BOOKING URL HERE
-    // Example: 'https://mysite.vagaro.com/thebaremethod'
+    // Main Vagaro MySite destination
     bookingUrl: 'https://mysite.vagaro.com/thebaremethod',
 
-    // PASTE YOUR VAGARO SERVICES URL HERE (the services tab)
+    // Services tab
     servicesUrl: 'https://mysite.vagaro.com/thebaremethod/services',
 
-    // PASTE YOUR VAGARO GIFT CARD URL HERE
+    // Gift certificates
     giftCardUrl: 'https://mysite.vagaro.com/thebaremethod/gift-certificates',
 
-    // PASTE YOUR VAGARO MEMBERSHIP URL HERE
+    // Memberships
     membershipUrl: 'https://mysite.vagaro.com/thebaremethod/memberships',
 
-    // PASTE YOUR VAGARO PACKAGES URL HERE
+    // Packages
     packagesUrl: 'https://mysite.vagaro.com/thebaremethod/packages',
 
-    // PASTE YOUR VAGARO DEALS URL HERE (daily deals / promotions tab)
+    // Deals / promotions
     dealsUrl: 'https://mysite.vagaro.com/thebaremethod/daily-deals',
 
-    // PASTE YOUR VAGARO FAQS URL HERE
+    // FAQs
     faqsUrl: 'https://mysite.vagaro.com/thebaremethod/faqs',
 
-    // PASTE YOUR VAGARO REVIEWS URL HERE
+    // Reviews
     reviewsUrl: 'https://mysite.vagaro.com/thebaremethod/reviews',
 
-    // PASTE YOUR VAGARO GALLERY URL HERE
+    // Gallery
     galleryUrl: 'https://mysite.vagaro.com/thebaremethod/gallery',
   },
 
   // ==========================================================================
-  //  3. LEGEND — MEDICAL WELLNESS PATIENT PLATFORM (Phase 1)
+  //  LEGACY: MEDICAL WELLNESS PLATFORM CONFIGURATION (NOT USED BY THE HUB)
   //  Paste your Legend EHR URLs below. These send patients to
   //  the secure platform for medical intake, telehealth, and portal access.
   //  Find them in your Legend EHR admin dashboard under Patient Links.
@@ -129,7 +127,7 @@ export const siteConfig = {
   },
 
   // ==========================================================================
-  //  3b. IV THERAPY — SCREENING, INTAKE & BOOKING (Phase 1 — Coming Soon)
+  //  LEGACY: IV THERAPY — SCREENING, INTAKE & BOOKING (NOT USED BY THE HUB)
   //  Paste your IV Therapy URLs below when supplied. Until then these are
   //  intentionally blank — buttons that reference them show "Coming Soon"
   //  and do not link anywhere. Do not paste fake URLs.
@@ -146,7 +144,7 @@ export const siteConfig = {
   },
 
   // ==========================================================================
-  //  3c. AGELESSRX EMR — SECONDARY MEDICAL EMR (Phase 1 — Coming Soon)
+  //  LEGACY: AGELESSRX EMR — SECONDARY MEDICAL EMR (NOT USED BY THE HUB)
   //  Paste your AgelessRx EMR URLs below when supplied. Until then these are
   //  intentionally blank — buttons that reference them show "Coming Soon"
   //  and do not link anywhere. Do not paste fake URLs.
@@ -161,7 +159,7 @@ export const siteConfig = {
   },
 
   // ==========================================================================
-  //  3b. WELLNESS MEMBERSHIPS — CHECKOUT & PORTAL LINKS (Phase 1)
+  //  LEGACY: WELLNESS MEMBERSHIPS — CHECKOUT & PORTAL LINKS (NOT USED BY THE HUB)
   //  These are hosted payment / intake / invoice links used by the wellness
   //  membership and à-la-carte sections. Paste real URLs when ready; leave
   //  blank to show a "request" form instead of a live payment button.
@@ -179,7 +177,7 @@ export const siteConfig = {
   },
 
   // ==========================================================================
-  //  4. PAYMENT — MERCHANT SERVICES (Phase 3 — leave blank for now)
+  //  LEGACY: PAYMENT — MERCHANT SERVICES (NOT USED BY THE HUB)
   //  These settings are for Phase 3 when your merchant account is set up
   //  through Organic Payment Gateways. Leave the hostedPaymentUrl values
   //  as empty strings ('') until you have your hosted checkout page URLs.
@@ -262,10 +260,7 @@ export const siteConfig = {
   },
 
   // ==========================================================================
-  //  7. CLINICAL PARTNERS
-  //  These names appear in the "How It Works" and wellness pages.
-  //  Update them if your partner names change. Do not imply The Bare Method
-  //  owns a pharmacy, lab, or provider network.
+  //  7. LEGACY CLINICAL PARTNERS (NOT USED BY THE PUBLIC HUB)
   // ==========================================================================
   clinicalPartners: {
     medicalPlatform: 'Legend EHR',

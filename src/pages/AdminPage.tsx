@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { LogOut, LayoutDashboard, FileText, Mail, Settings, Shield, Scale, Megaphone, ShoppingBag } from 'lucide-react';
+import { LogOut, LayoutDashboard, Mail, Settings, Shield, Scale, Megaphone } from 'lucide-react';
 import { supabase, wellnessStatusLabels, contactStatusLabels } from '@/lib/supabase';
 import { siteConfig } from '@/config/site';
 import { legalEntitySettings } from '@/config/legalEntity';
@@ -104,12 +104,10 @@ export function AdminPage() {
           <nav className="space-y-1">
             {[
               { id: 'dashboard' as const, label: 'Dashboard', icon: LayoutDashboard },
-              { id: 'wellness' as const, label: 'Wellness Requests', icon: FileText },
               { id: 'contact' as const, label: 'Contact Submissions', icon: Mail },
               { id: 'config' as const, label: 'Configuration', icon: Settings },
-            { id: 'legal' as const, label: 'Legal & Policies', icon: Scale },
-            { id: 'announcements' as const, label: 'Announcements', icon: Megaphone },
-            { id: 'catalog' as const, label: 'Wellness Catalog', icon: ShoppingBag },
+              { id: 'legal' as const, label: 'Legal & Policies', icon: Scale },
+              { id: 'announcements' as const, label: 'Announcements', icon: Megaphone },
             ].map((item) => {
               const Icon = item.icon;
               return (
@@ -130,12 +128,10 @@ export function AdminPage() {
 
           <div>
             {view === 'dashboard' && <DashboardView />}
-            {view === 'wellness' && <WellnessRequestsView />}
             {view === 'contact' && <ContactSubmissionsView />}
             {view === 'config' && <ConfigView />}
-          {view === 'legal' && <LegalView />}
-          {view === 'announcements' && <AnnouncementsView />}
-          {view === 'catalog' && <CatalogAdminView />}
+            {view === 'legal' && <LegalView />}
+            {view === 'announcements' && <AnnouncementsView />}
           </div>
         </div>
       </div>
@@ -144,29 +140,24 @@ export function AdminPage() {
 }
 
 function DashboardView() {
-  const [wellnessCount, setWellnessCount] = useState<number | null>(null);
   const [contactCount, setContactCount] = useState<number | null>(null);
 
   useEffect(() => {
-    supabase.from('wellness_requests').select('*', { count: 'exact', head: true }).then(({ count }) => setWellnessCount(count ?? 0));
     supabase.from('contact_submissions').select('*', { count: 'exact', head: true }).then(({ count }) => setContactCount(count ?? 0));
   }, []);
 
   return (
     <div>
       <h2 className="heading-display text-2xl text-ink-900">Dashboard</h2>
-      <p className="mt-1 text-sm text-ink-700">Overview of public orders, requests, and submissions.</p>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <StatCard label="Wellness Requests" value={wellnessCount} />
+      <p className="mt-1 text-sm text-ink-700">Overview of public contact submissions and site settings.</p>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <StatCard label="Contact Submissions" value={contactCount} />
-        <StatCard label="Pending Invoice Requests" value={null} note="Filtered in Wellness Requests" />
       </div>
       <div className="mt-8 rounded-2xl bg-cream-100 p-6">
-        <h3 className="font-medium text-ink-900">Nonclinical Admin Only</h3>
+        <h3 className="font-medium text-ink-900">Esthetics Hub Administration</h3>
         <p className="mt-2 text-sm text-ink-700">
-          This dashboard handles nonclinical business administration only. Medical charting, patient
-          records, and clinical documentation are managed through Legend EHR — not here. No protected
-          health information is stored in this system.
+          This dashboard is limited to The Bare Method website and esthetics-related contact
+          submissions. My Bare Method wellness operations are handled separately at mybaremethod.com.
         </p>
       </div>
     </div>
@@ -610,21 +601,12 @@ function ConfigView() {
           <ConfigItem label="Gallery URL" value={siteConfig.vagaro.galleryUrl} />
         </ConfigSection>
 
-        <ConfigSection title="Legend EHR (Wellness)">
-          <ConfigItem label="Intake URL" value={siteConfig.legend.intakeUrl} />
-          <ConfigItem label="Patient Portal URL" value={siteConfig.legend.patientPortalUrl} />
-          <ConfigItem label="Booking URL" value={siteConfig.legend.bookingUrl} />
-          <ConfigItem label="Existing Patient Login" value={siteConfig.legend.existingPatientLoginUrl} />
-        </ConfigSection>
-
-        <ConfigSection title="Payment Lanes">
-          {Object.entries(siteConfig.payments.lanes).map(([key, lane]) => (
-            <ConfigItem
-              key={key}
-              label={`${lane.label} — Hosted Payment URL`}
-              value={lane.hostedPaymentUrl || 'Not configured — paste your URL in site.ts'}
-            />
-          ))}
+        <ConfigSection title="My Bare Method (Separate Wellness Brand)">
+          <ConfigItem label="Website" value={siteConfig.myBareMethodUrl} />
+          <p className="text-xs text-ink-700/70">
+            Wellness services, customer care, policies, and any provider-guided workflows are managed
+            on the separate My Bare Method website.
+          </p>
         </ConfigSection>
 
         <ConfigSection title="Social & Analytics">
@@ -634,21 +616,15 @@ function ConfigView() {
           <ConfigItem label="Meta Pixel ID" value={siteConfig.social.metaPixelId || 'Not configured'} />
         </ConfigSection>
 
-        <ConfigSection title="Merchant Services">
-          <ConfigItem label="Merchant Services Company" value={siteConfig.payments.merchantServicesCompany} />
-          <ConfigItem label="Preferred Gateway" value={siteConfig.payments.preferredGateway} />
-          <ConfigItem label="Alternative Gateway" value={siteConfig.payments.alternativeGateway} />
-        </ConfigSection>
       </div>
 
       <div className="mt-8 rounded-2xl bg-cream-100 p-6">
-        <h3 className="font-medium text-ink-900">Where to Paste Your Credentials</h3>
+        <h3 className="font-medium text-ink-900">Public Configuration Only</h3>
         <ul className="mt-3 space-y-1.5 text-sm text-ink-700">
           <li>• Vagaro booking, gift card, membership, and package URLs → <code className="text-xs">siteConfig.vagaro</code></li>
-          <li>• Legend EHR intake, portal, booking, and login URLs → <code className="text-xs">siteConfig.legend</code></li>
-          <li>• Authorize.Net / NMI hosted payment form URLs → <code className="text-xs">siteConfig.payments.lanes</code></li>
+          <li>• My Bare Method destination → <code className="text-xs">siteConfig.myBareMethodUrl</code></li>
           <li>• Instagram, Google Business, Analytics, Meta Pixel → <code className="text-xs">siteConfig.social</code></li>
-          <li>• Do NOT paste raw API secrets or keys here — use hosted/tokenized forms only.</li>
+          <li>• Do not paste credentials, patient information, or private platform links here.</li>
         </ul>
       </div>
     </div>

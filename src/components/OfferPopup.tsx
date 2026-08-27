@@ -7,7 +7,6 @@ const DISMISS_KEY = 'bare-method-welcome-dismissed';
 const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
 const INITIAL_DELAY = 10_000;
 const RETRY_DELAY = 3 * 60 * 1000;
-const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 
 export default function OfferPopup() {
   const [visible, setVisible] = useState(false);
@@ -122,13 +121,13 @@ export default function OfferPopup() {
               <Sparkles className="h-5 w-5 text-gold-400" strokeWidth={1.5} />
             </div>
             <div className="flex-1 text-left">
-              <span className="block font-display text-base text-cream-50">Book Esthetics</span>
+              <span className="block font-display text-base text-cream-50">Book Esthetics via Vagaro</span>
               <span className="block text-cream-50/50 text-xs mt-0.5">Vagaro scheduling platform</span>
             </div>
           </a>
 
           <a
-            href={MYBAREMETHOD_URL}
+            href={siteConfig.myBareMethodUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleButtonClick}
@@ -138,16 +137,16 @@ export default function OfferPopup() {
               <HeartPulse className="h-5 w-5 text-emerald-400" strokeWidth={1.5} />
             </div>
             <div className="flex-1 text-left">
-              <span className="block font-display text-base text-cream-50">Provider-Led Wellness</span>
+              <span className="block font-display text-base text-cream-50">My Bare Method Wellness</span>
               <span className="inline-flex items-center gap-1 text-cream-50/50 text-xs mt-0.5">
-                MyBareMethod.com <ExternalLink className="h-3 w-3" />
+                Explore mybaremethod.com <ExternalLink className="h-3 w-3" />
               </span>
             </div>
           </a>
         </div>
 
         <p className="text-center text-cream-50/40 text-[11px] leading-relaxed max-w-xs mx-auto">
-          Provider-led wellness services are provided through a separate website with its own providers, policies, and patient portal.
+          My Bare Method is a separate provider-guided wellness experience with its own website, team, policies, and customer journey.
         </p>
       </div>
     </div>

@@ -27,12 +27,12 @@ All your editable content lives in these files inside the `src/` folder:
 | What You Want to Change | File to Edit |
 |---|---|
 | Booking links (Vagaro) | `src/config/site.ts` → section 2 |
-| Patient portal links (Legend) | `src/config/site.ts` → section 3 |
+| My Bare Method destination | `src/config/site.ts` → `myBareMethodUrl` |
 | Business name, address, phone, hours | `src/config/site.ts` → section 1 |
 | Instagram, Google Business, Analytics | `src/config/site.ts` → section 5 |
-| Payment links (Phase 3) | `src/config/site.ts` → section 4 |
+| Payment links | Managed by the selected booking/payment provider; no hub checkout is enabled |
 | Esthetic services (names, prices, descriptions) | `src/data/estheticServices.ts` |
-| Wellness programs (names, descriptions, fees) | `src/data/wellnessPrograms.ts` |
+| Wellness destination copy | `src/pages/WellnessPage.tsx` and `src/config/site.ts` |
 | Shop products (skincare, supplements, gift cards) | `src/data/products.ts` |
 | Memberships | `src/data/memberships.ts` |
 | Education courses | `src/data/courses.ts` |
@@ -49,9 +49,15 @@ want to change, update the text between the quotes, and save.
 
 ### Vagaro Booking Links
 
+The configured Vagaro MySite URLs are the verified active destinations for The
+Bare Method and share the `/thebaremethod` path structure. Do not replace them
+with invented paths. If Vagaro provides an intentional business-specific
+change, update the corresponding field in `src/config/site.ts` and preserve the
+same destination family:
+
 1. Open `src/config/site.ts`
 2. Find section 2 (VAGARO)
-3. Replace each URL between the quotes with your real Vagaro URL:
+3. Review the configured destinations:
    - `bookingUrl` — your main booking page
    - `giftCardUrl` — your gift card page
    - `membershipUrl` — your membership page
@@ -59,17 +65,13 @@ want to change, update the text between the quotes, and save.
 
 You can find these URLs in your Vagaro dashboard under **Business > Booking Page**.
 
-### Legend (OptiMantra) Patient Portal Links
+### My Bare Method Wellness Destination
 
-1. Open `src/config/site.ts`
-2. Find section 3 (LEGEND)
-3. Replace each URL with your real Legend/OptiMantra URL:
-   - `intakeUrl` — where new patients start intake
-   - `patientPortalUrl` — where existing patients log in
-   - `bookingUrl` — where patients schedule consultations
-   - `existingPatientLoginUrl` — login page for returning patients
-
-You can find these in your Legend/OptiMantra admin dashboard under **Patient Links**.
+The Bare Method is the parent-brand hub for local esthetics. My Bare Method is a
+separate provider-guided wellness brand with its own website, team, policies, and
+customer journey. Update only `siteConfig.myBareMethodUrl` when the canonical
+destination changes. Do not add intake, portal, prescription, checkout, or other
+wellness-platform links to this hub.
 
 ### Business Contact Info
 
@@ -96,13 +98,11 @@ You can find these in your Legend/OptiMantra admin dashboard under **Patient Lin
 4. To hide a service, change `active: true` to `active: false`
 5. To feature a service on the homepage, set `featured: true`
 
-### Editing Wellness Programs
+### Updating the Wellness Pathway
 
-1. Open `src/data/wellnessPrograms.ts`
-2. Each program is a block starting with `{ slug: ... }`
-3. Edit the `name`, `shortDescription`, `startingFee`, `mayAddress`, `mayInclude`, etc.
-4. To hide a program, change `active: true` to `active: false`
-5. To feature a program on the homepage, set `featured: true`
+The wellness pathway is an outbound handoff only. Keep its copy general and
+clearly labeled **My Bare Method**; do not add clinical service menus, intake
+forms, patient records, prescriptions, or wellness checkout to this repository.
 
 ### Editing Shop Products
 
@@ -130,19 +130,11 @@ You can find these in your Legend/OptiMantra admin dashboard under **Patient Lin
 
 ---
 
-## Phase 3: Payment Setup (Later)
+## Payment Setup
 
-Do not set up payments until your merchant account is arranged through
-**Organic Payment Gateways**. When ready:
-
-1. Open `src/config/site.ts`
-2. Find section 4 (PAYMENT)
-3. Paste your hosted checkout page URLs into the `hostedPaymentUrl` fields
-4. There are four separate lanes: Esthetics, Medical, Retail, Education
-5. Each lane can have its own merchant account and checkout page
-
-**Never paste API keys, passwords, or merchant credentials into this file.**
-Only paste the hosted checkout page URLs that your gateway provider gives you.
+The hub does not process wellness or medical payments. Esthetics booking and
+payment are handled through the configured Vagaro destination. Confirm any
+external payment or financing URL with the business owner before publishing it.
 
 ---
 
@@ -153,23 +145,9 @@ Only paste the hosted checkout page URLs that your gateway provider gives you.
 1. Go to `yourwebsite.com/admin`
 2. Sign in with your email and password (Supabase authentication)
 3. You will see three sections:
-   - **Dashboard** — overview of request counts
-   - **Wellness Requests** — all Wellness Plan submissions
+   - **Dashboard** — overview of website contact submissions
    - **Contact Submissions** — all contact form messages
    - **Configuration** — review all your links and settings
-
-### Managing Wellness Requests
-
-1. Click any request to see full details
-2. Update the status using the dropdown:
-   - **Awaiting Review** — new request, not yet reviewed
-   - **Intake Required** — patient needs to complete medical intake
-   - **Invoice Sent** — you have sent an invoice link to the customer
-   - **Paid** — the invoice has been paid
-   - **Cancelled** — the request is no longer active
-3. Paste an external invoice link in the Invoice Management section
-4. Add internal notes for your team
-5. All status changes are logged in the history
 
 ### Creating Your Admin Account
 
@@ -220,13 +198,10 @@ to calculate the cart total. If the price is not a fixed number, leave
 6. Set `active: true` to show it immediately
 7. Pick an icon from the `lucide-react` import list at the top of the file
 
-### New Wellness Program
+### New Wellness Content
 
-1. Open `src/data/wellnessPrograms.ts`
-2. Copy an existing program block
-3. Paste it at the end of the list
-4. Change the `slug`, `name`, `shortDescription`, `mayAddress`, `mayInclude`, etc.
-5. Set `active: true`
+Do not add wellness programs or medical workflows to this hub. Add only a
+general, clearly separated handoff to My Bare Method after review.
 
 ### New Product
 
@@ -250,18 +225,10 @@ to calculate the cart total. If the price is not a fixed number, leave
 
 ## Email Confirmations
 
-When a customer submits a Wellness Plan request or contact form, a
-confirmation email is queued through an edge function. To enable actual
-email sending:
-
-1. Sign up for a free account at [Resend.com](https://resend.com)
-2. Get your API key
-3. Add it as a secret named `RESEND_API_KEY` in your Supabase project
-4. Uncomment the Resend code in `supabase/functions/send-confirmation-email/index.ts`
-
-Until email sending is enabled, submissions still work — they are stored in
-the database and visible in the admin dashboard. The email step is optional and
-does not affect the form submission.
+The contact form stores submissions for review in the admin area. The existing
+email edge-function code is not wired to the current public contact flow and
+only logs its payload; treat email delivery as unfinished until separately
+implemented and tested.
 
 ---
 
@@ -273,10 +240,7 @@ src/
     site.ts          ← ALL your links, contact info, payment settings
   data/
     estheticServices.ts  ← Esthetic service names, prices, descriptions
-    wellnessPrograms.ts   ← Wellness program names, descriptions, fees
-    products.ts           ← Shop products (skincare, supplements, etc.)
     memberships.ts        ← Membership tiers and benefits
-    courses.ts            ← Education courses and dates
     faqs.ts               ← Frequently asked questions
     testimonials.ts       ← Client testimonials and results
     legal.ts              ← Legal page content
@@ -288,4 +252,6 @@ src/
 ```
 
 **In most cases, you only need to edit files in `src/config/` and `src/data/`.**
-The pages and components automatically use the data from those files.
+The pages and components automatically use the data from those files. The
+wellness handoff page is intentionally maintained separately in
+`src/pages/WellnessPage.tsx`.

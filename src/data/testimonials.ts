@@ -3,6 +3,7 @@ export type Testimonial = {
   location: string;
   text: string;
   service: string;
+  brand: 'The Bare Method Esthetics' | 'My Bare Method Wellness';
   rating: number;
 };
 
@@ -12,6 +13,7 @@ export const testimonials: Testimonial[] = [
     location: 'Apple Valley, MN',
     text: 'My skin has never looked better. The custom facial was tailored exactly to my concerns, and the aftercare guidance made a real difference in my routine.',
     service: 'Advanced Custom Facial',
+    brand: 'The Bare Method Esthetics',
     rating: 5,
   },
   {
@@ -19,6 +21,7 @@ export const testimonials: Testimonial[] = [
     location: 'Lakeville, MN',
     text: 'The Brazilian wax was the most comfortable I have ever had. Professional, quick, and I felt completely at ease the entire time.',
     service: 'Brazilian Waxing',
+    brand: 'The Bare Method Esthetics',
     rating: 5,
   },
   {
@@ -26,6 +29,7 @@ export const testimonials: Testimonial[] = [
     location: 'Burnsville, MN',
     text: 'I came in for body contouring and left feeling more confident than I have in years. The space is beautiful and the care is personal.',
     service: 'Body Contouring',
+    brand: 'The Bare Method Esthetics',
     rating: 5,
   },
   {
@@ -33,13 +37,15 @@ export const testimonials: Testimonial[] = [
     location: 'Eagan, MN',
     text: 'The microneedling series transformed my skin texture. My acne scars are visibly softer and my overall glow is unreal.',
     service: 'Microneedling',
+    brand: 'The Bare Method Esthetics',
     rating: 5,
   },
   {
     name: 'Nicole B.',
     location: 'Rosemount, MN',
     text: 'The wellness consultation was thorough and genuinely personalized. I finally feel like I have a plan that makes sense for my body.',
-    service: 'Weight Management',
+    service: 'Wellness consultation',
+    brand: 'My Bare Method Wellness',
     rating: 5,
   },
   {
@@ -47,6 +53,7 @@ export const testimonials: Testimonial[] = [
     location: 'Apple Valley, MN',
     text: 'Rina is an incredible educator. I left the speed waxing workshop with real, usable technique and so much more confidence.',
     service: 'Speed Waxing Mastery',
+    brand: 'The Bare Method Esthetics',
     rating: 5,
   },
 ];

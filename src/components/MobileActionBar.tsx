@@ -1,7 +1,5 @@
-import { Calendar, HeartPulse, MessageCircle, ExternalLink } from 'lucide-react';
+import { Calendar, HeartPulse, MessageCircle } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-
-const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 
 export function MobileActionBar() {
   return (
@@ -15,16 +13,16 @@ export function MobileActionBar() {
             className="flex flex-col items-center gap-1 rounded-xl px-2 py-2 text-ink-900 hover:bg-ink-900/5 transition-colors"
           >
             <Calendar className="h-5 w-5 text-gold-500" />
-            <span className="text-[11px] font-medium leading-tight text-center">Book Esthetics</span>
+            <span className="text-[11px] font-medium leading-tight text-center">Book via Vagaro</span>
           </a>
           <a
-            href={MYBAREMETHOD_URL}
+            href={siteConfig.myBareMethodUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-1 rounded-xl px-2 py-2 text-ink-900 hover:bg-ink-900/5 transition-colors"
           >
             <HeartPulse className="h-5 w-5 text-emerald-600" />
-            <span className="text-[11px] font-medium leading-tight text-center">Wellness</span>
+            <span className="text-[11px] font-medium leading-tight text-center">My Bare Method</span>
           </a>
           <a
             href={`sms:${siteConfig.business.phone.replace(/[^+\d]/g, '')}`}

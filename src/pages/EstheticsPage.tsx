@@ -123,7 +123,7 @@ function FocusAreaCard({ area }: { area: EstheticFocus }) {
           rel="noopener noreferrer"
           className="btn-gold"
         >
-          Book This Service
+          Book This Service via Vagaro
         </a>
         <span className="inline-flex items-center gap-1.5 text-sm text-ink-700/70">
           <ArrowRight className="h-4 w-4 text-gold-500" />
@@ -154,7 +154,7 @@ export function EstheticsPage() {
             rel="noopener noreferrer"
             className="btn-gold"
           >
-            Book Esthetics
+            Book Esthetics via Vagaro
           </a>
           <a
             href={siteConfig.vagaro.giftCardUrl}
@@ -258,7 +258,7 @@ export function EstheticsPage() {
               rel="noopener noreferrer"
               className="mt-5 btn-gold"
             >
-              Book Esthetics
+              Book Esthetics via Vagaro
             </a>
           </div>
         </div>

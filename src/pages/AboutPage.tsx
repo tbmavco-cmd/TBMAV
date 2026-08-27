@@ -5,11 +5,7 @@ import {
 
   Award,
   Users,
-  Stethoscope,
   ShieldCheck,
-  UserCog,
-  FlaskConical,
-  Pill,
   Lock,
   Star,
 } from 'lucide-react';
@@ -27,8 +23,8 @@ const pathways = [
   },
   {
     icon: HeartPulse,
-    name: 'Provider-Led Wellness',
-    description: 'Weight management, hormones, IV therapy, and telehealth — offered through My Bare Method (MyBareMethod.com).',
+    name: 'My Bare Method Wellness',
+    description: 'A separate provider-guided wellness experience at mybaremethod.com, with its own team, policies, and customer journey.',
   },
 ];
 
@@ -36,42 +32,7 @@ const values = [
   { icon: Award, title: 'Ethics & Integrity', text: 'We grow through ethics, education, and collaboration — not unnecessary competition.' },
   { icon: Users, title: 'Inclusive & Welcoming', text: 'A luxury experience that is warm and approachable for everyone.' },
   { icon: HeartPulse, title: 'Results-Focused', text: 'Personalized plans designed for real, lasting results.' },
-  { icon: ShieldCheck, title: 'Privacy First', text: 'Esthetic and medical records kept separate and secure.' },
-];
-
-const clinicalTeam = [
-  {
-    icon: Stethoscope,
-    role: 'Licensed Medical Provider',
-    description:
-      'Responsible for clinical evaluation, eligibility decisions, treatment recommendations, prescriptions, and IV Therapy orders.',
-    placeholder: true,
-  },
-  {
-    icon: HeartPulse,
-    role: 'Registered Nurse',
-    description:
-      'Administers eligible IV Therapy and other approved clinical services according to provider orders, established protocols, and applicable scope requirements.',
-    placeholder: true,
-  },
-  {
-    icon: UserCog,
-    role: 'Clinical Partner',
-    description: 'The licensed healthcare entity responsible for medical care, prescribing, and clinical operations.',
-    placeholder: true,
-  },
-  {
-    icon: Pill,
-    role: 'Pharmacy Partner',
-    description: 'A licensed pharmacy fulfills prescriptions when treatment is approved.',
-    placeholder: true,
-  },
-  {
-    icon: FlaskConical,
-    role: 'Laboratory Partner',
-    description: 'Participating laboratories process any recommended laboratory testing.',
-    placeholder: true,
-  },
+  { icon: ShieldCheck, title: 'Privacy First', text: 'We keep the esthetics customer journey clear, respectful, and separate from other services.' },
 ];
 
 export function AboutPage() {
@@ -79,13 +40,13 @@ export function AboutPage() {
     <>
       <Seo
         title="About | The Bare Method — Apple Valley, Minnesota"
-        description="Meet Carina Rina Hebert, founder of The Bare Method. Specialized Esthetics, personalized Wellness, and provider-directed IV Therapy in Apple Valley, Minnesota."
+        description="Meet Carina Rina Hebert, founder of The Bare Method, a local esthetics destination in Apple Valley with a broader vision for beauty and wellness."
         path="/about"
       />
       <PageHeader
         eyebrow="About The Bare Method"
         title="Your Skin. Your Wellness. Your Method."
-        subtitle="The Bare Method combines specialized body and intimate-area Esthetics, personalized provider-led Wellness, and professionally administered IV Therapy in a private and supportive environment."
+        subtitle="The Bare Method is a local esthetics destination with a broader brand vision. Esthetic services stay here; My Bare Method is the separate destination for provider-guided wellness."
       />
 
       {/* Founder */}
@@ -117,14 +78,8 @@ export function AboutPage() {
               <p>
                 She created The Bare Method to provide a private, elevated, and judgment-free
                 experience where clients feel seen, respected, and supported in their skin and
-                Wellness goals.
-              </p>
-              <p className="text-sm text-ink-700/80">
-                Rina provides Esthetics services within her qualifications and scope. Medical
-                evaluations, IV Therapy orders, clinical care, and prescribing decisions are
-                performed by appropriately licensed medical professionals. IV Therapy is
-                administered by qualified clinical personnel, including a Registered Nurse,
-                according to provider orders and applicable protocols.
+                confidence goals. The broader brand vision includes a separate wellness experience
+                through My Bare Method.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -144,13 +99,13 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Three Pathways */}
+      {/* Two pathways */}
       <section className="section bg-cream-100">
         <div className="container-bare">
           <SectionHeading
-            eyebrow="One Brand, Three Pathways"
-            title="Specialized Esthetics, Personalized Wellness, and Provider-Directed IV Therapy"
-            subtitle="Three connected service pathways under one elevated experience — each with its own booking, intake, and clinical process where required."
+            eyebrow="One brand, two clear paths"
+            title="The Bare Method Esthetics and My Bare Method Wellness"
+            subtitle="The Bare Method is the local esthetics destination. My Bare Method is the separate provider-guided wellness destination."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {pathways.map((d) => {
@@ -162,36 +117,6 @@ export function AboutPage() {
                   </div>
                   <h3 className="font-display text-lg font-medium text-ink-900">{d.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-700">{d.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Clinical Care Team */}
-      <section className="section">
-        <div className="container-bare">
-          <SectionHeading
-            eyebrow="Clinical Support"
-            title="Your Clinical Care Team"
-            subtitle="The medical professionals and partners who support Wellness and IV Therapy. Names and credentials appear here only once verified."
-          />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {clinicalTeam.map((member) => {
-              const Icon = member.icon;
-              return (
-                <div key={member.role} className="card flex flex-col p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cream-100 text-gold-500">
-                    <Icon className="h-6 w-6" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-display text-lg font-medium text-ink-900">{member.role}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-700">
-                    {member.description}
-                  </p>
-                  <p className="mt-4 text-xs font-medium uppercase tracking-wide text-gold-600/70">
-                    Credentials pending verification
-                  </p>
                 </div>
               );
             })}
@@ -230,10 +155,8 @@ export function AboutPage() {
             <div className="flex items-start gap-3">
               <Lock className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
               <p className="text-sm leading-relaxed text-ink-700">
-                Please do not submit medical history, diagnoses, medication details, allergies,
-                pregnancy information, laboratory results, photographs, or other sensitive health
-                information through this website. Medical information must be submitted through the
-                designated secure patient portal.
+                Please use this website for esthetics questions and general contact only. My Bare
+                Method handles its own wellness customer journey on mybaremethod.com.
               </p>
             </div>
           </div>
@@ -257,6 +180,7 @@ export function AboutPage() {
                   {t.name} <span className="text-ink-700/60">· {t.location}</span>
                 </p>
                 <p className="text-xs text-gold-600">{t.service}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-wide text-ink-500">{t.brand}</p>
               </div>
             ))}
           </div>

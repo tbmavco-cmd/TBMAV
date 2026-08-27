@@ -154,9 +154,9 @@ export function ContactPage() {
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
                     <p className="text-xs leading-relaxed text-red-900">
-                      Please do not submit diagnoses, medication details, symptoms, laboratory reports,
-                      photographs, or other sensitive health information through this form. Medical
-                      information must be submitted through the secure patient portal.
+                      Use this form for esthetics questions and general contact only. Please do not
+                      submit sensitive health information here. For My Bare Method wellness questions,
+                      visit mybaremethod.com directly.
                     </p>
                   </div>
                 </div>

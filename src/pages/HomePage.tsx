@@ -19,7 +19,7 @@ import { testimonials } from '@/data/testimonials';
 import { results } from '@/data/testimonials';
 
 const trustLine = 'Private suite \u00B7 Customized care \u00B7 Advanced Practice Esthetician \u00B7 Apple Valley';
-const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
+const MYBAREMETHOD_URL = siteConfig.myBareMethodUrl;
 
 function BookEstheticsButton({ className = '' }: { className?: string }) {
   return (
@@ -30,7 +30,7 @@ function BookEstheticsButton({ className = '' }: { className?: string }) {
       className={`btn-gold ${className}`}
     >
       <Calendar className="mr-2 h-4 w-4" />
-      Book Esthetics
+      Book Esthetics via Vagaro
     </a>
   );
 }
@@ -50,7 +50,7 @@ export function HomePage() {
     <>
       <Seo
         title="The Bare Method | Luxury Esthetics in Apple Valley, MN"
-        description="Specialized body and intimate-area esthetics in Apple Valley, Minnesota. Private. Personalized. Never judged. Provider-led wellness through My Bare Method (MyBareMethod.com)."
+        description="The Bare Method brings local esthetics in Apple Valley together with a clear path to My Bare Method, a separate provider-guided wellness experience."
         path="/"
       />
 
@@ -84,7 +84,7 @@ export function HomePage() {
                 className="btn-green"
               >
                 <HeartPulse className="mr-2 h-4 w-4" />
-                Explore Wellness
+                Explore My Bare Method
                 <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
               </a>
             </div>
@@ -146,9 +146,9 @@ export function HomePage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
                   <HeartPulse className="h-6 w-6" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-2xl font-medium text-ink-900">Provider-Led Wellness</h3>
+                <h3 className="font-display text-2xl font-medium text-ink-900">My Bare Method Wellness</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-700">
-                  Provider-led programs supporting weight, metabolism, hormones, longevity, recovery, IV therapy, and ongoing care — offered through My Bare Method, a separate company.
+                  Explore a separate provider-guided wellness experience through My Bare Method. Services, customer care, and policies are handled on its own website.
                 </p>
                 <div className="mt-6">
                   <a
@@ -158,12 +158,12 @@ export function HomePage() {
                     className="btn-green inline-flex items-center gap-1.5"
                   >
                     <HeartPulse className="mr-2 h-4 w-4" />
-                    Visit MyBareMethod.com
+                    Explore My Bare Method
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </div>
                 <p className="mt-2 text-[11px] text-ink-500">
-                  My Bare Method is a separate company with its own providers, policies, and patient portal.
+                  My Bare Method is separate from The Bare Method esthetics services and operates its own website, team, policies, and customer journey.
                 </p>
               </div>
             </div>
@@ -301,6 +301,7 @@ export function HomePage() {
                   {t.name} <span className="text-ink-700/60">&middot; {t.location}</span>
                 </p>
                 <p className="text-xs text-gold-600">{t.service}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-wide text-ink-500">{t.brand}</p>
               </div>
             ))}
           </div>
@@ -481,7 +482,7 @@ export function HomePage() {
               className="btn-green inline-flex items-center gap-1.5"
             >
               <HeartPulse className="mr-2 h-4 w-4" />
-              Explore Wellness at MyBareMethod.com
+              Explore My Bare Method
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>

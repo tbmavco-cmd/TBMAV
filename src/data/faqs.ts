@@ -9,7 +9,7 @@ export const faqs: Faq[] = [
     category: 'General',
     question: 'What is The Bare Method?',
     answer:
-      'The Bare Method is a luxury esthetics studio in Apple Valley, Minnesota, specializing in head-to-toe skin treatments, intimate-area care, and body contouring. Provider-led wellness services (weight management, hormones, IV therapy, telehealth) are offered separately through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal.',
+      'The Bare Method is a luxury esthetics studio in Apple Valley, Minnesota, specializing in head-to-toe skin treatments, intimate-area care, and body contouring. My Bare Method is the separate provider-guided wellness experience within the broader brand vision.',
   },
   {
     category: 'General',
@@ -21,7 +21,7 @@ export const faqs: Faq[] = [
     category: 'General',
     question: 'How do I book an appointment?',
     answer:
-      'Esthetic services (The Bare Method) are booked through Vagaro. Provider-led wellness services (My Bare Method) are managed through a separate platform at MyBareMethod.com.',
+      'Esthetic services are booked through Vagaro. My Bare Method wellness services are managed through the separate website at https://mybaremethod.com.',
   },
   {
     category: 'Esthetics',
@@ -51,7 +51,7 @@ export const faqs: Faq[] = [
     category: 'Esthetics',
     question: 'How do I book an esthetic service?',
     answer:
-      'All esthetic bookings, reservation fees, packages, memberships, and gift cards are handled through Vagaro. Use the "Book Esthetics" button on any esthetics page to go directly to our Vagaro booking page.',
+      'All esthetic bookings, reservation fees, packages, memberships, and gift cards are handled through Vagaro. Use the "Book Esthetics via Vagaro" button on any esthetics page to go directly to our Vagaro booking page.',
   },
   {
     category: 'Esthetics',
@@ -69,79 +69,79 @@ export const faqs: Faq[] = [
     category: 'Wellness',
     question: 'How do I start a wellness program?',
     answer:
-      'All provider-led wellness services are managed through My Bare Method at MyBareMethod.com. Visit MyBareMethod.com to explore programs, complete intake, and schedule a provider consultation.',
+      'All My Bare Method wellness services are managed through https://mybaremethod.com. Visit that separate website to explore options and begin its customer journey.',
   },
   {
     category: 'Wellness',
-    question: 'Will I definitely receive a prescription or medication?',
+    question: 'Where do My Bare Method wellness services take place?',
     answer:
-      'No. Prescriptions are not guaranteed. Medical services and prescriptions require evaluation and approval by an appropriately licensed medical provider. Treatment and prescription eligibility are not guaranteed.',
+      'My Bare Method wellness services take place through its separate website, team, policies, and customer journey. The Bare Method website does not provide or manage those services.',
   },
   {
     category: 'Wellness',
-    question: 'Is telehealth available?',
+    question: 'How do I learn more about My Bare Method?',
     answer:
-      'Yes, telehealth consultations are available. Availability may vary by state. Telehealth visits are conducted through our secure patient platform.',
+      'Visit https://mybaremethod.com for current information about the separate My Bare Method wellness experience.',
   },
   {
     category: 'Wellness',
-    question: 'Where is my medical information stored?',
+    question: 'Does The Bare Method manage My Bare Method accounts?',
     answer:
-      'All medical intake, medical records, clinical messaging, and provider documentation are handled through our designated secure patient platform, not on this website. We do not collect detailed medical information through the public website.',
+      'No. My Bare Method manages its own accounts, customer information, policies, and support through https://mybaremethod.com.',
   },
   {
     category: 'Wellness',
-    question: 'I am an existing patient. How do I access my portal?',
+    question: 'I already use My Bare Method. Where do I go for support?',
     answer:
-      'Existing patients can use the "Existing Patient Login" button to access the secure patient portal for follow-ups, refill reviews, lab review, and provider messaging.',
+      'Use the My Bare Method website and support channels for account access or wellness questions. The Bare Method esthetics team cannot manage those accounts.',
   },
   {
     category: 'Shop',
     question: 'What can I buy on the website?',
     answer:
-      'You can purchase professional skincare, supplements, gift cards, consultation fees, reservation fees, and education products directly. Medical wellness programs are added to your Wellness Plan and require provider review before treatment.',
+      'The Bare Method website directs esthetic customers to Vagaro for applicable services, memberships, packages, and gift cards. My Bare Method manages its own separate wellness offerings.',
   },
   {
     category: 'Shop',
-    question: 'What is My Wellness Plan?',
+    question: 'Where do I shop for wellness offerings?',
     answer:
-      'My Wellness Plan is a shopping-cart-style experience for medical wellness programs. You can browse programs, add them to your plan, and submit a request. Adding a program does not purchase medication.',
+      'Wellness offerings belong on the separate My Bare Method website at https://mybaremethod.com. This website does not host wellness shopping or checkout.',
   },
   {
     category: 'Shop',
     question: 'Can I request an invoice instead of paying now?',
     answer:
-      'Yes. For certain items, you can request an invoice. We will review your selection, adjust pricing if needed, and send a secure invoice link by email or text.',
+      'For esthetic services, use the confirmed Vagaro booking and payment flow. My Bare Method handles its own separate customer and payment questions.',
   },
   {
     category: 'Memberships',
     question: 'What is the difference between esthetic and wellness memberships?',
     answer:
-      'Esthetic memberships include treatment credits, member pricing, and priority booking, managed through Vagaro. Wellness memberships include provider follow-ups, program support, and care coordination. Medication is not automatically included in wellness memberships.',
+      'Esthetic memberships include treatment credits, member pricing, and priority booking through Vagaro. My Bare Method memberships, if offered, are managed separately at https://mybaremethod.com.',
   },
   {
     category: 'Memberships',
-    question: 'Does wellness membership include medication?',
+    question: 'Where are wellness memberships managed?',
     answer:
-      'No. Prescription medication, compounded products, pharmacy fees, laboratory testing, and shipping are priced separately unless a specific offer expressly says otherwise.',
+      'My Bare Method manages its own wellness memberships and customer terms through https://mybaremethod.com. The Bare Method website does not sell or administer them.',
   },
   {
     category: 'Memberships',
-    question: 'Does wellness membership guarantee a prescription?',
+    question: 'Can I use my esthetic membership for My Bare Method?',
     answer:
-      'No. A licensed medical provider determines whether any treatment or prescription is appropriate.',
+      'No. The Bare Method esthetic memberships are handled through Vagaro and apply only to eligible esthetic services.',
   },
   {
     category: 'Memberships',
     question: 'Can I use wellness care without a membership?',
     answer:
-      'Yes. Initial consultations, follow-ups, lab reviews, and selected wellness services are available à la carte.',
+      'Visit https://mybaremethod.com for My Bare Method availability and terms.',
   },
   {
     category: 'Memberships',
     question: 'Why is Bare Access only $49?',
     answer:
-      'Bare Access is designed as a low-cost care-coordination and member-pricing option. Clinical visits, medication, labs, and shipping are purchased separately as needed.',
+      'My Bare Method can provide current details about any wellness membership or access option on its separate website.',
   },
   {
     category: 'Memberships',
@@ -157,7 +157,7 @@ export const faqs: Faq[] = [
   },
   {
     category: 'Memberships',
-    question: 'Can I use my esthetic benefits on medication or labs?',
+    question: 'Can I use my esthetic benefits outside eligible esthetic services?',
     answer:
       'No. Esthetic benefits and credits apply only to eligible esthetic services.',
   },
@@ -165,7 +165,7 @@ export const faqs: Faq[] = [
     category: 'Memberships',
     question: 'Are wellness memberships insurance?',
     answer:
-      'No. Memberships are cash-pay wellness support programs and are not health insurance.',
+      'My Bare Method publishes its own membership terms on its separate website. The Bare Method esthetic memberships are not insurance.',
   },
   {
     category: 'Education',

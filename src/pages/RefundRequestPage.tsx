@@ -92,8 +92,8 @@ export function RefundRequestPage() {
                   <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
                   <p className="text-sm text-amber-800">
                     Do not submit diagnoses, medication information, laboratory results or other
-                    medical information through this form. Medical information must be submitted
-                    through the secure patient portal.
+                    sensitive health information through this form. This request page is for website
+                    and esthetics account matters only.
                   </p>
                 </div>
               </div>

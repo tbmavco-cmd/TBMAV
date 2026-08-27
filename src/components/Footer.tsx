@@ -5,7 +5,7 @@ import { footerDisclaimer, legalPages } from '@/data/legal';
 
 const exploreLinks = [
   { to: '/esthetics', label: 'Esthetics' },
-  { to: '/wellness', label: 'Wellness' },
+  { to: '/wellness', label: 'My Bare Method' },
   { to: '/results', label: 'Results' },
   { to: '/memberships', label: 'Memberships' },
   { to: '/about', label: 'About' },
@@ -13,8 +13,8 @@ const exploreLinks = [
 ];
 
 const clientAccess = [
-  { label: 'Book Esthetics', href: siteConfig.vagaro.servicesUrl, external: true },
-  { label: 'Provider-Led Wellness', href: 'https://MyBareMethod.com', external: true },
+  { label: 'Book Esthetics via Vagaro', href: siteConfig.vagaro.servicesUrl, external: true },
+  { label: 'Explore My Bare Method', href: siteConfig.myBareMethodUrl, external: true },
   { label: 'Vagaro Memberships', href: siteConfig.vagaro.membershipUrl, external: true },
   { label: 'Vagaro Gift Cards', href: siteConfig.vagaro.giftCardUrl, external: true },
 ];
@@ -47,7 +47,7 @@ export function Footer() {
             <h3 className="font-display text-2xl font-medium text-cream-50">The Bare Method</h3>
             <p className="mt-3 text-sm leading-relaxed text-cream-200/70">
               Your Skin. Your Wellness. Your Method. A private, personalized destination for
-              specialized esthetics and provider-led wellness in Apple Valley, Minnesota.
+              specialized esthetics in Apple Valley, with a clear path to My Bare Method wellness.
             </p>
             <ul className="mt-5 space-y-3.5">
               <li className="flex items-start gap-3 text-sm text-cream-200/70">
@@ -228,7 +228,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-cream-200/10 pt-8">
           <p className="text-xs leading-relaxed text-cream-200/50">
-            The Bare Method offers luxury esthetics and IV therapy services in Apple Valley, Minnesota. Provider-led wellness services (weight management, hormones, IV therapy, telehealth) are offered through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal. Individual results vary.
+            The Bare Method offers luxury esthetics in Apple Valley, Minnesota. My Bare Method is a separate provider-guided wellness experience with its own website, team, policies, and customer journey. Individual results vary.
           </p>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
             <Link

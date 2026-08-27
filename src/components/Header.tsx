@@ -4,13 +4,12 @@ import { Menu, X, ExternalLink } from 'lucide-react';
 import { Logo } from './Logo';
 import { siteConfig } from '@/config/site';
 
-const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
+const MYBAREMETHOD_URL = siteConfig.myBareMethodUrl;
 
 const navLinks: { to?: string; href?: string; label: string; external?: boolean }[] = [
   { to: '/', label: 'Home' },
   { to: '/esthetics', label: 'Esthetics' },
-  { to: '/iv-therapy', label: 'IV Therapy' },
-  { to: '/wellness', label: 'Wellness' },
+  { to: '/wellness', label: 'My Bare Method' },
   { to: '/results', label: 'Results' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
@@ -111,7 +110,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="btn-gold text-sm"
             >
-              Book Now
+              Book Esthetic Services via Vagaro
             </a>
             <a
               href={MYBAREMETHOD_URL}
@@ -119,7 +118,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="btn-green text-sm inline-flex items-center gap-1.5"
             >
-              Wellness
+              My Bare Method
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
@@ -156,9 +155,8 @@ export function Header() {
                 <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Explore</p>
                 <div className="space-y-0.5">
                   <MobileNavLink to="/esthetics">Esthetics</MobileNavLink>
-                  <MobileNavLink to="/wellness">Provider-Led Wellness</MobileNavLink>
+                  <MobileNavLink to="/wellness">My Bare Method</MobileNavLink>
                   <MobileNavLink to="/results">Results</MobileNavLink>
-                  <MobileNavLink to="/iv-therapy">IV Therapy</MobileNavLink>
                   <MobileNavLink to="/about">About</MobileNavLink>
                   <MobileNavLink to="/contact">Contact</MobileNavLink>
                 </div>
@@ -168,8 +166,8 @@ export function Header() {
               <div>
                 <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Client Access</p>
                 <div className="space-y-0.5">
-                  <MobileExtLink href={siteConfig.vagaro.servicesUrl}>Book Esthetics</MobileExtLink>
-                  <MobileExtLink href={MYBAREMETHOD_URL}>MyBareMethod.com</MobileExtLink>
+                  <MobileExtLink href={siteConfig.vagaro.servicesUrl}>Book Esthetics via Vagaro</MobileExtLink>
+                  <MobileExtLink href={MYBAREMETHOD_URL}>Explore My Bare Method</MobileExtLink>
                   <MobileExtLink href={siteConfig.vagaro.membershipUrl}>Esthetic Memberships</MobileExtLink>
                   <MobileExtLink href={siteConfig.vagaro.giftCardUrl}>Gift Cards</MobileExtLink>
                 </div>
