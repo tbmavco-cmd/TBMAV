@@ -83,7 +83,7 @@ export const siteConfig = {
     bookingUrl: 'https://mysite.vagaro.com/thebaremethod',
 
     // PASTE YOUR VAGARO SERVICES URL HERE (the services tab)
-    servicesUrl: 'https://mysite.vagaro.com/thebaremethod/services',
+    servicesUrl: 'https://salonlofts.com/rina_tbm/schedule',
 
     // PASTE YOUR VAGARO GIFT CARD URL HERE
     giftCardUrl: 'https://mysite.vagaro.com/thebaremethod/gift-certificates',
