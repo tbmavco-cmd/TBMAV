@@ -598,16 +598,9 @@ function ConfigView() {
       </p>
 
       <div className="mt-6 space-y-6">
-        <ConfigSection title="Vagaro (Esthetics)">
-          <ConfigItem label="Booking URL" value={siteConfig.vagaro.bookingUrl} />
-          <ConfigItem label="Services URL" value={siteConfig.vagaro.servicesUrl} />
-          <ConfigItem label="Gift Card URL" value={siteConfig.vagaro.giftCardUrl} />
-          <ConfigItem label="Membership URL" value={siteConfig.vagaro.membershipUrl} />
-          <ConfigItem label="Packages URL" value={siteConfig.vagaro.packagesUrl} />
-          <ConfigItem label="Deals URL" value={siteConfig.vagaro.dealsUrl} />
-          <ConfigItem label="FAQs URL" value={siteConfig.vagaro.faqsUrl} />
-          <ConfigItem label="Reviews URL" value={siteConfig.vagaro.reviewsUrl} />
-          <ConfigItem label="Gallery URL" value={siteConfig.vagaro.galleryUrl} />
+        <ConfigSection title="Salon Lofts (Esthetics)">
+          <ConfigItem label="Booking URL" value={siteConfig.salonLofts.bookingUrl} />
+          <ConfigItem label="Services URL" value={siteConfig.salonLofts.servicesUrl} />
         </ConfigSection>
 
         <ConfigSection title="Legend EHR (Wellness)">
@@ -644,7 +637,7 @@ function ConfigView() {
       <div className="mt-8 rounded-2xl bg-cream-100 p-6">
         <h3 className="font-medium text-ink-900">Where to Paste Your Credentials</h3>
         <ul className="mt-3 space-y-1.5 text-sm text-ink-700">
-          <li>• Vagaro booking, gift card, membership, and package URLs → <code className="text-xs">siteConfig.vagaro</code></li>
+          <li>• Salon Lofts booking URLs → <code className="text-xs">siteConfig.salonLofts</code></li>
           <li>• Legend EHR intake, portal, booking, and login URLs → <code className="text-xs">siteConfig.legend</code></li>
           <li>• Authorize.Net / NMI hosted payment form URLs → <code className="text-xs">siteConfig.payments.lanes</code></li>
           <li>• Instagram, Google Business, Analytics, Meta Pixel → <code className="text-xs">siteConfig.social</code></li>

@@ -9,19 +9,19 @@ export const faqs: Faq[] = [
     category: 'General',
     question: 'What is The Bare Method?',
     answer:
-      'The Bare Method is a luxury esthetics studio in Apple Valley, Minnesota, specializing in head-to-toe skin treatments, intimate-area care, and body contouring. Provider-led wellness services (weight management, hormones, IV therapy, telehealth) are offered separately through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal.',
+      'The Bare Method is a luxury esthetics studio in Burnsville, Minnesota, specializing in head-to-toe skin treatments, intimate-area care, and body contouring. Provider-led wellness services (weight management, hormones, telehealth) are offered separately through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal.',
   },
   {
     category: 'General',
     question: 'Where are you located?',
     answer:
-      'We are located at 15115 Cedar Avenue, Suite 33, Apple Valley, MN 55124, serving Apple Valley, Lakeville, Rosemount, Burnsville, Eagan, and the greater South Minneapolis–Saint Paul metro.',
+      'We are located at Salon Lofts Burnsville, 14109 Irving Avenue South, Loft 6, Burnsville, MN 55337, serving Burnsville, Apple Valley, Lakeville, Rosemount, Eagan, and the greater South Minneapolis–Saint Paul metro.',
   },
   {
     category: 'General',
     question: 'How do I book an appointment?',
     answer:
-      'Esthetic services (The Bare Method) are booked through Vagaro. Provider-led wellness services (My Bare Method) are managed through a separate platform at MyBareMethod.com.',
+      'Esthetic services (The Bare Method) are booked through Salon Lofts. Provider-led wellness services (My Bare Method) are managed through a separate platform at MyBareMethod.com.',
   },
   {
     category: 'Esthetics',
@@ -51,13 +51,13 @@ export const faqs: Faq[] = [
     category: 'Esthetics',
     question: 'How do I book an esthetic service?',
     answer:
-      'All esthetic bookings, reservation fees, packages, memberships, and gift cards are handled through Vagaro. Use the "Book Esthetics" button on any esthetics page to go directly to our Vagaro booking page.',
+      'All esthetic bookings are handled through Salon Lofts. Use the "Book Esthetics" button on any esthetics page to go directly to our Salon Lofts scheduling page.',
   },
   {
     category: 'Esthetics',
     question: 'Do you require reservation fees for esthetic appointments?',
     answer:
-      'Yes, a reservation fee may be required for certain services. Reservation fees are managed through Vagaro and applied to your service total.',
+      'Yes, a reservation fee may be required for certain services. Reservation fees are managed through Salon Lofts and applied to your service total.',
   },
   {
     category: 'Esthetics',
@@ -117,7 +117,7 @@ export const faqs: Faq[] = [
     category: 'Memberships',
     question: 'What is the difference between esthetic and wellness memberships?',
     answer:
-      'Esthetic memberships include treatment credits, member pricing, and priority booking, managed through Vagaro. Wellness memberships include provider follow-ups, program support, and care coordination. Medication is not automatically included in wellness memberships.',
+      'Esthetic memberships include treatment credits, member pricing, and priority booking. Wellness memberships include provider follow-ups, program support, and care coordination. Medication is not automatically included in wellness memberships.',
   },
   {
     category: 'Memberships',

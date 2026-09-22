@@ -112,7 +112,7 @@ export default function OfferPopup() {
 
         <div className="space-y-3 mb-6">
           <a
-            href={siteConfig.vagaro.servicesUrl}
+            href={siteConfig.salonLofts.servicesUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleButtonClick}
@@ -123,7 +123,7 @@ export default function OfferPopup() {
             </div>
             <div className="flex-1 text-left">
               <span className="block font-display text-base text-cream-50">Book Esthetics</span>
-              <span className="block text-cream-50/50 text-xs mt-0.5">Vagaro scheduling platform</span>
+              <span className="block text-cream-50/50 text-xs mt-0.5">Salon Lofts scheduling</span>
             </div>
           </a>
 

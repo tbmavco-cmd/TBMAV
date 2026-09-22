@@ -17,7 +17,6 @@ import { MembershipCancellationPage } from '@/pages/MembershipCancellationPage';
 import { PrivacyRequestPage } from '@/pages/PrivacyRequestPage';
 import { AdminPage } from '@/pages/AdminPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { IvTherapyPage } from '@/pages/IvTherapyPage';
 import { FinancingPage } from '@/pages/FinancingPage';
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/esthetics" element={<EstheticsPage />} />
                     <Route path="/wellness" element={<WellnessPage />} />
-                    <Route path="/iv-therapy" element={<IvTherapyPage />} />
                     <Route path="/memberships" element={<MembershipsPage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/results" element={<ResultsPage />} />

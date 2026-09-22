@@ -44,10 +44,10 @@ export const legalEntitySettings = {
   bareMethodLegalEntityName: '[THE BARE METHOD LEGAL ENTITY NAME — e.g. The Bare Method LLC]',
   dbaName: 'The Bare Method',
   businessMailingAddress: {
-    line1: '15115 Cedar Avenue, Suite 33',
-    city: 'Apple Valley',
+    line1: 'Salon Lofts Burnsville, 14109 Irving Avenue South, Loft 6',
+    city: 'Burnsville',
     state: 'MN',
-    zip: '55124',
+    zip: '55337',
   },
   website: 'thebaremethodmn.com',
 
@@ -58,7 +58,7 @@ export const legalEntitySettings = {
   privacyEmail: '[PRIVACY EMAIL — e.g. privacy@thebaremethodmn.com]',
   legalNoticeEmail: '[LEGAL-NOTICE EMAIL — e.g. legal@thebaremethodmn.com]',
   membershipCancellationEmail: '[MEMBERSHIP-CANCELLATION EMAIL — e.g. cancel@thebaremethodmn.com]',
-  customerServicePhone: '218-656-7189',
+  customerServicePhone: '952-333-1202',
 
   // ==========================================================================
   //  3. CLINICAL & MEDICAL RELATIONSHIPS
@@ -86,7 +86,7 @@ export const legalEntitySettings = {
   paymentProcessor: '[PAYMENT PROCESSOR — e.g. Authorize.Net or NMI via Organic Payment Gateways]',
   merchantServicesProvider: '[MERCHANT-SERVICES PROVIDER — e.g. Organic Payment Gateways]',
   paymentGateway: '[PAYMENT GATEWAY — e.g. Authorize.Net]',
-  estheticBookingProvider: 'Vagaro',
+  estheticBookingProvider: 'Salon Lofts',
 
   // ==========================================================================
   //  6. AFFILIATES & REFERRAL PARTNERS

@@ -15,7 +15,7 @@ export function FinalCTA() {
         </p>
         <div className="mx-auto mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={siteConfig.vagaro.servicesUrl}
+            href={siteConfig.salonLofts.servicesUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold"

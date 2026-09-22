@@ -7,7 +7,7 @@ export type Membership = {
   features: string[];
   note?: string;
   ctaLabel: string;
-  ctaType: 'vagaro' | 'wellness_plan' | 'portal';
+  ctaType: 'contact' | 'wellness_plan' | 'portal';
   active: boolean;
 };
 
@@ -29,8 +29,8 @@ export const memberships: Membership[] = [
       'Product savings',
     ],
     note: 'Credits convert to more value than the dollar amount paid. A service normally costing $175 may only use 125–150 credits depending on your membership level.',
-    ctaLabel: 'Join via Vagaro',
-    ctaType: 'vagaro',
+    ctaLabel: 'Contact for Information',
+    ctaType: 'contact',
     active: true,
   },
   {
@@ -51,8 +51,8 @@ export const memberships: Membership[] = [
       'Product savings',
     ],
     note: 'Higher memberships unlock greater credit value. Credits can be used toward different treatments each visit — you are not locked into one service.',
-    ctaLabel: 'Join via Vagaro',
-    ctaType: 'vagaro',
+    ctaLabel: 'Contact for Information',
+    ctaType: 'contact',
     active: true,
   },
 ];

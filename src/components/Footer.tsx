@@ -13,10 +13,9 @@ const exploreLinks = [
 ];
 
 const clientAccess = [
-  { label: 'Book Esthetics', href: siteConfig.vagaro.servicesUrl, external: true },
+  { label: 'Book Esthetics', href: siteConfig.salonLofts.servicesUrl, external: true },
   { label: 'Provider-Led Wellness', href: 'https://MyBareMethod.com', external: true },
-  { label: 'Vagaro Memberships', href: siteConfig.vagaro.membershipUrl, external: true },
-  { label: 'Vagaro Gift Cards', href: siteConfig.vagaro.giftCardUrl, external: true },
+  { label: 'Memberships & Gift Cards', to: '/contact', external: false },
 ];
 
 const footerLegalGroups: { heading: string; category: string }[] = [
@@ -47,7 +46,7 @@ export function Footer() {
             <h3 className="font-display text-2xl font-medium text-cream-50">The Bare Method</h3>
             <p className="mt-3 text-sm leading-relaxed text-cream-200/70">
               Your Skin. Your Wellness. Your Method. A private, personalized destination for
-              specialized esthetics and provider-led wellness in Apple Valley, Minnesota.
+              specialized esthetics and provider-led wellness in Burnsville, Minnesota.
             </p>
             <ul className="mt-5 space-y-3.5">
               <li className="flex items-start gap-3 text-sm text-cream-200/70">
@@ -228,7 +227,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-cream-200/10 pt-8">
           <p className="text-xs leading-relaxed text-cream-200/50">
-            The Bare Method offers luxury esthetics and IV therapy services in Apple Valley, Minnesota. Provider-led wellness services (weight management, hormones, IV therapy, telehealth) are offered through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal. Individual results vary.
+            The Bare Method offers luxury esthetics and provider-led wellness services in Burnsville, Minnesota. Provider-led wellness services (weight management, hormones, telehealth) are offered through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal. Individual results vary.
           </p>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
             <Link

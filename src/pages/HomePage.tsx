@@ -18,13 +18,13 @@ import { estheticFocusAreas } from '@/data/estheticServices';
 import { testimonials } from '@/data/testimonials';
 import { results } from '@/data/testimonials';
 
-const trustLine = 'Private suite \u00B7 Customized care \u00B7 Advanced Practice Esthetician \u00B7 Apple Valley';
+const trustLine = 'Private suite \u00B7 Customized care \u00B7 Advanced Practice Esthetician \u00B7 Burnsville';
 const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 
 function BookEstheticsButton({ className = '' }: { className?: string }) {
   return (
     <a
-      href={siteConfig.vagaro.servicesUrl}
+      href={siteConfig.salonLofts.servicesUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-gold ${className}`}
@@ -49,8 +49,8 @@ export function HomePage() {
   return (
     <>
       <Seo
-        title="The Bare Method | Luxury Esthetics in Apple Valley, MN"
-        description="Specialized body and intimate-area esthetics in Apple Valley, Minnesota. Private. Personalized. Never judged. Provider-led wellness through My Bare Method (MyBareMethod.com)."
+        title="The Bare Method | Luxury Esthetics in Burnsville, MN"
+        description="Specialized body and intimate-area esthetics in Burnsville, Minnesota. Private. Personalized. Never judged. Provider-led wellness through My Bare Method (MyBareMethod.com)."
         path="/"
       />
 
@@ -58,7 +58,7 @@ export function HomePage() {
       <section className="relative overflow-hidden bg-cream-100">
         <div className="container-bare grid items-center gap-10 py-14 lg:grid-cols-2 lg:py-20">
           <div className="animate-fade-up">
-            <p className="eyebrow mb-4">The Bare Method · Apple Valley, Minnesota</p>
+            <p className="eyebrow mb-4">The Bare Method · Burnsville, Minnesota</p>
             <h1 className="heading-display text-4xl text-ink-900 sm:text-5xl lg:text-[3.5rem] xl:text-6xl leading-[1.1] text-balance">
               Specialized care for the concerns you do not always talk about.
             </h1>
@@ -148,7 +148,7 @@ export function HomePage() {
                 </div>
                 <h3 className="font-display text-2xl font-medium text-ink-900">Provider-Led Wellness</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-700">
-                  Provider-led programs supporting weight, metabolism, hormones, longevity, recovery, IV therapy, and ongoing care — offered through My Bare Method, a separate company.
+                  Provider-led programs supporting weight, metabolism, hormones, longevity, recovery, and ongoing care — offered through My Bare Method, a separate company.
                 </p>
                 <div className="mt-6">
                   <a
@@ -320,7 +320,7 @@ export function HomePage() {
             </div>
             <div className="flex-1 text-center sm:text-left">
               <p className="text-sm text-ink-700">
-                Rated by real clients in Apple Valley and the surrounding communities.
+                Rated by real clients in Burnsville and the surrounding communities.
               </p>
             </div>
             <a
@@ -417,8 +417,8 @@ export function HomePage() {
         <div className="container-bare">
           <SectionHeading
             eyebrow="Visit Us"
-            title="Find Us in Apple Valley"
-            subtitle="Serving Apple Valley, Lakeville, Rosemount, Burnsville, Eagan, and the greater South Minneapolis\u2013Saint Paul metro."
+            title="Find Us in Burnsville"
+            subtitle="Serving Burnsville, Apple Valley, Lakeville, Rosemount, Eagan, and the greater South Minneapolis\u2013Saint Paul metro."
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <div className="card overflow-hidden">

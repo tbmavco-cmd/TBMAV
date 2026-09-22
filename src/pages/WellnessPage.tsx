@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, HeartPulse, Leaf, Activity, Brain, Syringe, ExternalLink } from 'lucide-react';
+import { ArrowRight, Shield, HeartPulse, Leaf, Activity, Brain, ExternalLink } from 'lucide-react';
 import { Seo } from '@/components/Seo';
 import { SectionHeading } from '@/components/SectionHeading';
 
@@ -8,7 +8,6 @@ const wellnessServices = [
   { icon: Activity, title: 'Weight & Metabolic Health', desc: 'Provider-led programs supporting sustainable weight management and metabolic optimization.' },
   { icon: Brain, title: 'Hormone Wellness', desc: 'Individualized hormone evaluation and management guided by licensed providers.' },
   { icon: Leaf, title: 'Longevity & Recovery', desc: 'Regenerative protocols and recovery support under clinical supervision.' },
-  { icon: Syringe, title: 'IV Therapy', desc: 'Vitamin and nutrient infusions administered by qualified clinical personnel.' },
   { icon: HeartPulse, title: 'Telehealth & Ongoing Care', desc: 'Convenient virtual follow-ups and continuous provider support from anywhere.' },
   { icon: Shield, title: 'Lab Work & Diagnostics', desc: 'Comprehensive lab panels to inform clinical decisions and track progress.' },
 ];
@@ -18,7 +17,7 @@ export function WellnessPage() {
     <>
       <Seo
         title="Provider-Led Wellness | My Bare Method"
-        description="Provider-led wellness services including weight management, hormone therapy, IV therapy, and telehealth are offered through MyBareMethod.com."
+        description="Provider-led wellness services including weight management, hormone therapy, and telehealth are offered through MyBareMethod.com."
         path="/wellness"
       />
 
@@ -33,7 +32,7 @@ export function WellnessPage() {
             Your Wellness Journey,<br className="hidden sm:block" /> Guided by Experts
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-cream-200/80 text-balance">
-            Provider-led wellness services — including weight management, hormone therapy, IV therapy, and telehealth — are offered through My Bare Method, a separate company at MyBareMethod.com.
+            Provider-led wellness services — including weight management, hormone therapy, and telehealth — are offered through My Bare Method, a separate company at MyBareMethod.com.
           </p>
           <div className="mx-auto mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

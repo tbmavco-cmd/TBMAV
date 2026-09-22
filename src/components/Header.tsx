@@ -9,7 +9,6 @@ const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 const navLinks: { to?: string; href?: string; label: string; external?: boolean }[] = [
   { to: '/', label: 'Home' },
   { to: '/esthetics', label: 'Esthetics' },
-  { to: '/iv-therapy', label: 'IV Therapy' },
   { to: '/wellness', label: 'Wellness' },
   { to: '/results', label: 'Results' },
   { to: '/about', label: 'About' },
@@ -106,7 +105,7 @@ export function Header() {
 
           <div className="hidden items-center gap-2 lg:flex">
             <a
-              href={siteConfig.vagaro.servicesUrl}
+              href={siteConfig.salonLofts.servicesUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold text-sm"
@@ -158,7 +157,6 @@ export function Header() {
                   <MobileNavLink to="/esthetics">Esthetics</MobileNavLink>
                   <MobileNavLink to="/wellness">Provider-Led Wellness</MobileNavLink>
                   <MobileNavLink to="/results">Results</MobileNavLink>
-                  <MobileNavLink to="/iv-therapy">IV Therapy</MobileNavLink>
                   <MobileNavLink to="/about">About</MobileNavLink>
                   <MobileNavLink to="/contact">Contact</MobileNavLink>
                 </div>
@@ -168,10 +166,9 @@ export function Header() {
               <div>
                 <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Client Access</p>
                 <div className="space-y-0.5">
-                  <MobileExtLink href={siteConfig.vagaro.servicesUrl}>Book Esthetics</MobileExtLink>
+                  <MobileExtLink href={siteConfig.salonLofts.servicesUrl}>Book Esthetics</MobileExtLink>
                   <MobileExtLink href={MYBAREMETHOD_URL}>MyBareMethod.com</MobileExtLink>
-                  <MobileExtLink href={siteConfig.vagaro.membershipUrl}>Esthetic Memberships</MobileExtLink>
-                  <MobileExtLink href={siteConfig.vagaro.giftCardUrl}>Gift Cards</MobileExtLink>
+                  <MobileNavLink to="/contact">Memberships & Gift Cards</MobileNavLink>
                 </div>
               </div>
 

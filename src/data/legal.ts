@@ -91,11 +91,11 @@ export const legalPages: LegalPage[] = [
       },
       {
         heading: 'Third-Party Websites and Platforms',
-        body: 'This website links to and routes users to third-party platforms, including Vagaro (esthetic booking), Legend EHR (patient portal and telehealth), clinical-partner platforms, pharmacy partners, laboratory partners, payment processors, and affiliate links. Each third-party platform has its own terms, privacy policy, and practices. We are not responsible for the content or practices of third-party websites.',
+        body: 'This website links to and routes users to third-party platforms, including Salon Lofts (esthetic booking), Legend EHR (patient portal and telehealth), clinical-partner platforms, pharmacy partners, laboratory partners, payment processors, and affiliate links. Each third-party platform has its own terms, privacy policy, and practices. We are not responsible for the content or practices of third-party websites.',
       },
       {
-        heading: 'Vagaro Links',
-        body: 'Esthetic appointments, memberships, packages, and gift cards are booked and managed through Vagaro. Vagaro processes bookings and payments according to its own terms. Please review Vagaro\'s terms before booking.',
+        heading: 'Salon Lofts Links',
+        body: 'Esthetic appointments are booked through Salon Lofts. Salon Lofts processes bookings and payments according to its own terms. Please review Salon Lofts\' terms before booking.',
       },
       {
         heading: 'Legend Portal Links',
@@ -226,7 +226,7 @@ export const legalPages: LegalPage[] = [
       },
       {
         heading: 'Information Received From Third-Party Platforms',
-        body: 'We may receive limited information from third-party platforms (such as Vagaro or Legend) necessary for coordination. We do not receive clinical or medical-record data through these integrations.',
+        body: 'We may receive limited information from third-party platforms (such as Salon Lofts or Legend) necessary for coordination. We do not receive clinical or medical-record data through these integrations.',
       },
       {
         heading: 'Purposes for Collecting Information',
@@ -581,7 +581,7 @@ export const legalPages: LegalPage[] = [
     sections: [
       {
         heading: 'Appointment Booking',
-        body: 'Esthetic appointments are booked through Vagaro. By booking, you agree to Vagaro\'s terms and to these Esthetic Services Terms.',
+        body: 'Esthetic appointments are booked through Salon Lofts. By booking, you agree to Salon Lofts\' terms and to these Esthetic Services Terms.',
       },
       {
         heading: 'Reservation Fees',
@@ -633,11 +633,11 @@ export const legalPages: LegalPage[] = [
       },
       {
         heading: 'Packages',
-        body: 'Packages are subject to the terms disclosed at purchase and may have expiration dates. Package terms are managed through Vagaro.',
+        body: 'Packages are subject to the terms disclosed at purchase and may have expiration dates.',
       },
       {
         heading: 'Membership Credits',
-        body: 'Esthetic membership credits are managed through Vagaro. Credits may have expiration terms. See the Membership Terms for details.',
+        body: 'Esthetic membership credits may have expiration terms. See the Membership Terms for details.',
       },
       {
         heading: 'Expiration',
@@ -1319,7 +1319,7 @@ export const legalPages: LegalPage[] = [
 ];
 
 export const footerDisclaimer =
-  'The Bare Method offers Esthetics, Wellness-support, and provider-directed IV Therapy services. Medical evaluations, clinical care, prescriptions, and IV Therapy orders are provided by appropriately licensed medical professionals through the responsible healthcare entity. IV Therapy is administered by qualified clinical personnel, including a Registered Nurse, according to provider orders and applicable protocols. Treatment, prescriptions, eligibility, and results are not guaranteed. Medical information must be submitted through the designated secure patient portal. Individual results vary.';
+  'The Bare Method offers luxury esthetics and provider-led wellness services. Medical evaluations, clinical care, and prescriptions are provided by appropriately licensed medical professionals through the responsible healthcare entity. Treatment, prescriptions, eligibility, and results are not guaranteed. Medical information must be submitted through the designated secure patient portal. Individual results vary.';
 
 export const testimonialsDisclaimer =
   'Individual experiences and results vary. Testimonials do not guarantee that another person will receive the same result.';

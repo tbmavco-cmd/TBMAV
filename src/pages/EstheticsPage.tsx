@@ -118,7 +118,7 @@ function FocusAreaCard({ area }: { area: EstheticFocus }) {
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <a
-          href={siteConfig.vagaro.servicesUrl}
+          href={siteConfig.salonLofts.servicesUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-gold"
@@ -138,8 +138,8 @@ export function EstheticsPage() {
   return (
     <>
       <Seo
-        title="Esthetics | The Bare Method — Apple Valley, MN"
-        description="The Bare Method specializes in head-to-toe skin treatments, intimate-area care, advanced microneedling, and confidence-focused body contouring in Apple Valley, Minnesota. Private, personalized, and never judged."
+        title="Esthetics | The Bare Method — Burnsville, MN"
+        description="The Bare Method specializes in head-to-toe skin treatments, intimate-area care, advanced microneedling, and confidence-focused body contouring in Burnsville, Minnesota. Private, personalized, and never judged."
         path="/esthetics"
       />
       <PageHeader
@@ -149,29 +149,25 @@ export function EstheticsPage() {
       >
         <div className="flex flex-wrap gap-3">
           <a
-            href={siteConfig.vagaro.servicesUrl}
+            href={siteConfig.salonLofts.servicesUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold"
           >
             Book Esthetics
           </a>
-          <a
-            href={siteConfig.vagaro.giftCardUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="btn-outline"
           >
             Gift Cards
-          </a>
-          <a
-            href={siteConfig.vagaro.membershipUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          </Link>
+          <Link
+            to="/memberships"
             className="btn-outline"
           >
             Memberships
-          </a>
+          </Link>
         </div>
       </PageHeader>
 
@@ -244,16 +240,15 @@ export function EstheticsPage() {
         <div className="container-bare">
           <SectionHeading
             eyebrow="Booking & Payments"
-            title="Esthetic Booking Through Vagaro"
-            subtitle="All esthetic bookings, deposits, packages, memberships, gift cards, and payments are handled securely through Vagaro."
+            title="Esthetic Booking Through Salon Lofts"
+            subtitle="All esthetic bookings and payments are handled securely through Salon Lofts."
           />
           <div className="mx-auto mt-8 max-w-2xl rounded-2xl bg-white p-6 text-center">
             <p className="text-sm leading-relaxed text-ink-700">
-              We use Vagaro for esthetic scheduling, deposits, packages, memberships, gift cards,
-              client forms, and payments. This keeps your esthetic experience seamless and secure.
+              We use Salon Lofts for esthetic scheduling and payments. This keeps your esthetic experience seamless and secure.
             </p>
             <a
-              href={siteConfig.vagaro.servicesUrl}
+              href={siteConfig.salonLofts.servicesUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 btn-gold"

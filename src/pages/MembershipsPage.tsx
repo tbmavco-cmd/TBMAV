@@ -1,4 +1,5 @@
 import { Check, Star, Gift } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Seo } from '@/components/Seo';
 import { PageHeader, SectionHeading } from '@/components/SectionHeading';
 import { FinalCTA } from '@/components/FinalCTA';
@@ -64,14 +65,12 @@ export function MembershipsPage() {
                   )}
 
                   <div className="mt-6">
-                    <a
-                      href={siteConfig.vagaro.membershipUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/contact"
                       className="btn-gold w-full"
                     >
-                      {membership.ctaLabel}
-                    </a>
+                      Contact for Information
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -128,14 +127,12 @@ export function MembershipsPage() {
           <p className="text-sm text-ink-700 max-w-lg mx-auto mb-6">
             Give the gift of professional skin care. The Bare Method gift cards can be used toward any esthetic service or membership.
           </p>
-          <a
-            href={siteConfig.vagaro.giftCardUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="btn-gold inline-flex items-center gap-2"
           >
-            Purchase a Gift Card
-          </a>
+            Contact for Gift Cards
+          </Link>
         </div>
       </section>
 

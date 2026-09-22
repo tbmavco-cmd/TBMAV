@@ -57,8 +57,8 @@ export function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact The Bare Method | Apple Valley, MN"
-        description="Contact The Bare Method in Apple Valley, Minnesota. Call 218-656-7189 or send us a message."
+        title="Contact The Bare Method | Burnsville, MN"
+        description="Contact The Bare Method in Burnsville, Minnesota. Call 952-333-1202 or send us a message."
         path="/contact"
       />
       <PageHeader

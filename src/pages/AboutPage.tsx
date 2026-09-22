@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import {
   Sparkles,
   HeartPulse,
-
   Award,
   Users,
   Stethoscope,
@@ -28,7 +27,7 @@ const pathways = [
   {
     icon: HeartPulse,
     name: 'Provider-Led Wellness',
-    description: 'Weight management, hormones, IV therapy, and telehealth — offered through My Bare Method (MyBareMethod.com).',
+    description: 'Weight management, hormones, and telehealth — offered through My Bare Method (MyBareMethod.com).',
   },
 ];
 
@@ -44,14 +43,14 @@ const clinicalTeam = [
     icon: Stethoscope,
     role: 'Licensed Medical Provider',
     description:
-      'Responsible for clinical evaluation, eligibility decisions, treatment recommendations, prescriptions, and IV Therapy orders.',
+      'Responsible for clinical evaluation, eligibility decisions, treatment recommendations, and prescriptions.',
     placeholder: true,
   },
   {
     icon: HeartPulse,
     role: 'Registered Nurse',
     description:
-      'Administers eligible IV Therapy and other approved clinical services according to provider orders, established protocols, and applicable scope requirements.',
+      'Provides approved clinical services according to provider orders, established protocols, and applicable scope requirements.',
     placeholder: true,
   },
   {
@@ -78,14 +77,14 @@ export function AboutPage() {
   return (
     <>
       <Seo
-        title="About | The Bare Method — Apple Valley, Minnesota"
-        description="Meet Carina Rina Hebert, founder of The Bare Method. Specialized Esthetics, personalized Wellness, and provider-directed IV Therapy in Apple Valley, Minnesota."
+        title="About | The Bare Method — Burnsville, Minnesota"
+        description="Meet Carina Rina Hebert, founder of The Bare Method. Specialized Esthetics and personalized Wellness in Burnsville, Minnesota."
         path="/about"
       />
       <PageHeader
         eyebrow="About The Bare Method"
         title="Your Skin. Your Wellness. Your Method."
-        subtitle="The Bare Method combines specialized body and intimate-area Esthetics, personalized provider-led Wellness, and professionally administered IV Therapy in a private and supportive environment."
+        subtitle="The Bare Method combines specialized body and intimate-area Esthetics and personalized provider-led Wellness in a private and supportive environment."
       />
 
       {/* Founder */}
@@ -121,10 +120,8 @@ export function AboutPage() {
               </p>
               <p className="text-sm text-ink-700/80">
                 Rina provides Esthetics services within her qualifications and scope. Medical
-                evaluations, IV Therapy orders, clinical care, and prescribing decisions are
-                performed by appropriately licensed medical professionals. IV Therapy is
-                administered by qualified clinical personnel, including a Registered Nurse,
-                according to provider orders and applicable protocols.
+                evaluations, clinical care, and prescribing decisions are
+                performed by appropriately licensed medical professionals.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -132,7 +129,7 @@ export function AboutPage() {
                 Explore Esthetics
               </Link>
               <a
-                href={siteConfig.vagaro.bookingUrl}
+                href={siteConfig.salonLofts.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold"
@@ -148,9 +145,9 @@ export function AboutPage() {
       <section className="section bg-cream-100">
         <div className="container-bare">
           <SectionHeading
-            eyebrow="One Brand, Three Pathways"
-            title="Specialized Esthetics, Personalized Wellness, and Provider-Directed IV Therapy"
-            subtitle="Three connected service pathways under one elevated experience — each with its own booking, intake, and clinical process where required."
+            eyebrow="One Brand, Two Pathways"
+            title="Specialized Esthetics and Personalized Wellness"
+            subtitle="Two connected service pathways under one elevated experience — each with its own booking, intake, and clinical process where required."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {pathways.map((d) => {
@@ -175,7 +172,7 @@ export function AboutPage() {
           <SectionHeading
             eyebrow="Clinical Support"
             title="Your Clinical Care Team"
-            subtitle="The medical professionals and partners who support Wellness and IV Therapy. Names and credentials appear here only once verified."
+            subtitle="The medical professionals and partners who support Wellness. Names and credentials appear here only once verified."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {clinicalTeam.map((member) => {

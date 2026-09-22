@@ -21,7 +21,7 @@
  *    - Do NOT remove the quotes around your URLs.
  *
  *  PHASES:
- *    Phase 1 (now): Vagaro + Legend links, contact info, social links.
+ *    Phase 1 (now): Salon Lofts + Legend links, contact info, social links.
  *    Phase 2 (now): Wellness Plan request form, admin request list, invoice links.
  *    Phase 3 (later): Hosted payment checkout, recurring billing, automation.
  *    Phase 3 settings are included below but left blank — do not fill them
@@ -39,15 +39,16 @@ export const siteConfig = {
     name: 'The Bare Method',
     domain: 'thebaremethodmn.com',
     tagline: 'Your Skin. Your Wellness. Your Method.',
-    location: 'Apple Valley, Minnesota',
+    location: 'Burnsville, Minnesota',
     address: {
-      line1: '15115 Cedar Avenue, Suite 33',
-      city: 'Apple Valley',
+      line1: 'Salon Lofts Burnsville, 14109 Irving Avenue South, Loft 6',
+      city: 'Burnsville',
       state: 'MN',
-      zip: '55124',
+      zip: '55337',
     },
-    phone: '218-656-7189',
-    phoneHref: 'tel:+12186567189',
+    phone: '952-333-1202',
+    phoneHref: 'tel:+19523331202',
+    smsHref: 'sms:+19523331202',
     email: 'info@thebaremethodmn.com',
     founder: 'Carina "Rina" Hebert',
     // Edit your business hours below. Each line is one day.
@@ -72,39 +73,13 @@ export const siteConfig = {
   },
 
   // ==========================================================================
-  //  2. VAGARO — ESTHETIC BOOKING (Phase 1)
-  //  Paste your Vagaro URLs below. These are the public booking pages
+  //  2. SALON LOFTS — ESTHETIC BOOKING (Phase 1)
+  //  Paste your Salon Lofts URLs below. These are the public booking pages
   //  that clients are sent to when they click "Book Esthetics".
-  //  Find them in your Vagaro dashboard under Business > Booking Page.
   // ==========================================================================
-  vagaro: {
-    // PASTE YOUR VAGARO BOOKING URL HERE
-    // Example: 'https://mysite.vagaro.com/thebaremethod'
-    bookingUrl: 'https://mysite.vagaro.com/thebaremethod',
-
-    // PASTE YOUR VAGARO SERVICES URL HERE (the services tab)
+  salonLofts: {
+    bookingUrl: 'https://salonlofts.com/rina_tbm',
     servicesUrl: 'https://salonlofts.com/rina_tbm/schedule',
-
-    // PASTE YOUR VAGARO GIFT CARD URL HERE
-    giftCardUrl: 'https://mysite.vagaro.com/thebaremethod/gift-certificates',
-
-    // PASTE YOUR VAGARO MEMBERSHIP URL HERE
-    membershipUrl: 'https://mysite.vagaro.com/thebaremethod/memberships',
-
-    // PASTE YOUR VAGARO PACKAGES URL HERE
-    packagesUrl: 'https://mysite.vagaro.com/thebaremethod/packages',
-
-    // PASTE YOUR VAGARO DEALS URL HERE (daily deals / promotions tab)
-    dealsUrl: 'https://mysite.vagaro.com/thebaremethod/daily-deals',
-
-    // PASTE YOUR VAGARO FAQS URL HERE
-    faqsUrl: 'https://mysite.vagaro.com/thebaremethod/faqs',
-
-    // PASTE YOUR VAGARO REVIEWS URL HERE
-    reviewsUrl: 'https://mysite.vagaro.com/thebaremethod/reviews',
-
-    // PASTE YOUR VAGARO GALLERY URL HERE
-    galleryUrl: 'https://mysite.vagaro.com/thebaremethod/gallery',
   },
 
   // ==========================================================================
@@ -256,9 +231,9 @@ export const siteConfig = {
   // ==========================================================================
   maps: {
     embedSrc:
-      'https://www.google.com/maps?q=15115+Cedar+Avenue+Suite+33+Apple+Valley+MN+55124&output=embed',
+      'https://www.google.com/maps?q=14109+Irving+Avenue+South+Burnsville+MN+55337&output=embed',
     directionsUrl:
-      'https://www.google.com/maps/dir/?api=1&destination=15115+Cedar+Avenue+Suite+33+Apple+Valley+MN+55124',
+      'https://www.google.com/maps/dir/?api=1&destination=14109+Irving+Avenue+South+Burnsville+MN+55337',
   },
 
   // ==========================================================================

@@ -49,7 +49,7 @@ const fallbackAnnouncements: Announcement[] = [
   },
   {
     id: 'mybaremethod-wellness-2',
-    headline: 'Weight, Hormones, IV Therapy & More — My Bare Method',
+    headline: 'Weight, Hormones, Longevity & More — My Bare Method',
     link: 'https://MyBareMethod.com',
     cta_text: 'Learn More',
     audience: 'all',
