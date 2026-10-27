@@ -16,9 +16,10 @@ export function WellnessPage() {
   return (
     <>
       <Seo
-        title="Provider-Led Wellness | My Bare Method"
-        description="Provider-led wellness services including weight management, hormone therapy, and telehealth are offered through MyBareMethod.com."
+        title="Wellness Referrals | The Bare Method"
+        description="Provider-led wellness services are offered through My Bare Method (MyBareMethod.com), a separate company."
         path="/wellness"
+        noindex
       />
 
       {/* ====== HERO ====== */}
@@ -28,10 +29,10 @@ export function WellnessPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-5">
             Provider-Led Wellness
           </p>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-cream-50 leading-tight tracking-tight text-balance">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-tight tracking-tight text-balance">
             Your Wellness Journey,<br className="hidden sm:block" /> Guided by Experts
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream-200/80 text-balance">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 text-balance">
             Provider-led wellness services — including weight management, hormone therapy, and telehealth — are offered through My Bare Method, a separate company at MyBareMethod.com.
           </p>
           <div className="mx-auto mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -45,14 +46,14 @@ export function WellnessPage() {
               <ExternalLink className="h-4 w-4" />
             </a>
           </div>
-          <p className="mt-6 text-sm text-cream-200/60 max-w-xl mx-auto">
+          <p className="mt-6 text-sm text-white/60 max-w-xl mx-auto">
             You will be leaving TheBareMethodMN.com. MyBareMethod.com is a separate company with its own providers, policies, and patient portal.
           </p>
         </div>
       </section>
 
       {/* ====== ABOUT WELLNESS SERVICES ====== */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="What We Offer"
@@ -64,7 +65,7 @@ export function WellnessPage() {
               const Icon = service.icon;
               return (
                 <div key={service.title} className="card p-6 flex flex-col">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blush-50 text-gold-700">
                     <Icon className="h-6 w-6" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-display text-lg font-medium text-ink-900">{service.title}</h3>
@@ -91,7 +92,7 @@ export function WellnessPage() {
               { step: 3, title: 'Provider Review & Care', desc: 'A licensed provider reviews your information and guides your personalized wellness plan.' },
             ].map((s) => (
               <div key={s.step} className="text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-ink-900 text-cream-50 font-display text-lg font-medium">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-ink-900 text-white font-display text-lg font-medium">
                   {s.step}
                 </div>
                 <h3 className="mt-4 font-display text-base font-medium text-ink-900">{s.title}</h3>
@@ -103,7 +104,7 @@ export function WellnessPage() {
       </section>
 
       {/* ====== IMPORTANT NOTICE ====== */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <div className="mx-auto max-w-3xl">
             <div className="rounded-2xl border border-gold-400/30 bg-white p-8 sm:p-10 text-center">
@@ -131,7 +132,7 @@ export function WellnessPage() {
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
-              <p className="mt-4 text-xs text-ink-500">
+              <p className="mt-4 text-xs text-muted-500">
                 You will be leaving TheBareMethodMN.com for a separate website.
               </p>
             </div>
@@ -145,10 +146,10 @@ export function WellnessPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-4">
             Ready to Start?
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl font-medium text-cream-50 leading-tight text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl font-medium text-white leading-tight text-balance">
             Begin Your Wellness Journey
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-cream-200/80 text-balance">
+          <p className="mx-auto mt-4 max-w-xl text-white/80 text-balance">
             Visit MyBareMethod.com to explore provider-led wellness options, create your account, and get started with a licensed provider.
           </p>
           <div className="mt-8">
@@ -162,7 +163,7 @@ export function WellnessPage() {
               <ExternalLink className="h-4 w-4" />
             </a>
           </div>
-          <p className="mt-6 text-xs text-cream-200/50 max-w-lg mx-auto">
+          <p className="mt-6 text-xs text-white/50 max-w-lg mx-auto">
             My Bare Method (MyBareMethod.com) is a separate company. Its providers, policies, and patient portal are independent from The Bare Method esthetics services.
           </p>
         </div>
@@ -170,3 +171,4 @@ export function WellnessPage() {
     </>
   );
 }
+

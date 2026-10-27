@@ -54,8 +54,9 @@ export function MembershipCancellationPage() {
         title="Cancel Membership — The Bare Method"
         description="Cancel your The Bare Method membership online."
         path="/cancel-membership"
+        noindex
       />
-      <div className="border-b border-ink-900/5 bg-cream-100">
+      <div className="border-b border-ink-900/5 bg-blush-100">
         <div className="container-bare py-8">
           <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-ink-700 hover:text-gold-600 transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Home
@@ -70,8 +71,8 @@ export function MembershipCancellationPage() {
       <section className="section">
         <div className="container-bare max-w-2xl">
           {submitted ? (
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-emerald-600" />
+            <div className="rounded-2xl border border-gold-300 bg-blush-50 p-8 text-center">
+              <CheckCircle2 className="mx-auto h-12 w-12 text-gold-700" />
               <h2 className="mt-4 font-display text-2xl text-ink-900">Cancellation Request Received</h2>
               <p className="mt-2 text-ink-700">
                 Your cancellation request has been received and is pending verification. A confirmation
@@ -117,7 +118,7 @@ export function MembershipCancellationPage() {
                 <textarea rows={3} value={form.reason} onChange={(e) => setForm({ ...form, reason: e.target.value })} className="input-bare" />
               </div>
               <label className="flex items-start gap-3">
-                <input type="checkbox" checked={form.terms_acknowledged} onChange={(e) => setForm({ ...form, terms_acknowledged: e.target.checked })} className="mt-1 h-4 w-4 rounded border-cream-300 text-gold-500" />
+                <input type="checkbox" checked={form.terms_acknowledged} onChange={(e) => setForm({ ...form, terms_acknowledged: e.target.checked })} className="mt-1 h-4 w-4 rounded border-blush-200 text-gold-500" />
                 <span className="text-sm text-ink-700">
                   I understand that cancellation will prevent future renewal charges after the cancellation
                   becomes effective. Membership benefits remain available through the end of the paid billing
@@ -135,3 +136,4 @@ export function MembershipCancellationPage() {
     </>
   );
 }
+

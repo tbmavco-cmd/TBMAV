@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, Mail, Instagram, Clock, ExternalLink, Star } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { siteConfig, BOOKING_URL } from '@/config/site';
 import { footerDisclaimer, legalPages } from '@/data/legal';
 
 const exploreLinks = [
@@ -13,7 +13,7 @@ const exploreLinks = [
 ];
 
 const clientAccess = [
-  { label: 'Book Esthetics', href: siteConfig.salonLofts.servicesUrl, external: true },
+  { label: 'Book Esthetics', href: BOOKING_URL, external: true },
   { label: 'Provider-Led Wellness', href: 'https://MyBareMethod.com', external: true },
   { label: 'Memberships & Gift Cards', to: '/contact', external: false },
 ];
@@ -38,18 +38,18 @@ export function Footer() {
   )}`;
 
   return (
-    <footer className="bg-ink-900 text-cream-100">
+    <footer className="bg-ink-900 text-white">
       <div className="container-bare py-16">
         <div className="grid gap-12 lg:grid-cols-4">
           {/* BUSINESS */}
           <div className="lg:col-span-1">
-            <h3 className="font-display text-2xl font-medium text-cream-50">The Bare Method</h3>
-            <p className="mt-3 text-sm leading-relaxed text-cream-200/70">
+            <h3 className="font-display italic text-2xl font-medium text-white">The Bare Method</h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
               Your Skin. Your Wellness. Your Method. A private, personalized destination for
               specialized esthetics and provider-led wellness in Burnsville, Minnesota.
             </p>
             <ul className="mt-5 space-y-3.5">
-              <li className="flex items-start gap-3 text-sm text-cream-200/70">
+              <li className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin className="mt-0.5 h-4.5 w-4.5 shrink-0 text-gold-300" />
                 <span>
                   {business.address.line1}
@@ -60,7 +60,7 @@ export function Footer() {
               <li>
                 <a
                   href={business.phoneHref}
-                  className="flex items-center gap-3 text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                  className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Phone className="h-4.5 w-4.5 shrink-0 text-gold-300" />
                   {business.phone}
@@ -69,7 +69,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${business.email}`}
-                  className="flex items-center gap-3 text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                  className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Mail className="h-4.5 w-4.5 shrink-0 text-gold-300" />
                   {business.email}
@@ -80,7 +80,7 @@ export function Footer() {
                   href={social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                  className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Instagram className="h-4.5 w-4.5 shrink-0 text-gold-300" />
                   {social.instagramHandle}
@@ -91,15 +91,15 @@ export function Footer() {
                   href={social.googleReviews}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                  className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Star className="h-4.5 w-4.5 shrink-0 fill-gold-300 text-gold-300" />
                   Google Reviews
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-cream-200/70">
+              <li className="flex items-start gap-3 text-sm text-white/70">
                 <Clock className="mt-0.5 h-4.5 w-4.5 shrink-0 text-gold-300" />
-                <span>Tue–Sat by appointment</span>
+                <span>Tue–Fri 9–6, Sat 9–4 · Central · By appointment</span>
               </li>
               <li>
                 <a
@@ -124,7 +124,7 @@ export function Footer() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                    className="text-sm text-white/70 hover:text-white transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -146,14 +146,14 @@ export function Footer() {
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white transition-colors"
                     >
                       {l.label} <ExternalLink className="h-3.5 w-3.5" />
                     </a>
                   ) : (
                     <Link
                       to={l.to!}
-                      className="text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                      className="text-sm text-white/70 hover:text-white transition-colors"
                     >
                       {l.label}
                     </Link>
@@ -169,7 +169,7 @@ export function Footer() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-sm text-cream-200/70 hover:text-cream-50 transition-colors"
+                    className="text-sm text-white/70 hover:text-white transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -190,7 +190,7 @@ export function Footer() {
                   <li key={p.slug}>
                     <Link
                       to={`/legal/${p.slug}`}
-                      className="text-xs text-cream-200/60 hover:text-cream-50 transition-colors"
+                      className="text-xs text-white/60 hover:text-white transition-colors"
                     >
                       {p.title}
                     </Link>
@@ -201,7 +201,7 @@ export function Footer() {
         </div>
 
         {/* Organized legal link categories */}
-        <div className="mt-12 grid gap-8 border-t border-cream-200/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 border-t border-blush-200/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
           {footerLegalGroups.map((group) => (
             <div key={group.category}>
               <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
@@ -214,7 +214,7 @@ export function Footer() {
                     <li key={p.slug}>
                       <Link
                         to={`/legal/${p.slug}`}
-                        className="text-xs text-cream-200/60 hover:text-cream-50 transition-colors"
+                        className="text-xs text-white/60 hover:text-white transition-colors"
                       >
                         {p.title}
                       </Link>
@@ -225,8 +225,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 border-t border-cream-200/10 pt-8">
-          <p className="text-xs leading-relaxed text-cream-200/50">
+        <div className="mt-10 border-t border-blush-200/10 pt-8">
+          <p className="text-xs leading-relaxed text-white/50">
             The Bare Method offers luxury esthetics and provider-led wellness services in Burnsville, Minnesota. Provider-led wellness services (weight management, hormones, telehealth) are offered through My Bare Method (MyBareMethod.com) — a separate company with its own providers, policies, and patient portal. Individual results vary.
           </p>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
@@ -268,13 +268,13 @@ export function Footer() {
             </Link>
           </div>
           <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-            <p className="text-xs text-cream-200/40">
+            <p className="text-xs text-white/40">
               © {new Date().getFullYear()} The Bare Method. All rights reserved. Individual results
               vary.
             </p>
             <Link
               to="/admin"
-              className="text-xs text-cream-200/40 hover:text-gold-300 transition-colors"
+              className="text-xs text-white/40 hover:text-gold-300 transition-colors"
             >
               Admin
             </Link>
@@ -284,3 +284,4 @@ export function Footer() {
     </footer>
   );
 }
+

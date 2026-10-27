@@ -4,45 +4,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        nude: {
-          50: '#FBF7F3',
-          100: '#F5EDE4',
-          200: '#EBDCCB',
-          300: '#DDC5A8',
-          400: '#C9A77F',
-          500: '#B8895C',
-          600: '#9E6F47',
-          700: '#7E5738',
-          800: '#5E4129',
-          900: '#3D2A1B',
+        ink: {
+          50: '#fff8f9',
+          100: '#fbeef0',
+          200: '#f1dce0',
+          300: '#856f74',
+          900: '#000000',
+          800: '#1a1a1a',
+          700: '#333333',
         },
-        cream: {
-          50: '#FEFCFA',
-          100: '#FAF5EF',
-          200: '#F4E9DD',
-          300: '#EBD9C6',
-        },
-        beige: {
-          50: '#F7F2EC',
-          100: '#EFE7DB',
-          200: '#E2D3BF',
-          300: '#D2BC9A',
+        blush: {
+          50: '#fff8f9',
+          100: '#fbeef0',
+          200: '#f1dce0',
         },
         gold: {
-          300: '#D4B872',
-          400: '#C4A35A',
-          500: '#A8863F',
-          600: '#8A6A30',
+          200: '#e3cb94',
+          300: '#e3cb94',
+          400: '#d4b872',
+          500: '#c6a15b',
+          600: '#a8843f',
+          700: '#7e6029',
         },
-        ink: {
-          900: '#1A1614',
-          800: '#2A2421',
-          700: '#3D352F',
+        muted: {
+          500: '#856f74',
+          600: '#746064',
         },
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['Jost', 'system-ui', 'sans-serif'],
+        display: ['"Bodoni Moda"', 'Georgia', 'serif'],
       },
       letterSpacing: {
         tightest: '-0.04em',
@@ -73,3 +64,4 @@ export default {
   },
   plugins: [],
 };
+

@@ -57,8 +57,8 @@ export function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact The Bare Method | Burnsville, MN"
-        description="Contact The Bare Method in Burnsville, Minnesota. Call 952-333-1202 or send us a message."
+        title="Contact & Hours | The Bare Method, Burnsville MN"
+        description="Salon Lofts Burnsville, 14109 Irving Ave S Suite 6. Text 952-333-1202. Tue–Fri 9–6, Sat 9–4. Directions, booking and questions."
         path="/contact"
       />
       <PageHeader
@@ -217,3 +217,4 @@ export function ContactPage() {
     </>
   );
 }
+

@@ -4,11 +4,7 @@ import {
   HeartPulse,
   Award,
   Users,
-  Stethoscope,
   ShieldCheck,
-  UserCog,
-  FlaskConical,
-  Pill,
   Lock,
   Star,
 } from 'lucide-react';
@@ -38,47 +34,12 @@ const values = [
   { icon: ShieldCheck, title: 'Privacy First', text: 'Esthetic and medical records kept separate and secure.' },
 ];
 
-const clinicalTeam = [
-  {
-    icon: Stethoscope,
-    role: 'Licensed Medical Provider',
-    description:
-      'Responsible for clinical evaluation, eligibility decisions, treatment recommendations, and prescriptions.',
-    placeholder: true,
-  },
-  {
-    icon: HeartPulse,
-    role: 'Registered Nurse',
-    description:
-      'Provides approved clinical services according to provider orders, established protocols, and applicable scope requirements.',
-    placeholder: true,
-  },
-  {
-    icon: UserCog,
-    role: 'Clinical Partner',
-    description: 'The licensed healthcare entity responsible for medical care, prescribing, and clinical operations.',
-    placeholder: true,
-  },
-  {
-    icon: Pill,
-    role: 'Pharmacy Partner',
-    description: 'A licensed pharmacy fulfills prescriptions when treatment is approved.',
-    placeholder: true,
-  },
-  {
-    icon: FlaskConical,
-    role: 'Laboratory Partner',
-    description: 'Participating laboratories process any recommended laboratory testing.',
-    placeholder: true,
-  },
-];
-
 export function AboutPage() {
   return (
     <>
       <Seo
-        title="About | The Bare Method — Burnsville, Minnesota"
-        description="Meet Carina Rina Hebert, founder of The Bare Method. Specialized Esthetics and personalized Wellness in Burnsville, Minnesota."
+        title="About Rina | Advanced Practice Esthetician in Burnsville, MN"
+        description={'Meet Carina "Rina" Hebert, Advanced Practice Esthetician and founder of The Bare Method, Burnsville\'s private-suite studio for intimate and body skin care.'}
         path="/about"
       />
       <PageHeader
@@ -91,8 +52,11 @@ export function AboutPage() {
       <section className="section">
         <div className="container-bare grid items-center gap-12 lg:grid-cols-2">
           <img
-            src="/images/ChatGPT_Image_Jul_25,_2026,_09_00_20_PM copy.png"
-            alt="Carina Rina Hebert, founder of The Bare Method"
+            src="/images/studio/studio-lounge-mural.jpg"
+            alt="The private studio lounge at The Bare Method"
+            loading="lazy"
+            width={1070}
+            height={1650}
             className="rounded-3xl shadow-lg order-2 lg:order-1 w-full aspect-[4/5] object-cover object-top"
           />
           <div className="order-1 lg:order-2">
@@ -142,7 +106,7 @@ export function AboutPage() {
       </section>
 
       {/* Three Pathways */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="One Brand, Two Pathways"
@@ -166,38 +130,8 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Clinical Care Team */}
-      <section className="section">
-        <div className="container-bare">
-          <SectionHeading
-            eyebrow="Clinical Support"
-            title="Your Clinical Care Team"
-            subtitle="The medical professionals and partners who support Wellness. Names and credentials appear here only once verified."
-          />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {clinicalTeam.map((member) => {
-              const Icon = member.icon;
-              return (
-                <div key={member.role} className="card flex flex-col p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cream-100 text-gold-500">
-                    <Icon className="h-6 w-6" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-display text-lg font-medium text-ink-900">{member.role}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-700">
-                    {member.description}
-                  </p>
-                  <p className="mt-4 text-xs font-medium uppercase tracking-wide text-gold-600/70">
-                    Credentials pending verification
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="Our Values"
@@ -223,7 +157,7 @@ export function AboutPage() {
       {/* Privacy note */}
       <section className="section">
         <div className="container-bare">
-          <div className="rounded-2xl bg-cream-100 p-6">
+          <div className="rounded-2xl bg-blush-100 p-6">
             <div className="flex items-start gap-3">
               <Lock className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
               <p className="text-sm leading-relaxed text-ink-700">
@@ -238,7 +172,7 @@ export function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading eyebrow="Client Love" title="What Our Clients Say" />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -260,7 +194,9 @@ export function AboutPage() {
         </div>
       </section>
 
+      <section className="section bg-blush-100"><div className="container-bare grid items-center gap-10 lg:grid-cols-2"><img src="/images/studio/confidence-client-mural.jpg" alt="Client beside the studio confidence mural" loading="lazy" width={1400} height={1120} className="mx-auto max-h-[600px] rounded-3xl object-contain" /><div><p className="eyebrow">The Bare Method</p><h2 className="heading-display mt-4 text-4xl">Confidence in every stage</h2><div className="divider-gold" /><p className="mt-6 text-muted-500">Personalized care in a private space, focused on how you feel in your skin and your body.</p></div></div></section>
       <FinalCTA />
     </>
   );
 }
+

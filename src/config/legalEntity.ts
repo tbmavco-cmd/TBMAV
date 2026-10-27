@@ -44,7 +44,7 @@ export const legalEntitySettings = {
   bareMethodLegalEntityName: '[THE BARE METHOD LEGAL ENTITY NAME — e.g. The Bare Method LLC]',
   dbaName: 'The Bare Method',
   businessMailingAddress: {
-    line1: 'Salon Lofts Burnsville, 14109 Irving Avenue South, Loft 6',
+    line1: 'Salon Lofts Burnsville, 14109 Irving Ave S, Suite 6',
     city: 'Burnsville',
     state: 'MN',
     zip: '55337',
@@ -54,10 +54,10 @@ export const legalEntitySettings = {
   // ==========================================================================
   //  2. CONTACT EMAILS & PHONE
   // ==========================================================================
-  customerServiceEmail: '[CUSTOMER-SERVICE EMAIL — e.g. info@thebaremethodmn.com]',
-  privacyEmail: '[PRIVACY EMAIL — e.g. privacy@thebaremethodmn.com]',
-  legalNoticeEmail: '[LEGAL-NOTICE EMAIL — e.g. legal@thebaremethodmn.com]',
-  membershipCancellationEmail: '[MEMBERSHIP-CANCELLATION EMAIL — e.g. cancel@thebaremethodmn.com]',
+  customerServiceEmail: 'info@thebaremethodmn.com',
+  privacyEmail: 'privacy@thebaremethodmn.com',
+  legalNoticeEmail: 'legal@thebaremethodmn.com',
+  membershipCancellationEmail: 'cancel@thebaremethodmn.com',
   customerServicePhone: '952-333-1202',
 
   // ==========================================================================
@@ -154,3 +154,4 @@ export const legalEntitySettings = {
 } as const;
 
 export type LegalEntitySettings = typeof legalEntitySettings;
+

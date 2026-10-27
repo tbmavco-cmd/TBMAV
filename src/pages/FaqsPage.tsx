@@ -54,7 +54,7 @@ export function FaqsPage() {
                 onClick={() => setCategory(c)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   category === c
-                    ? 'bg-ink-900 text-cream-50'
+                    ? 'bg-ink-900 text-white'
                     : 'border border-ink-900/15 text-ink-700 hover:border-ink-900/30 hover:bg-ink-900/5'
                 }`}
               >
@@ -89,3 +89,4 @@ export function FaqsPage() {
     </>
   );
 }
+

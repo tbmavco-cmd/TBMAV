@@ -15,7 +15,7 @@ export function MembershipsPage() {
     <>
       <Seo
         title="Esthetics Memberships | The Bare Method"
-        description="Save on the treatments you love with monthly membership credits, priority booking, and exclusive perks at The Bare Method."
+        description="Monthly esthetics memberships from $99/mo with treatment credits, priority booking and member pricing at The Bare Method, Burnsville."
         path="/memberships"
       />
 
@@ -40,7 +40,7 @@ export function MembershipsPage() {
                       <h3 className="font-display text-xl font-medium text-ink-900">
                         {membership.name}
                       </h3>
-                      <p className="text-sm text-ink-600 mt-1">{membership.tagline}</p>
+                      <p className="text-sm text-muted-500 mt-1">{membership.tagline}</p>
                     </div>
                     <Star className="h-5 w-5 flex-shrink-0 text-gold-500 mt-1" strokeWidth={1.5} />
                   </div>
@@ -59,7 +59,7 @@ export function MembershipsPage() {
                   </ul>
 
                   {membership.note && (
-                    <p className="mt-4 text-xs text-ink-500 leading-relaxed border-t border-ink-900/5 pt-4">
+                    <p className="mt-4 text-xs text-muted-500 leading-relaxed border-t border-ink-900/5 pt-4">
                       {membership.note}
                     </p>
                   )}
@@ -80,7 +80,7 @@ export function MembershipsPage() {
       </section>
 
       {/* ====== HOW IT WORKS ====== */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="How It Works"
@@ -106,7 +106,7 @@ export function MembershipsPage() {
               },
             ].map((s) => (
               <div key={s.step} className="text-center">
-                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-ink-900 text-cream-50 font-display text-base font-medium">
+                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-ink-900 text-white font-display text-base font-medium">
                   {s.step}
                 </div>
                 <h3 className="mt-3 font-display text-sm font-medium text-ink-900">{s.title}</h3>
@@ -140,3 +140,4 @@ export function MembershipsPage() {
     </>
   );
 }
+

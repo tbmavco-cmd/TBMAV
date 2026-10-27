@@ -44,13 +44,13 @@ export function CookieBanner() {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-cream-200 bg-ink-900 text-cream-100 shadow-2xl">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-blush-200 bg-ink-900 text-white shadow-2xl">
       <div className="container-bare py-6">
         <div className="flex items-start gap-4">
           <Cookie className="mt-1 h-6 w-6 shrink-0 text-gold-400" />
           <div className="flex-1">
-            <h2 className="font-display text-lg font-medium text-cream-50">Cookie Preferences</h2>
-            <p className="mt-1 text-sm text-cream-200/80">
+            <h2 className="font-display text-lg font-medium text-white">Cookie Preferences</h2>
+            <p className="mt-1 text-sm text-white/80">
               We use cookies to operate the website, understand usage, and — where enabled — deliver
               relevant ads and track affiliate referrals. You can accept all, reject nonessential, or
               customize. See our{' '}
@@ -60,17 +60,17 @@ export function CookieBanner() {
             {customizing && (
               <div className="mt-4 space-y-3">
                 {categories.map((cat) => (
-                  <label key={cat.key} className="flex items-start gap-3 rounded-lg bg-cream-50/5 p-3">
+                  <label key={cat.key} className="flex items-start gap-3 rounded-lg bg-blush-50/5 p-3">
                     <input
                       type="checkbox"
                       disabled={cat.alwaysOn}
                       checked={cat.alwaysOn ? true : draft[cat.key]}
                       onChange={(e) => setDraft({ ...draft, [cat.key]: e.target.checked })}
-                      className="mt-1 h-4 w-4 rounded border-cream-300 text-gold-500 disabled:opacity-50"
+                      className="mt-1 h-4 w-4 rounded border-blush-200 text-gold-500 disabled:opacity-50"
                     />
                     <div>
-                      <p className="text-sm font-medium text-cream-50">{cat.label}</p>
-                      <p className="text-xs text-cream-200/70">{cat.description}</p>
+                      <p className="text-sm font-medium text-white">{cat.label}</p>
+                      <p className="text-xs text-white/70">{cat.description}</p>
                     </div>
                   </label>
                 ))}
@@ -83,7 +83,7 @@ export function CookieBanner() {
                   <button onClick={acceptAll} className="btn-gold text-sm">
                     <Check className="h-4 w-4" /> Accept All
                   </button>
-                  <button onClick={rejectNonessential} className="btn-outline border-cream-200/30 text-cream-100 hover:bg-cream-50/10 text-sm">
+                  <button onClick={rejectNonessential} className="btn-outline border-blush-200/30 text-white hover:bg-blush-50/10 text-sm">
                     <X className="h-4 w-4" /> Reject Nonessential
                   </button>
                   <button onClick={() => { setDraft(preferences); setCustomizing(true); }} className="text-sm text-gold-400 underline">
@@ -93,7 +93,7 @@ export function CookieBanner() {
               ) : (
                 <>
                   <button onClick={saveCustom} className="btn-gold text-sm">Save Preferences</button>
-                  <button onClick={() => setCustomizing(false)} className="text-sm text-cream-200/70 underline">Cancel</button>
+                  <button onClick={() => setCustomizing(false)} className="text-sm text-white/70 underline">Cancel</button>
                 </>
               )}
             </div>
@@ -103,3 +103,4 @@ export function CookieBanner() {
     </div>
   );
 }
+

@@ -56,8 +56,9 @@ export function PrivacyRequestPage() {
         title="Privacy Request — The Bare Method"
         description="Submit a privacy request to access, correct, or delete your data."
         path="/privacy-request"
+        noindex
       />
-      <div className="border-b border-ink-900/5 bg-cream-100">
+      <div className="border-b border-ink-900/5 bg-blush-100">
         <div className="container-bare py-8">
           <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-ink-700 hover:text-gold-600 transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Home
@@ -69,8 +70,8 @@ export function PrivacyRequestPage() {
       <section className="section">
         <div className="container-bare max-w-2xl">
           {submitted ? (
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-emerald-600" />
+            <div className="rounded-2xl border border-gold-300 bg-blush-50 p-8 text-center">
+              <CheckCircle2 className="mx-auto h-12 w-12 text-gold-700" />
               <h2 className="mt-4 font-display text-2xl text-ink-900">Request Received</h2>
               <p className="mt-2 text-ink-700">
                 We will evaluate and respond to verified privacy requests as required by applicable law.
@@ -113,7 +114,7 @@ export function PrivacyRequestPage() {
                 <textarea rows={4} value={form.details} onChange={(e) => setForm({ ...form, details: e.target.value })} className="input-bare" />
               </div>
               <label className="flex items-start gap-3">
-                <input type="checkbox" checked={form.no_medical_info_confirmed} onChange={(e) => setForm({ ...form, no_medical_info_confirmed: e.target.checked })} className="mt-1 h-4 w-4 rounded border-cream-300 text-gold-500" />
+                <input type="checkbox" checked={form.no_medical_info_confirmed} onChange={(e) => setForm({ ...form, no_medical_info_confirmed: e.target.checked })} className="mt-1 h-4 w-4 rounded border-blush-200 text-gold-500" />
                 <span className="text-sm text-ink-700">
                   I confirm that this submission does not include medical information.
                 </span>
@@ -132,3 +133,4 @@ export function PrivacyRequestPage() {
     </>
   );
 }
+

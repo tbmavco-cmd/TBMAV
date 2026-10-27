@@ -116,7 +116,7 @@ export default function AnnouncementsView() {
           type="text"
           value={form.headline}
           onChange={(e) => setForm({ ...form, headline: e.target.value })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
           placeholder="Short announcement text"
         />
       </div>
@@ -126,7 +126,7 @@ export default function AnnouncementsView() {
           type="text"
           value={form.link}
           onChange={(e) => setForm({ ...form, link: e.target.value })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
           placeholder="/esthetics or full URL"
         />
       </div>
@@ -136,7 +136,7 @@ export default function AnnouncementsView() {
           type="text"
           value={form.cta_text}
           onChange={(e) => setForm({ ...form, cta_text: e.target.value })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
           placeholder="Book Now"
         />
       </div>
@@ -145,7 +145,7 @@ export default function AnnouncementsView() {
         <select
           value={form.audience}
           onChange={(e) => setForm({ ...form, audience: e.target.value })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
         >
           <option value="general">General</option>
           <option value="esthetics">Esthetics</option>
@@ -158,7 +158,7 @@ export default function AnnouncementsView() {
           type="number"
           value={form.priority}
           onChange={(e) => setForm({ ...form, priority: parseInt(e.target.value) || 0 })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
         />
       </div>
       <div>
@@ -167,7 +167,7 @@ export default function AnnouncementsView() {
           type="datetime-local"
           value={form.starts_at}
           onChange={(e) => setForm({ ...form, starts_at: e.target.value })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
         />
       </div>
       <div>
@@ -176,7 +176,7 @@ export default function AnnouncementsView() {
           type="datetime-local"
           value={form.ends_at}
           onChange={(e) => setForm({ ...form, ends_at: e.target.value })}
-          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e]"
+          className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm focus:border-[#c6a15b] focus:ring-1 focus:ring-[#c6a15b]"
         />
       </div>
       <div className="flex items-center gap-2">
@@ -184,7 +184,7 @@ export default function AnnouncementsView() {
           type="checkbox"
           checked={form.is_active}
           onChange={(e) => setForm({ ...form, is_active: e.target.checked })}
-          className="h-4 w-4 rounded border-ink-300 text-[#c9a96e] focus:ring-[#c9a96e]"
+          className="h-4 w-4 rounded border-ink-300 text-[#c6a15b] focus:ring-[#c6a15b]"
         />
         <label className="text-sm text-ink-700">Active</label>
       </div>
@@ -198,7 +198,7 @@ export default function AnnouncementsView() {
         {!showNew && !editingId && (
           <button
             onClick={() => { setShowNew(true); setForm(emptyForm); }}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-ink-900 px-4 py-2 text-sm font-medium text-cream-50 hover:bg-ink-800 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-ink-900 px-4 py-2 text-sm font-medium text-white hover:bg-ink-800 transition-colors"
           >
             <Plus className="w-4 h-4" /> New
           </button>
@@ -214,7 +214,7 @@ export default function AnnouncementsView() {
             <button
               onClick={handleSave}
               disabled={!form.headline.trim()}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-ink-900 px-4 py-2 text-sm font-medium text-cream-50 hover:bg-ink-800 disabled:opacity-50 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-ink-900 px-4 py-2 text-sm font-medium text-white hover:bg-ink-800 disabled:opacity-50 transition-colors"
             >
               <Save className="w-4 h-4" /> Save
             </button>
@@ -227,9 +227,9 @@ export default function AnnouncementsView() {
 
       {/* List */}
       {loading ? (
-        <p className="text-sm text-ink-500">Loading...</p>
+        <p className="text-sm text-muted-500">Loading...</p>
       ) : rows.length === 0 ? (
-        <p className="text-sm text-ink-500">No announcements yet.</p>
+        <p className="text-sm text-muted-500">No announcements yet.</p>
       ) : (
         <div className="space-y-3">
           {rows.map((row) => (
@@ -246,7 +246,7 @@ export default function AnnouncementsView() {
                     <button
                       onClick={handleSave}
                       disabled={!form.headline.trim()}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-ink-900 px-4 py-2 text-sm font-medium text-cream-50 hover:bg-ink-800 disabled:opacity-50 transition-colors"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-ink-900 px-4 py-2 text-sm font-medium text-white hover:bg-ink-800 disabled:opacity-50 transition-colors"
                     >
                       <Save className="w-4 h-4" /> Save
                     </button>
@@ -259,11 +259,11 @@ export default function AnnouncementsView() {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-ink-900 truncate">{row.headline}</p>
-                    <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-ink-500">
+                    <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-500">
                       <span className="inline-block rounded-full bg-ink-100 px-2 py-0.5 capitalize">{row.audience}</span>
                       <span>Priority: {row.priority}</span>
-                      {row.is_active && !isExpired(row) && <span className="text-emerald-600 font-medium">Active</span>}
-                      {!row.is_active && <span className="text-ink-400">Inactive</span>}
+                      {row.is_active && !isExpired(row) && <span className="text-gold-700 font-medium">Active</span>}
+                      {!row.is_active && <span className="text-muted-500">Inactive</span>}
                       {isExpired(row) && <span className="text-red-500 font-medium">Expired</span>}
                       {row.cta_text && <span className="italic">CTA: {row.cta_text}</span>}
                     </div>
@@ -271,14 +271,14 @@ export default function AnnouncementsView() {
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => startEdit(row)}
-                      className="p-2 rounded-lg text-ink-500 hover:text-ink-900 hover:bg-ink-50 transition-colors"
+                      className="p-2 rounded-lg text-muted-500 hover:text-ink-900 hover:bg-ink-50 transition-colors"
                       aria-label="Edit"
                     >
                       <Pencil className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(row.id)}
-                      className="p-2 rounded-lg text-ink-500 hover:text-red-600 hover:bg-red-50 transition-colors"
+                      className="p-2 rounded-lg text-muted-500 hover:text-red-600 hover:bg-red-50 transition-colors"
                       aria-label="Delete"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -293,3 +293,4 @@ export default function AnnouncementsView() {
     </div>
   );
 }
+

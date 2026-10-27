@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 type SeoProps = {
   title: string;
   description: string;
   path?: string;
+  canonical?: string;
+  noindex?: boolean;
   ogImage?: string;
   faqSchema?: { q: string; a: string }[];
   serviceSchema?: {
@@ -16,76 +18,54 @@ type SeoProps = {
 
 const BASE_URL = 'https://thebaremethodmn.com';
 
-export function Seo({ title, description, path = '', ogImage, faqSchema, serviceSchema }: SeoProps) {
-  useEffect(() => {
-    document.title = title;
+export function Seo({ title, description, path = '', canonical, noindex, ogImage, faqSchema, serviceSchema }: SeoProps) {
+  const canonicalUrl = canonical ?? `${BASE_URL}${path}`;
 
-    const setMeta = (name: string, content: string, attr: 'name' | 'property' = 'name') => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-
-    const url = `${BASE_URL}${path}`;
-    setMeta('description', description);
-    setMeta('og:title', title, 'property');
-    setMeta('og:description', description, 'property');
-    setMeta('og:url', url, 'property');
-    if (ogImage) setMeta('og:image', ogImage, 'property');
-    setMeta('twitter:title', title);
-    setMeta('twitter:description', description);
-    if (ogImage) setMeta('twitter:image', ogImage);
-
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'canonical';
-      document.head.appendChild(link);
-    }
-    link.href = url;
-
-    const schemas: Record<string, unknown>[] = [];
-    if (faqSchema && faqSchema.length) {
-      schemas.push({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqSchema.map((f) => ({
-          '@type': 'Question',
-          name: f.q,
-          acceptedAnswer: { '@type': 'Answer', text: f.a },
-        })),
-      });
-    }
-    if (serviceSchema) {
-      schemas.push({
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: serviceSchema.name,
-        description: serviceSchema.description,
-        provider: { '@type': 'HealthAndBeautyBusiness', name: serviceSchema.provider },
-        areaServed: serviceSchema.areaServed,
-      });
-    }
-
-    const existing = document.querySelectorAll('script[data-dynamic-schema]');
-    existing.forEach((e) => e.remove());
-
-    schemas.forEach((s) => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.setAttribute('data-dynamic-schema', 'true');
-      script.textContent = JSON.stringify(s);
-      document.head.appendChild(script);
+  const schemas: Record<string, unknown>[] = [];
+  if (faqSchema && faqSchema.length) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqSchema.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
     });
+  }
+  if (serviceSchema) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: serviceSchema.name,
+      description: serviceSchema.description,
+      provider: { '@type': 'BeautySalon', name: serviceSchema.provider },
+      areaServed: serviceSchema.areaServed,
+    });
+  }
 
-    return () => {
-      document.querySelectorAll('script[data-dynamic-schema]').forEach((e) => e.remove());
-    };
-  }, [title, description, path, ogImage, faqSchema, serviceSchema]);
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonicalUrl} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-  return null;
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonicalUrl} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+      {schemas.map((s, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(s)}
+        </script>
+      ))}
+    </Helmet>
+  );
 }
+

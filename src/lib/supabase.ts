@@ -96,3 +96,4 @@ export const contactStatusLabels: Record<string, string> = {
   responded: 'Responded',
   archived: 'Archived',
 };
+

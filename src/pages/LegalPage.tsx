@@ -19,8 +19,9 @@ export function LegalPage() {
         title={`${page.title} — The Bare Method`}
         description={page.sections[0]?.body ?? ''}
         path={`/legal/${page.slug}`}
+        noindex
       />
-      <div className="border-b border-ink-900/5 bg-cream-100">
+      <div className="border-b border-ink-900/5 bg-blush-100">
         <div className="container-bare py-8">
           <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-ink-700 hover:text-gold-600 transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Home
@@ -57,7 +58,7 @@ export function LegalPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-2xl bg-cream-100 p-6">
+          <div className="mt-12 rounded-2xl bg-blush-100 p-6">
             <p className="text-xs leading-relaxed text-ink-700/70">{footerDisclaimer}</p>
           </div>
 
@@ -73,3 +74,4 @@ export function LegalPage() {
     </>
   );
 }
+

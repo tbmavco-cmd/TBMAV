@@ -4,50 +4,57 @@ export type Testimonial = {
   text: string;
   service: string;
   rating: number;
+  source: string;
 };
 
 export const testimonials: Testimonial[] = [
   {
-    name: 'Jessica M.',
-    location: 'Apple Valley, MN',
-    text: 'My skin has never looked better. The custom facial was tailored exactly to my concerns, and the aftercare guidance made a real difference in my routine.',
-    service: 'Advanced Custom Facial',
+    name: 'Kimberly E.',
+    location: 'Google review · 5 stars',
+    text: "I've received both waxing and body contouring services, and the results have been amazing… I'm 39 years old and have never looked better.",
+    service: 'Waxing & Body Contouring',
     rating: 5,
+    source: 'Google review',
   },
   {
-    name: 'Ashley R.',
-    location: 'Lakeville, MN',
-    text: 'The Brazilian wax was the most comfortable I have ever had. Professional, quick, and I felt completely at ease the entire time.',
-    service: 'Brazilian Waxing',
-    rating: 5,
-  },
-  {
-    name: 'Taylor K.',
-    location: 'Burnsville, MN',
-    text: 'I came in for body contouring and left feeling more confident than I have in years. The space is beautiful and the care is personal.',
-    service: 'Body Contouring',
-    rating: 5,
-  },
-  {
-    name: 'Megan L.',
-    location: 'Eagan, MN',
-    text: 'The microneedling series transformed my skin texture. My acne scars are visibly softer and my overall glow is unreal.',
+    name: 'Nikki',
+    location: 'Google review · 5 stars',
+    text: 'I had microneedling done by her, and she did a fabulous job. She was so detailed and thorough, and she walked me through the whole process so I knew exactly what to expect.',
     service: 'Microneedling',
     rating: 5,
+    source: 'Google review',
   },
   {
-    name: 'Nicole B.',
-    location: 'Rosemount, MN',
-    text: 'The wellness consultation was thorough and genuinely personalized. I finally feel like I have a plan that makes sense for my body.',
-    service: 'Weight Management',
+    name: 'Amera J.',
+    location: 'Google review · 5 stars',
+    text: 'I got a Brazilian wax from Rina and she is incredible! She was very thorough and quick… She provided me with great aftercare tips and was very nice.',
+    service: 'Brazilian Wax',
     rating: 5,
+    source: 'Google review',
   },
   {
-    name: 'Danielle S.',
-    location: 'Apple Valley, MN',
-    text: 'Rina is an incredible educator. I left the speed waxing workshop with real, usable technique and so much more confidence.',
-    service: 'Speed Waxing Mastery',
+    name: 'Stephanie E.',
+    location: 'Google review · 5 stars',
+    text: 'She is so knowledgeable about all things skin and you can tell she loves what she does. I trust her and my skin has never looked better.',
+    service: 'Skin Treatments',
     rating: 5,
+    source: 'Google review',
+  },
+  {
+    name: 'A. A.',
+    location: 'Google review · 5 stars',
+    text: 'She made me feel comfortable from day one and customized treatments to fit my goals. My skin has never looked better, and I\'ve also had great results with the Contour body treatments.',
+    service: 'Body Contouring',
+    rating: 5,
+    source: 'Google review',
+  },
+  {
+    name: 'Lilian C.',
+    location: 'Google review · 5 stars',
+    text: 'A truly luxurious experience from start to finish… my face and body were left looking wonderful — radiant and completely renewed.',
+    service: 'Face & Body',
+    rating: 5,
+    source: 'Google review',
   },
 ];
 
@@ -77,69 +84,35 @@ export const resultCategories = [
 
 export const results: ResultItem[] = [
   {
-    id: 'r1',
-    category: 'Head-to-Toe Skin',
-    title: 'Head-to-Toe Skin — Texture & Tone Series',
-    description: 'Improved tone, clarity, and hydration across the skin over a personalized series.',
-    image: '/images/ChatGPT_Image_Jul_25,_2026,_11_37_20_PM copy.png',
+    "id": "r0",
+    "category": "Microneedling",
+    "title": "Microneedling series: acne scar texture",
+    "description": "Individual results vary. Shared with client consent.",
+    "image": "/images/results/result-microneedling-acne-scars.jpg"
   },
   {
-    id: 'r2',
-    category: 'Microneedling',
-    title: 'Microneedling — Acne Scar Softening',
-    description: 'Visible improvement in acne scar texture after a four-session microneedling series.',
-    image: '/images/ChatGPT_Image_Jul_26,_2026,_12_12_24_AM.png',
+    "id": "r1",
+    "category": "Body Contouring",
+    "title": "4-in-1 body contouring series: midsection",
+    "description": "Individual results vary. Shared with client consent.",
+    "image": "/images/results/result-body-contouring.jpg"
   },
   {
-    id: 'r3',
-    category: 'Body Contouring',
-    title: 'Body Contouring — Midsection Refinement',
-    description: 'Refined midsection appearance after a personalized body contouring series.',
-    image: '/images/ChatGPT_Image_Jul_26,_2026,_12_05_44_AM.png',
+    "id": "r2",
+    "category": "Skin Rejuvenation",
+    "title": "One IPL photofacial session: tone & sun damage",
+    "description": "Individual results vary. Shared with client consent.",
+    "image": "/images/results/result-ipl-one-session.jpg"
   },
   {
-    id: 'r4',
-    category: 'Waxing & Ingrown-Hair Care',
-    title: 'Brazilian Waxing — Smooth, Confident Results',
-    description: 'Consistent, comfortable Brazilian waxing with finer regrowth over time.',
-    image: '/images/ChatGPT_Image_Jul_25,_2026,_11_57_04_PM.png',
-  },
-  {
-    id: 'r5',
-    category: 'Skin Rejuvenation',
-    title: 'Skin Rejuvenation — Instant Glow',
-    description: 'Immediate smoothness and radiance after a single rejuvenation session.',
-    image: '/images/ChatGPT_Image_Jul_26,_2026,_12_03_06_AM.png',
-  },
-  {
-    id: 'r6',
-    category: 'Skin Rejuvenation',
-    title: 'Full Rejuvenation Journey — Skin & Body',
-    description: 'A combined rejuvenation, microneedling, and body treatment journey for comprehensive renewal.',
-    image: '/images/ChatGPT_Image_Jul_26,_2026,_12_08_48_AM.png',
-  },
-  {
-    id: 'r7',
-    category: 'Microneedling',
-    title: 'Microneedling — Fine Line Softening',
-    description: 'Softer appearance of fine lines after a microneedling series.',
-    image: '/images/ChatGPT_Image_Jul_25,_2026,_11_41_13_PM copy.png',
-  },
-  {
-    id: 'r8',
-    category: 'Body Contouring',
-    title: 'EMS & RF — Tone and Firmness',
-    description: 'Improved muscle tone and skin firmness after a combined EMS and radiofrequency series.',
-    image: '/images/ChatGPT_Image_Jul_26,_2026,_12_21_27_AM.png',
-  },
-  {
-    id: 'r9',
-    category: 'Intimate Skin Care',
-    title: 'Vajacial — Calm, Bright, Confident',
-    description: 'Reduced irritation and brighter intimate skin after a vajacial series.',
-    image: '/images/ChatGPT_Image_Jul_26,_2026,_12_20_21_AM.png',
-  },
+    "id": "r3",
+    "category": "Skin Rejuvenation",
+    "title": "Ultimate Glow Up: texture & fine lines",
+    "description": "Individual results vary. Shared with client consent.",
+    "image": "/images/results/result-forehead-texture.jpg"
+  }
 ];
 
 export const resultsDisclaimer =
   'Individual results vary. Images are shown with client consent and are not a guarantee of a specific outcome.';
+

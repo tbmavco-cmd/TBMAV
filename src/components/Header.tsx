@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { Logo } from './Logo';
-import { siteConfig } from '@/config/site';
+import { siteConfig, BOOKING_URL } from '@/config/site';
 
 const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 
@@ -39,7 +39,7 @@ function MobileExtLink({ href, children }: { href: string; children: ReactNode }
       className="flex items-center gap-1.5 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-800 hover:bg-ink-900/5 transition-colors"
     >
       {children}
-      <ExternalLink className="h-3 w-3 text-ink-400" />
+      <ExternalLink className="h-3 w-3 text-muted-500" />
     </a>
   );
 }
@@ -65,8 +65,8 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-nude-50/95 backdrop-blur-md shadow-sm border-b border-ink-900/5'
-            : 'bg-nude-50/80 backdrop-blur-sm'
+            ? 'bg-blush-50/95 backdrop-blur-md shadow-sm border-b border-ink-900/5'
+            : 'bg-blush-50/80 backdrop-blur-sm'
         }`}
       >
         <div className="container-bare flex h-18 items-center justify-between gap-4 py-3.5">
@@ -105,7 +105,7 @@ export function Header() {
 
           <div className="hidden items-center gap-2 lg:flex">
             <a
-              href={siteConfig.salonLofts.servicesUrl}
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold text-sm"
@@ -116,7 +116,7 @@ export function Header() {
               href={MYBAREMETHOD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-green text-sm inline-flex items-center gap-1.5"
+              className="btn-outline text-sm inline-flex items-center gap-1.5"
             >
               Wellness
               <ExternalLink className="h-3.5 w-3.5" />
@@ -142,7 +142,7 @@ export function Header() {
             className="absolute inset-0 bg-ink-900/40 backdrop-blur-sm animate-fade-in"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-nude-50 shadow-2xl animate-slide-down flex flex-col">
+          <div className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-blush-50 shadow-2xl animate-slide-down flex flex-col">
             <div className="flex items-center justify-between border-b border-ink-900/10 px-5 py-4">
               <Logo />
               <button onClick={() => setOpen(false)} className="btn-ghost p-2" aria-label="Close menu">
@@ -152,7 +152,7 @@ export function Header() {
             <nav className="flex-1 overflow-y-auto px-5 py-6 space-y-6">
               {/* EXPLORE */}
               <div>
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Explore</p>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-muted-500">Explore</p>
                 <div className="space-y-0.5">
                   <MobileNavLink to="/esthetics">Esthetics</MobileNavLink>
                   <MobileNavLink to="/wellness">Provider-Led Wellness</MobileNavLink>
@@ -164,9 +164,9 @@ export function Header() {
 
               {/* CLIENT ACCESS */}
               <div>
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Client Access</p>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-muted-500">Client Access</p>
                 <div className="space-y-0.5">
-                  <MobileExtLink href={siteConfig.salonLofts.servicesUrl}>Book Esthetics</MobileExtLink>
+                  <MobileExtLink href={BOOKING_URL}>Book Esthetics</MobileExtLink>
                   <MobileExtLink href={MYBAREMETHOD_URL}>MyBareMethod.com</MobileExtLink>
                   <MobileNavLink to="/contact">Memberships & Gift Cards</MobileNavLink>
                 </div>
@@ -174,9 +174,9 @@ export function Header() {
 
               {/* SUPPORT */}
               <div>
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Support</p>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-muted-500">Support</p>
                 <div className="space-y-0.5">
-                  <MobileNavLink to="/membership-cancellation">Cancel Membership</MobileNavLink>
+                  <MobileNavLink to="/cancel-membership">Cancel Membership</MobileNavLink>
                   <MobileNavLink to="/refund-request">Refund Request</MobileNavLink>
                   <MobileNavLink to="/privacy-request">Privacy Request</MobileNavLink>
                 </div>
@@ -184,7 +184,7 @@ export function Header() {
 
               {/* LEGAL */}
               <div>
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-ink-400">Legal</p>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-muted-500">Legal</p>
                 <div className="space-y-0.5">
                   <MobileNavLink to="/legal/terms-of-use">Terms of Use</MobileNavLink>
                   <MobileNavLink to="/legal/privacy-policy">Privacy Policy</MobileNavLink>
@@ -199,3 +199,4 @@ export function Header() {
     </>
   );
 }
+

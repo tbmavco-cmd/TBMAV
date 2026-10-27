@@ -29,6 +29,12 @@
  * ============================================================================
  */
 
+// The single booking URL for all "Book Esthetics" buttons. Change this one
+// constant to switch the booking destination everywhere on the site.
+export const BOOKING_URL = 'https://salonlofts.com/rina_tbm/schedule';
+
+export const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
+
 export const siteConfig = {
 
   // ==========================================================================
@@ -41,7 +47,7 @@ export const siteConfig = {
     tagline: 'Your Skin. Your Wellness. Your Method.',
     location: 'Burnsville, Minnesota',
     address: {
-      line1: 'Salon Lofts Burnsville, 14109 Irving Avenue South, Loft 6',
+      line1: 'Salon Lofts Burnsville, 14109 Irving Ave S, Suite 6',
       city: 'Burnsville',
       state: 'MN',
       zip: '55337',
@@ -79,7 +85,7 @@ export const siteConfig = {
   // ==========================================================================
   salonLofts: {
     bookingUrl: 'https://salonlofts.com/rina_tbm',
-    servicesUrl: 'https://salonlofts.com/rina_tbm/schedule',
+    servicesUrl: BOOKING_URL,
   },
 
   // ==========================================================================
@@ -251,3 +257,4 @@ export const siteConfig = {
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+

@@ -14,7 +14,7 @@ export function PlaceholderImage({
   icon?: LucideIcon;
 }) {
   return (
-    <div className={`relative overflow-hidden bg-gradient-to-br from-cream-100 to-nude-200 ${aspect} ${className}`}>
+    <div className={`relative overflow-hidden bg-gradient-to-br from-blush-100 to-blush-200 ${aspect} ${className}`}>
       <img
         src={`https://images.pexels.com/search/?query=${encodeURIComponent(query)}`}
         alt={alt}
@@ -32,3 +32,4 @@ export function PlaceholderImage({
     </div>
   );
 }
+

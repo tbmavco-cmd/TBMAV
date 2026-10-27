@@ -1,9 +1,10 @@
 import { Check, ArrowRight, ShieldCheck, Lock, Heart, Clock, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Seo } from '@/components/Seo';
 import { PageHeader, SectionHeading } from '@/components/SectionHeading';
 import { FinalCTA } from '@/components/FinalCTA';
-import { siteConfig } from '@/config/site';
+import { siteConfig, BOOKING_URL } from '@/config/site';
 import { estheticFocusAreas, type EstheticFocus } from '@/data/estheticServices';
 
 function FocusAreaCard({ area }: { area: EstheticFocus }) {
@@ -59,7 +60,7 @@ function FocusAreaCard({ area }: { area: EstheticFocus }) {
       </button>
 
       {expanded && (
-        <div className="mt-4 space-y-4 rounded-2xl bg-cream-100 p-6 animate-fade-in">
+        <div className="mt-4 space-y-4 rounded-2xl bg-blush-100 p-6 animate-fade-in">
           <div>
             <h5 className="text-xs font-semibold uppercase tracking-wide text-ink-700/60">Best For</h5>
             <p className="mt-1 text-sm text-ink-700">{d.bestFor}</p>
@@ -109,7 +110,7 @@ function FocusAreaCard({ area }: { area: EstheticFocus }) {
         </div>
       )}
 
-      <div className="mt-6 rounded-2xl bg-cream-100 p-5">
+      <div className="mt-6 rounded-2xl bg-blush-100 p-5">
         <h4 className="text-xs font-semibold uppercase tracking-wide text-ink-700/60">
           May Be Ideal For
         </h4>
@@ -118,7 +119,7 @@ function FocusAreaCard({ area }: { area: EstheticFocus }) {
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <a
-          href={siteConfig.salonLofts.servicesUrl}
+          href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-gold"
@@ -138,8 +139,8 @@ export function EstheticsPage() {
   return (
     <>
       <Seo
-        title="Esthetics | The Bare Method — Burnsville, MN"
-        description="The Bare Method specializes in head-to-toe skin treatments, intimate-area care, advanced microneedling, and confidence-focused body contouring in Burnsville, Minnesota. Private, personalized, and never judged."
+        title="Esthetics Services & Pricing | The Bare Method Burnsville"
+        description="All services and prices: waxing, vajacials, facials, dermaplaning, microneedling, back & booty facials, body contouring. Serving Burnsville, Apple Valley and Lakeville."
         path="/esthetics"
       />
       <PageHeader
@@ -149,7 +150,7 @@ export function EstheticsPage() {
       >
         <div className="flex flex-wrap gap-3">
           <a
-            href={siteConfig.salonLofts.servicesUrl}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold"
@@ -179,6 +180,7 @@ export function EstheticsPage() {
             title="Private. Personalized. Never Judged."
             subtitle="We understand that skin and intimate-area concerns can feel deeply personal. Our approach is discreet, educational, and tailored to your comfort, goals, and skin needs."
           />
+      <div className="container-bare"><img src="/images/studio/suite-treatment-room-alt.jpg" alt="The Bare Method treatment room" loading="lazy" width={1600} height={1197} className="max-h-[520px] w-full rounded-3xl object-cover" /></div>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
               { icon: Lock, title: 'Private & Discreet', text: 'A calm, confidential space where your concerns are heard and respected.' },
@@ -188,7 +190,7 @@ export function EstheticsPage() {
               const Icon = t.icon;
               return (
                 <div key={t.title} className="card flex items-start gap-4 p-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cream-100 text-gold-500">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush-100 text-gold-500">
                     <Icon className="h-5 w-5" strokeWidth={1.5} />
                   </div>
                   <div>
@@ -203,7 +205,7 @@ export function EstheticsPage() {
       </section>
 
       {/* FOUR FOCUS AREAS */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="Specialized Focus Areas"
@@ -221,7 +223,7 @@ export function EstheticsPage() {
       {/* CAREFUL WORDING NOTE */}
       <section className="section">
         <div className="container-bare">
-          <div className="mx-auto max-w-3xl rounded-2xl bg-cream-100 p-8 text-center">
+          <div className="mx-auto max-w-3xl rounded-2xl bg-blush-100 p-8 text-center">
             <h3 className="font-display text-xl font-medium text-ink-900">
               Individual Results Vary
             </h3>
@@ -236,7 +238,7 @@ export function EstheticsPage() {
       </section>
 
       {/* BOOKING */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="Booking & Payments"
@@ -248,7 +250,7 @@ export function EstheticsPage() {
               We use Salon Lofts for esthetic scheduling and payments. This keeps your esthetic experience seamless and secure.
             </p>
             <a
-              href={siteConfig.salonLofts.servicesUrl}
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 btn-gold"
@@ -263,3 +265,4 @@ export function EstheticsPage() {
     </>
   );
 }
+

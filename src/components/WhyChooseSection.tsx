@@ -11,7 +11,7 @@ const features = [
   {
     title: 'Advanced Technology',
     description:
-      'From EMS body contouring and RF skin tightening to medical-grade microneedling and LED therapy, we invest in proven, results-driven technology.',
+      'From IPL photofacials and 4-in-1 body contouring to microneedling and LED therapy, we offer advanced options personalized to your goals.',
     icon: Cpu,
   },
   {
@@ -42,7 +42,7 @@ const features = [
 
 export function WhyChooseSection() {
   return (
-    <section className="section bg-cream-100">
+    <section className="section bg-black text-white dark-band">
       <div className="container-bare">
         <SectionHeading
           eyebrow="The Bare Method Difference"
@@ -51,14 +51,14 @@ export function WhyChooseSection() {
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.title} className="card p-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-gold-500">
+            <div key={feature.title} className="rounded-2xl border border-gold-300/25 bg-white/5 p-8">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-300/10 text-gold-300">
                 <feature.icon className="h-6 w-6" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-4 font-display font-medium text-ink-900">
+              <h3 className="mt-4 font-display font-medium text-gold-300">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-700">
+              <p className="mt-2 text-sm leading-relaxed text-white/80">
                 {feature.description}
               </p>
             </div>
@@ -68,3 +68,4 @@ export function WhyChooseSection() {
     </section>
   );
 }
+

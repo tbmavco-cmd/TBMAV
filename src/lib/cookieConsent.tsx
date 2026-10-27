@@ -72,3 +72,4 @@ export function useCookieConsent() {
   if (!ctx) throw new Error('useCookieConsent must be used within CookieProvider');
   return ctx;
 }
+

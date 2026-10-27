@@ -13,7 +13,7 @@ import { Seo } from '@/components/Seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { GoogleLogo } from '@/components/GoogleLogo';
 import { WhyChooseSection } from '@/components/WhyChooseSection';
-import { siteConfig } from '@/config/site';
+import { siteConfig, BOOKING_URL } from '@/config/site';
 import { estheticFocusAreas } from '@/data/estheticServices';
 import { testimonials } from '@/data/testimonials';
 import { results } from '@/data/testimonials';
@@ -24,7 +24,7 @@ const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 function BookEstheticsButton({ className = '' }: { className?: string }) {
   return (
     <a
-      href={siteConfig.salonLofts.servicesUrl}
+      href={BOOKING_URL}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-gold ${className}`}
@@ -37,42 +37,44 @@ function BookEstheticsButton({ className = '' }: { className?: string }) {
 
 function TrustLine() {
   return (
-    <p className="text-xs sm:text-sm font-medium text-ink-600/80 tracking-wide">
+    <p className="text-xs sm:text-sm font-medium text-muted-500/80 tracking-wide">
       {trustLine}
     </p>
   );
 }
 
 export function HomePage() {
-  const topResults = results.slice(0, 3);
+  const topResults = results;
 
   return (
     <>
       <Seo
-        title="The Bare Method | Luxury Esthetics in Burnsville, MN"
-        description="Specialized body and intimate-area esthetics in Burnsville, Minnesota. Private. Personalized. Never judged. Provider-led wellness through My Bare Method (MyBareMethod.com)."
+        title="Waxing, Facials & Body Contouring in Burnsville, MN | The Bare Method"
+        description="Private-suite esthetics in Burnsville: Brazilian waxing, vajacials, dermaplaning, microneedling and 4-in-1 body contouring by an Advanced Practice Esthetician. Book online."
         path="/"
       />
 
       {/* ====== HERO — INTRODUCTORY OFFER ABOVE THE FOLD ====== */}
-      <section className="relative overflow-hidden bg-cream-100">
+      <section className="relative overflow-hidden bg-black text-white dark-band">
         <div className="container-bare grid items-center gap-10 py-14 lg:grid-cols-2 lg:py-20">
           <div className="animate-fade-up">
             <p className="eyebrow mb-4">The Bare Method · Burnsville, Minnesota</p>
             <h1 className="heading-display text-4xl text-ink-900 sm:text-5xl lg:text-[3.5rem] xl:text-6xl leading-[1.1] text-balance">
-              Specialized care for the concerns you do not always talk about.
+              Private-Suite Waxing, Facials & Body Contouring in Burnsville
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-700 text-balance">
-              Elevated skincare and body treatments designed to restore confidence in every stage of your journey.
+              Specialized care for the concerns you do not always talk about. Elevated skincare and body treatments designed to restore confidence in every stage of your journey.
             </p>
 
             {/* Offer callout */}
-            <div className="mt-7 rounded-2xl border border-[#c9a96e]/30 bg-white/70 backdrop-blur-sm p-5 max-w-lg">
-              <p className="text-sm font-semibold text-[#c9a96e] uppercase tracking-wide mb-1">New Client Exclusive Offer</p>
+            <div className="mt-7 rounded-2xl border border-[#c6a15b]/30 bg-white/5 backdrop-blur-sm p-5 max-w-lg">
+              <p className="text-sm font-semibold text-[#c6a15b] uppercase tracking-wide mb-1">NEW CLIENT OFFER</p>
               <p className="text-ink-900 font-display text-lg sm:text-xl font-medium">
-                Sculpt & Glow 4-in-1 — Just $149
+                Ultimate Glow Up
               </p>
-              <p className="mt-1 text-sm text-ink-700">EMS Sculpt + RF Skin Tightening + Hydrofacial + Red Light Therapy</p>
+              <p className="mt-1 text-sm text-white/80">IPL photofacial + salmon DNA (PDRN) microneedling</p>
+              <p className="mt-3 flex items-baseline gap-3"><span className="font-display text-3xl text-gold-300">$349</span><del className="text-white/60">$595</del></p>
+              <ul className="mt-3 space-y-1 text-sm text-white/80"><li>Brightens sun spots &amp; redness</li><li>Smooths texture &amp; fine lines</li></ul>
             </div>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -81,7 +83,7 @@ export function HomePage() {
                 href={MYBAREMETHOD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-green"
+                className="btn-outline"
               >
                 <HeartPulse className="mr-2 h-4 w-4" />
                 Explore Wellness
@@ -94,8 +96,9 @@ export function HomePage() {
           </div>
           <div className="relative animate-fade-in">
             <img
-              src="/images/ChatGPT_Image_Jul_25,_2026,_10_54_04_PM_(3).png"
-              alt="A confident, warm esthetic environment at The Bare Method"
+              src="/images/studio/suite-treatment-room.jpg"
+              fetchPriority="high" width={1600} height={1196}
+              alt="Private treatment suite at The Bare Method, Burnsville"
               className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl"
             />
           </div>
@@ -114,12 +117,15 @@ export function HomePage() {
             {/* Esthetics card */}
             <div className="card card-hover group flex flex-col overflow-hidden">
               <img
-                src="/images/ChatGPT_Image_Jul_25,_2026,_10_54_03_PM_(1).png"
+                src="/images/studio/studio-lounge-mural.jpg"
                 alt="Esthetics"
+                loading="lazy"
+                width={1070}
+                height={1650}
                 className="aspect-[16/9] w-full object-cover"
               />
               <div className="flex flex-1 flex-col p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cream-100 text-gold-500">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blush-100 text-gold-500">
                   <Sparkles className="h-6 w-6" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-display text-2xl font-medium text-ink-900">Esthetics</h3>
@@ -138,12 +144,15 @@ export function HomePage() {
             {/* Wellness card */}
             <div className="card card-hover group flex flex-col overflow-hidden">
               <img
-                src="/images/ChatGPT_Image_Jul_25,_2026,_10_54_05_PM_(4).png"
+                src="/images/studio/studio-wide-private-suite.jpg"
                 alt="Wellness"
+                loading="lazy"
+                width={1600}
+                height={1206}
                 className="aspect-[16/9] w-full object-cover"
               />
               <div className="flex flex-1 flex-col p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blush-50 text-gold-700">
                   <HeartPulse className="h-6 w-6" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-display text-2xl font-medium text-ink-900">Provider-Led Wellness</h3>
@@ -155,14 +164,14 @@ export function HomePage() {
                     href={MYBAREMETHOD_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-green inline-flex items-center gap-1.5"
+                    className="btn-outline inline-flex items-center gap-1.5"
                   >
                     <HeartPulse className="mr-2 h-4 w-4" />
                     Visit MyBareMethod.com
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </div>
-                <p className="mt-2 text-[11px] text-ink-500">
+                <p className="mt-2 text-[11px] text-muted-500">
                   My Bare Method is a separate company with its own providers, policies, and patient portal.
                 </p>
               </div>
@@ -172,7 +181,7 @@ export function HomePage() {
       </section>
 
       {/* ====== ESTHETICS SPECIALTIES (brief) ====== */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <div className="flex items-end justify-between gap-4">
             <SectionHeading
@@ -190,11 +199,11 @@ export function HomePage() {
               const Icon = area.icon;
               return (
                 <div key={area.slug} className="card flex flex-col p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cream-100 text-gold-500 shadow-sm">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blush-100 text-gold-500 shadow-sm">
                     <Icon className="h-6 w-6" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-display text-lg font-medium text-ink-900">{area.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-700 line-clamp-3">{area.description}</p>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-700">{area.description}</p>
                   <Link to="/esthetics" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-600 hover:gap-2.5 transition-all">
                     Learn more <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -210,28 +219,31 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="section bg-blush-100"><div className="container-bare grid items-center gap-10 lg:grid-cols-2"><div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl"><img src="/images/studio/neon-what-happens.jpg" alt="What happens in the salon stays in the salon" loading="lazy" width={1100} height={1650} className="absolute left-1/2 top-0 h-auto w-[120%] max-w-none -translate-x-1/2" /></div><div><p className="eyebrow">Your comfort comes first</p><h2 className="heading-display mt-4 text-3xl sm:text-4xl">What happens in the salon stays in the salon</h2><div className="divider-gold" /><p className="mt-6 text-muted-500">Private, respectful care for the concerns you do not always talk about. Every appointment starts with your comfort and your goals.</p></div></div></section>
+
       {/* ====== RESULTS — 3 STRONGEST EXAMPLES ====== */}
       <section className="section">
         <div className="container-bare">
           <SectionHeading
             eyebrow="Results"
-            title="Real Transformations"
-            subtitle="A glimpse of what consistent, personalized care can achieve."
+            title="Results"
+            subtitle="Before & after photos from real clients, shared with their permission."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+          
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {topResults.map((r) => (
               <div key={r.id} className="card overflow-hidden">
                 {r.image && (
-                  <img src={r.image} alt={r.title} className="aspect-[4/5] w-full object-cover" />
+                  <img src={r.image} alt={r.title} loading="lazy" width={800} height={1000} className="aspect-[4/5] w-full object-contain bg-blush-100" />
                 )}
                 <div className="p-5">
                   <h3 className="text-sm font-semibold text-ink-900">{r.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-ink-600">{r.description}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-500">{r.description}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-center text-xs text-ink-500">
+          <p className="mt-4 text-center text-xs text-muted-500">
             Individual results vary. Images shown with client consent and are not a guarantee of a specific outcome.
           </p>
           <div className="mt-6 text-center">
@@ -239,15 +251,19 @@ export function HomePage() {
               View Full Results Gallery
             </Link>
           </div>
+
         </div>
       </section>
 
       {/* ====== MEET RINA + FOUNDER PHOTO ====== */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare grid items-center gap-12 lg:grid-cols-2">
           <img
-            src="/images/ChatGPT_Image_Jul_25,_2026,_09_00_20_PM copy.png"
-            alt="Carina Rina Hebert, founder of The Bare Method"
+            src="/images/studio/studio-lounge-mural.jpg"
+            alt="The private studio lounge at The Bare Method"
+            loading="lazy"
+            width={1070}
+            height={1650}
             className="rounded-3xl shadow-lg order-2 lg:order-1 w-full aspect-[4/5] object-cover object-top"
           />
           <div className="order-1 lg:order-2">
@@ -306,7 +322,7 @@ export function HomePage() {
           </div>
 
           {/* Google Reviews CTA */}
-          <div className="mt-10 rounded-2xl border border-cream-200 bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+          <div className="mt-10 rounded-2xl border border-blush-200 bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
             <div className="flex flex-col items-center gap-2">
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -315,7 +331,7 @@ export function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <GoogleLogo className="h-4 w-4" />
-                <span className="text-xs font-semibold uppercase tracking-wide text-ink-900">5.0 on Google</span>
+                <span className="text-xs font-semibold uppercase tracking-wide text-ink-900">5.0 on Google · 15 reviews</span>
               </div>
             </div>
             <div className="flex-1 text-center sm:text-left">
@@ -335,76 +351,24 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ====== SCULPT & GLOW OFFER SECTION ====== */}
-      <section className="section bg-ink-900 overflow-hidden">
+      {/* ====== ULTIMATE GLOW UP OFFER ====== */}
+      <section className="section bg-blush-100">
         <div className="container-bare">
-          <div className="mx-auto max-w-5xl rounded-3xl bg-gradient-to-br from-nude-100 via-cream-100 to-nude-200 p-8 sm:p-12 lg:p-16 relative">
-            {/* Decorative leaf accents */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 text-gold-400 opacity-60">
-              <svg width="40" height="24" viewBox="0 0 40 24" fill="none" className="mx-auto">
-                <path d="M20 0c-4 6-12 10-20 12 8 2 16 6 20 12 4-6 12-10 20-12-8-2-16-6-20-12z" fill="currentColor" />
-              </svg>
-            </div>
-
-            <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-4">New Client Exclusive Offer</p>
-              <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-medium text-ink-900 leading-[1.05] tracking-tightest">
-                Sculpt<br /><span className="text-gold-500">&</span> Glow
-              </h2>
-              <div className="mt-4 flex items-center justify-center gap-3">
-                <span className="h-px w-8 bg-gold-400/50"></span>
-                <p className="text-lg sm:text-xl font-medium text-ink-800">4-in-1 Just</p>
-                <span className="h-px w-8 bg-gold-400/50"></span>
-              </div>
-              <p className="mt-2 font-display text-5xl sm:text-6xl font-semibold text-ink-900">$149</p>
-            </div>
-
-            <div className="mt-10 grid gap-8 sm:grid-cols-2 max-w-2xl mx-auto">
-              {/* Treatments included */}
-              <div className="rounded-2xl border border-gold-400/30 bg-white/80 p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-ink-900 mb-4">4 Treatments Included</p>
-                <ul className="space-y-3">
-                  {[
-                    { icon: 'Zap', label: 'EMS Sculpt' },
-                    { icon: 'Waves', label: 'RF Skin Tightening' },
-                    { icon: 'Droplets', label: 'Hydrofacial' },
-                    { icon: 'Sun', label: 'Red Light Therapy' },
-                  ].map((t) => (
-                    <li key={t.label} className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-cream-200 text-gold-500">
-                        <span className="h-4 w-4 rounded-full bg-gold-400/30"></span>
-                      </span>
-                      <span className="text-sm font-medium text-ink-800">{t.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Benefits */}
-              <div className="flex flex-col justify-center space-y-4">
-                {[
-                  { bold: 'ZERO', rest: 'Downtime' },
-                  { bold: 'Lose Inches', rest: 'FAST' },
-                  { bold: 'Non-Surgical', rest: 'Alternative' },
-                ].map((b) => (
-                  <div key={b.bold} className="flex items-center gap-3">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold-500 text-white">
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    <p className="text-sm text-ink-800">
-                      <span className="font-bold">{b.bold}</span>{' '}{b.rest}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-10 text-center">
-              <BookEstheticsButton />
-              <p className="mt-3 text-xs text-ink-700/60">{trustLine}</p>
-            </div>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.7fr]">
+          <div className="rounded-3xl border border-gold-300 p-8 text-center sm:p-12 lg:p-16">
+            <p className="eyebrow mb-4">NEW CLIENT OFFER</p>
+            <h2 className="heading-display text-4xl sm:text-6xl">Ultimate <span className="italic">Glow Up</span></h2>
+            <div className="divider-gold" aria-hidden="true" />
+            <p className="mt-6 text-lg text-ink-700">IPL photofacial + salmon DNA (PDRN) microneedling</p>
+            <p className="mt-6 flex items-baseline justify-center gap-4"><span className="font-display text-5xl sm:text-6xl">$349</span><del className="text-2xl text-muted-500">$595</del></p>
+            <ul className="mx-auto mt-8 max-w-sm space-y-3 text-left">
+              <li className="flex items-center gap-3"><Sparkles className="h-5 w-5 text-gold-700" />Brightens sun spots &amp; redness</li>
+              <li className="flex items-center gap-3"><Sparkles className="h-5 w-5 text-gold-700" />Smooths texture &amp; fine lines</li>
+            </ul>
+            <div className="mt-8"><BookEstheticsButton /></div>
+            <p className="mt-4 text-xs text-muted-500">{trustLine}</p>
+          </div>
+          <video autoPlay muted loop playsInline preload="metadata" poster="/videos/glow-up-reel-19588-poster.jpg" className="mx-auto aspect-[9/16] max-h-[640px] w-full rounded-3xl bg-black object-contain"><source src="/videos/glow-up-reel-19588.mp4" type="video/mp4" /></video>
           </div>
         </div>
       </section>
@@ -418,7 +382,7 @@ export function HomePage() {
           <SectionHeading
             eyebrow="Visit Us"
             title="Find Us in Burnsville"
-            subtitle="Serving Burnsville, Apple Valley, Lakeville, Rosemount, Eagan, and the greater South Minneapolis\u2013Saint Paul metro."
+            subtitle="Serving Burnsville, Apple Valley, Lakeville, Rosemount, Eagan, and the greater South Minneapolis–Saint Paul metro."
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <div className="card overflow-hidden">
@@ -463,8 +427,10 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="section bg-blush-100"><div className="container-bare"><SectionHeading eyebrow="A space for you" title="Inside the suite" /><div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">{[{file:'bubbly-bar',alt:'The bubbly bar in the private suite'},{file:'retail-shelf',alt:'Skincare retail shelf'},{file:'wax-station',alt:'The waxing station'},{file:'facial-cart-detail',alt:'Facial treatment cart'}].map(item => <img key={item.file} src={`/images/studio/${item.file}.jpg`} alt={item.alt} loading="lazy" width={900} height={1200} className="aspect-[3/4] w-full rounded-2xl object-cover" />)}</div></div></section>
+
       {/* ====== FINAL BOOKING CTA ====== */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare text-center">
           <h2 className="heading-display mx-auto max-w-2xl text-3xl text-ink-900 sm:text-4xl text-balance">
             Ready to Begin?
@@ -478,16 +444,17 @@ export function HomePage() {
               href={MYBAREMETHOD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-green inline-flex items-center gap-1.5"
+              className="btn-outline inline-flex items-center gap-1.5"
             >
               <HeartPulse className="mr-2 h-4 w-4" />
               Explore Wellness at MyBareMethod.com
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
-          <p className="mt-4 text-xs text-ink-500">{trustLine}</p>
+          <p className="mt-4 text-xs text-muted-500">{trustLine}</p>
         </div>
       </section>
     </>
   );
 }
+

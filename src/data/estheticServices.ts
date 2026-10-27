@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Shield, Flower2, Zap, Waves } from 'lucide-react';
+import { Shield, Flower2, Waves, Sun, Sparkles, Droplet } from 'lucide-react';
 
 export type ServiceDetail = {
   bestFor: string;
@@ -25,7 +25,7 @@ export type EstheticFocus = {
 
 export const estheticFocusAreas: EstheticFocus[] = [
   {
-    slug: 'body-skin-hidden-insecurities',
+    slug: 'head-to-toe-skin-hidden-insecurities',
     name: 'Head-to-Toe Skin & Hidden Insecurities',
     eyebrow: 'Head-to-Toe Skin Confidence',
     description:
@@ -111,41 +111,119 @@ export const estheticFocusAreas: EstheticFocus[] = [
     },
   },
   {
-    slug: 'ems-rf-body-contouring',
-    name: 'EMS & RF Body Contouring',
-    eyebrow: 'Body Contouring',
+    slug: 'ipl-photofacials',
+    name: 'IPL Photofacials',
+    eyebrow: 'Light-Based Skin Renewal',
     description:
-      'Non-invasive body contouring sessions may use EMS and radiofrequency technology to support muscle stimulation, improved body definition, and skin-firming goals. Each plan is personalized and focused on how you feel in your body.',
+      'Intense Pulsed Light (IPL) photofacials target sun spots, redness, and uneven tone for a clearer, more even-looking complexion. A personalized series is recommended for best results.',
     concerns: [
-      'Desire for improved body definition',
-      'Skin-firming goals',
-      'Smoother-looking skin',
-      'Muscle tone support',
-      'Body-confidence goals',
+      'Sun spots and sun damage',
+      'Redness and rosacea-like flushing',
+      'Uneven skin tone',
+      'Broken capillaries on the face',
+      'Freckling and pigmentation',
     ],
     techniques: [
-      'Electrical muscle stimulation (EMS)',
-      'Radiofrequency (RF) skin-firming',
+      'IPL (intense pulsed light) photofacial',
       'Personalized treatment planning',
-      'Confidence-focused session design',
+      'Series-based protocols',
+      'Post-treatment skin care guidance',
     ],
     idealFor:
-      'Clients looking to complement a healthy lifestyle with non-invasive contouring and firming support.',
-    icon: Zap,
+      'Clients looking to brighten sun damage, redness, and uneven tone with a light-based series.',
+    icon: Sun,
     details: {
-      bestFor: 'Clients seeking non-invasive body definition and skin tightening to complement a healthy lifestyle.',
+      bestFor: 'Clients with sun spots, redness, or uneven tone who want a light-based renewal series.',
       benefits: [
-        'Improved muscle tone and definition',
-        'Tighter, firmer-looking skin',
-        'Reduced appearance of cellulite',
-        'Non-invasive with no surgery required',
+        'Brightened sun spots and pigmentation',
+        'Reduced visible redness',
+        'More even, radiant complexion',
+        'Improved overall skin clarity',
       ],
-      treatmentTime: '45–75 minutes',
-      downtime: 'None — no recovery needed',
-      recommendedSeries: '6–8 sessions, spaced 1–2 weeks apart',
+      treatmentTime: '30–45 minutes',
+      downtime: 'Minimal — mild redness and darkening of spots for a few days',
+      recommendedSeries: '3–5 sessions, spaced 3–4 weeks apart',
       faq: [
-        { q: 'Does it really work?', a: 'Many clients see noticeable toning and firming after a full series. Results vary by individual.' },
-        { q: 'Is it uncomfortable?', a: 'Most describe EMS as a deep muscle contraction and RF as a warm, relaxing sensation.' },
+        { q: 'Is IPL safe for my skin?', a: 'IPL is most effective on lighter skin tones. A consultation will determine if IPL is the right fit for you.' },
+        { q: 'When will I see results?', a: 'Sun spots typically darken and flake off within 1–2 weeks; cumulative results appear over the series.' },
+      ],
+      membershipCredits: true,
+    },
+  },
+  {
+    slug: 'shr-light-pulse-hair-reduction',
+    name: 'SHR Light-Pulse Hair Reduction',
+    eyebrow: 'Gentle Hair Reduction',
+    description:
+      'SHR light-pulse hair reduction is a gentle, in-motion approach to long-term hair reduction for face and body. Sold as a personalized series for lasting smoothness.',
+    concerns: [
+      'Unwanted facial hair',
+      'Unwanted body hair',
+      'Ingrown hairs from shaving',
+      'Stubble and frequent maintenance',
+    ],
+    techniques: [
+      'SHR light-pulse hair reduction',
+      'In-motion gliding technique',
+      'Personalized series planning',
+      'Aftercare and maintenance guidance',
+    ],
+    idealFor:
+      'Clients seeking gentle, long-term hair reduction for face and body without the discomfort of traditional methods.',
+    icon: Sparkles,
+    details: {
+      bestFor: 'Clients who want lasting hair reduction with a gentle, in-motion light-pulse approach.',
+      benefits: [
+        'Long-term hair reduction',
+        'Gentle, in-motion treatment',
+        'Reduced ingrown hairs',
+        'Smoother skin over a series',
+      ],
+      treatmentTime: '30–60 minutes depending on area',
+      downtime: 'Minimal — mild warmth and pinkness for a few hours',
+      recommendedSeries: '6–8 sessions, spaced 4–6 weeks apart',
+      faq: [
+        { q: 'What is SHR light-pulse hair reduction?', a: 'SHR is a light-pulse hair reduction method that uses a gentler, in-motion technique. We always call it SHR light-pulse hair reduction.' },
+        { q: 'Does it hurt?', a: 'Most clients find SHR more comfortable than traditional methods, describing it as a warm sensation.' },
+      ],
+      membershipCredits: true,
+    },
+  },
+  {
+    slug: 'ipl-spider-vein-treatment',
+    name: 'IPL Spider Vein Treatment',
+    eyebrow: 'Spider Vein Clearing',
+    description:
+      'IPL spider vein treatment targets visible spider veins on the face and body using light-based technology. Sold as a multi-session series for progressive clearing.',
+    concerns: [
+      'Visible spider veins on face',
+      'Spider veins on legs',
+      'Broken capillaries',
+      'Diffuse redness from small vessels',
+    ],
+    techniques: [
+      'IPL (intense pulsed light) vein targeting',
+      'Personalized series planning',
+      'Progressive clearing protocols',
+      'Post-treatment care guidance',
+    ],
+    idealFor:
+      'Clients with visible spider veins looking for a non-invasive, light-based clearing series.',
+    icon: Droplet,
+    details: {
+      bestFor: 'Clients with small, visible spider veins who want a light-based clearing option.',
+      benefits: [
+        'Reduced appearance of spider veins',
+        'Clearer, more even skin tone',
+        'Non-invasive, light-based approach',
+        'Progressive results over a series',
+      ],
+      treatmentTime: '20–40 minutes depending on area',
+      downtime: 'Minimal — mild redness for 24–48 hours',
+      recommendedSeries: '2–4 sessions, spaced 4–6 weeks apart',
+      faq: [
+        { q: 'Will the veins disappear completely?', a: 'Many veins fade significantly over a series; individual results vary and new vessels can develop over time.' },
+        { q: 'Is it uncomfortable?', a: 'Most describe a quick snap sensation with each pulse. Comfort is managed throughout.' },
       ],
       membershipCredits: true,
     },
@@ -155,7 +233,7 @@ export const estheticFocusAreas: EstheticFocus[] = [
     name: 'Advanced Microneedling & Skin Rejuvenation',
     eyebrow: 'Skin Rejuvenation',
     description:
-      'Microneedling services designed to support skin renewal, and may be combined with EMS, LED light, BB Glow-style, and PDRN-based topical protocols. Every plan is customized based on your skin goals, and individual results vary.',
+      'Microneedling services designed to support skin renewal, and may be combined with LED light, BB Glow-style, and PDRN-based topical protocols. Every plan is customized based on your skin goals, and individual results vary.',
     concerns: [
       'Skin texture and tone',
       'Fine lines and laxity',
@@ -168,7 +246,6 @@ export const estheticFocusAreas: EstheticFocus[] = [
       'Blue LED light support',
       'BB Glow-style treatments',
       'PDRN-based topical protocols',
-      'EMS combination sessions',
       'Customized rejuvenation plans',
     ],
     idealFor:
@@ -192,4 +269,45 @@ export const estheticFocusAreas: EstheticFocus[] = [
       membershipCredits: true,
     },
   },
+  {
+    slug: 'body-contouring',
+    name: '4-in-1 Body Contouring',
+    eyebrow: 'Body Contouring',
+    description:
+      'Non-invasive body sculpting that combines fat freezing, cavitation, radiofrequency and laser lipo in a personalized series, focused on how you feel in your body. Individual results vary.',
+    concerns: [
+      'Desire for improved body definition',
+      'Skin-firming goals',
+      'Smoother-looking skin',
+      'Body-confidence goals',
+    ],
+    techniques: [
+      'Fat freezing (cryolipolysis)',
+      'Cavitation',
+      'Radiofrequency (RF) skin-firming',
+      'Laser lipo',
+      'Personalized treatment planning',
+    ],
+    idealFor:
+      'Clients looking to complement a healthy lifestyle with non-invasive contouring and firming support.',
+    icon: Sparkles,
+    details: {
+      bestFor: 'Clients seeking non-invasive body definition and skin tightening to complement a healthy lifestyle.',
+      benefits: [
+        'Improved body definition',
+        'Tighter, firmer-looking skin',
+        'Personalized multi-modality series',
+        'Non-invasive with no surgery required',
+      ],
+      treatmentTime: '45–75 minutes',
+      downtime: 'Minimal — mild redness or warmth in the treated area',
+      recommendedSeries: '6–8 sessions, spaced 1–2 weeks apart',
+      faq: [
+        { q: 'Does it really work?', a: 'Many clients see noticeable toning and firming after a full series. Results vary by individual.' },
+        { q: 'Is it uncomfortable?', a: 'Most describe the treatments as tolerable, with sensations of cold, warmth, or gentle suction depending on the modality.' },
+      ],
+      membershipCredits: true,
+    },
+  },
 ];
+

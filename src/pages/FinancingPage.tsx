@@ -49,11 +49,11 @@ export function FinancingPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-6">
             Flexible Beauty Investment Plans Available
           </p>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-cream-50 leading-tight tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-tight tracking-tight">
             Invest in Your Confidence<br />
             <span className="text-gold-400">with Flexible Monthly Payments</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-lg text-cream-200/80">
+          <p className="mx-auto mt-6 max-w-lg text-lg text-white/80">
             Up to 0% financing for up to 12 months through Cherry. No hard credit check required.
           </p>
           <div className="mt-10">
@@ -71,7 +71,7 @@ export function FinancingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="section bg-nude-50">
+      <section className="section bg-blush-50">
         <div className="container-bare">
           <SectionHeading
             eyebrow="Why Cherry"
@@ -96,7 +96,7 @@ export function FinancingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="section bg-cream-100">
+      <section className="section bg-blush-100">
         <div className="container-bare">
           <SectionHeading
             eyebrow="How It Works"
@@ -131,10 +131,10 @@ export function FinancingPage() {
             <p className="text-xs font-semibold uppercase tracking-widest text-gold-400 mb-4">
               Ready to Get Started?
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-medium text-cream-50">
+            <h2 className="font-display text-3xl sm:text-4xl font-medium text-white">
               See What You Qualify For
             </h2>
-            <p className="mt-4 text-cream-200/70 max-w-md mx-auto">
+            <p className="mt-4 text-white/70 max-w-md mx-auto">
               Pre-qualify in seconds with no impact to your credit score. Know your budget before your first visit.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -149,13 +149,13 @@ export function FinancingPage() {
               </a>
               <a
                 href={`sms:${siteConfig.business.phone.replace(/[^+\d]/g, '')}`}
-                className="inline-flex items-center gap-2 rounded-full border border-cream-200/30 px-8 py-4 text-base font-medium text-cream-50 transition-colors hover:bg-cream-50/10"
+                className="inline-flex items-center gap-2 rounded-full border border-blush-200/30 px-8 py-4 text-base font-medium text-white transition-colors hover:bg-blush-50/10"
               >
                 <MessageCircle className="h-4 w-4" />
                 Text the Team
               </a>
             </div>
-            <p className="mt-6 text-xs text-cream-200/50">
+            <p className="mt-6 text-xs text-white/50">
               Financing provided by Cherry Technologies, Inc. Subject to credit approval. Terms and conditions apply.
             </p>
           </div>
@@ -164,3 +164,4 @@ export function FinancingPage() {
     </>
   );
 }
+

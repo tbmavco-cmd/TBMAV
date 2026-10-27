@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Sparkles, HeartPulse, ExternalLink } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { siteConfig, BOOKING_URL } from '@/config/site';
 
 const STORAGE_KEY = 'bare-method-welcome-popup-ts';
 const DISMISS_KEY = 'bare-method-welcome-dismissed';
@@ -95,24 +95,24 @@ export default function OfferPopup() {
       >
         <button
           onClick={handleDismiss}
-          className="absolute top-4 right-4 text-cream-50/60 hover:text-cream-50 transition-colors"
+          className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
           aria-label="Close popup"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="text-center mb-8">
-          <h2 className="font-display text-2xl md:text-3xl text-cream-50 mb-2">
+          <h2 className="font-display text-2xl md:text-3xl text-white mb-2">
             Welcome to The Bare Method
           </h2>
-          <p className="text-cream-50/70 text-sm">
+          <p className="text-white/70 text-sm">
             Choose your experience.
           </p>
         </div>
 
         <div className="space-y-3 mb-6">
           <a
-            href={siteConfig.salonLofts.servicesUrl}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleButtonClick}
@@ -122,8 +122,8 @@ export default function OfferPopup() {
               <Sparkles className="h-5 w-5 text-gold-400" strokeWidth={1.5} />
             </div>
             <div className="flex-1 text-left">
-              <span className="block font-display text-base text-cream-50">Book Esthetics</span>
-              <span className="block text-cream-50/50 text-xs mt-0.5">Salon Lofts scheduling</span>
+              <span className="block font-display text-base text-white">Book Esthetics</span>
+              <span className="block text-white/50 text-xs mt-0.5">Salon Lofts scheduling</span>
             </div>
           </a>
 
@@ -132,24 +132,25 @@ export default function OfferPopup() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleButtonClick}
-            className="flex items-center gap-4 w-full rounded-xl border border-gold-400/20 bg-ink-900/80 p-4 hover:border-emerald-400/50 transition-colors group"
+            className="flex items-center gap-4 w-full rounded-xl border border-gold-400/20 bg-ink-900/80 p-4 hover:border-gold-300/50 transition-colors group"
           >
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 group-hover:bg-emerald-500/20 transition-colors">
-              <HeartPulse className="h-5 w-5 text-emerald-400" strokeWidth={1.5} />
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush-200/10 group-hover:bg-blush-200/20 transition-colors">
+              <HeartPulse className="h-5 w-5 text-gold-700" strokeWidth={1.5} />
             </div>
             <div className="flex-1 text-left">
-              <span className="block font-display text-base text-cream-50">Provider-Led Wellness</span>
-              <span className="inline-flex items-center gap-1 text-cream-50/50 text-xs mt-0.5">
+              <span className="block font-display text-base text-white">Provider-Led Wellness</span>
+              <span className="inline-flex items-center gap-1 text-white/50 text-xs mt-0.5">
                 MyBareMethod.com <ExternalLink className="h-3 w-3" />
               </span>
             </div>
           </a>
         </div>
 
-        <p className="text-center text-cream-50/40 text-[11px] leading-relaxed max-w-xs mx-auto">
+        <p className="text-center text-white/40 text-[11px] leading-relaxed max-w-xs mx-auto">
           Provider-led wellness services are provided through a separate website with its own providers, policies, and patient portal.
         </p>
       </div>
     </div>
   );
 }
+

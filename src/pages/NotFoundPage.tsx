@@ -5,7 +5,7 @@ import { Seo } from '@/components/Seo';
 export function NotFoundPage() {
   return (
     <>
-      <Seo title="Page Not Found — The Bare Method" description="The page you are looking for could not be found." />
+      <Seo title="Page Not Found — The Bare Method" description="The page you are looking for could not be found." noindex />
       <section className="section">
         <div className="container-bare max-w-2xl text-center">
           <p className="font-display text-8xl sm:text-9xl font-medium text-gold-400/30">404</p>
@@ -24,7 +24,7 @@ export function NotFoundPage() {
               <Sparkles className="h-4 w-4" />
               Esthetics
             </Link>
-            <Link to="/wellness" className="btn-green">
+            <Link to="/wellness" className="btn-outline">
               <HeartPulse className="h-4 w-4" />
               Wellness
             </Link>
@@ -34,3 +34,4 @@ export function NotFoundPage() {
     </>
   );
 }
+

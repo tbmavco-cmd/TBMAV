@@ -17,7 +17,7 @@ const SESSION_KEY = 'bare-method-announcements-dismissed';
 const fallbackAnnouncements: Announcement[] = [
   {
     id: 'first-spa-50',
-    headline: '50% Off First Spa Service*',
+    headline: 'Now offering IPL photofacials & SHR light-pulse hair reduction',
     link: '/esthetics',
     cta_text: 'Book Now',
     audience: 'all',
@@ -58,7 +58,7 @@ const fallbackAnnouncements: Announcement[] = [
 ];
 
 export default function AnnouncementBar() {
-  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([fallbackAnnouncements[0]]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
@@ -82,7 +82,9 @@ export default function AnnouncementBar() {
       .limit(3)
       .then(({ data }) => {
         const items: Announcement[] = data && data.length > 0 ? data : fallbackAnnouncements;
-        setAnnouncements(items);
+        // Keep the current service announcement first and suppress retired-service promotions.
+        const currentItems = items.filter(item => !/\bE[M]S\b|Sculpt\s*&\s*Glow|50% Off First Spa/i.test(item.headline));
+        setAnnouncements([fallbackAnnouncements[0], ...currentItems.filter(item => item.id !== fallbackAnnouncements[0].id)]);
       });
   }, []);
 
@@ -124,7 +126,7 @@ export default function AnnouncementBar() {
     <span className="inline-flex items-center gap-2 text-center text-xs sm:text-sm font-medium leading-snug">
       <span>{current.headline}</span>
       {current.cta_text && (
-        <span className="hidden sm:inline whitespace-nowrap underline underline-offset-2 decoration-[#c9a96e]/60 font-semibold">
+        <span className="hidden sm:inline whitespace-nowrap underline underline-offset-2 decoration-[#c6a15b]/60 font-semibold">
           {current.cta_text}
         </span>
       )}
@@ -133,7 +135,7 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="relative z-50 flex items-center justify-center bg-ink-900 text-cream-50 select-none"
+      className="relative z-50 flex items-center justify-center bg-ink-900 text-white select-none"
       style={{ minHeight: '40px' }}
       role="region"
       aria-label="Announcements"
@@ -147,7 +149,7 @@ export default function AnnouncementBar() {
       {announcements.length > 1 && (
         <button
           onClick={() => advance(-1)}
-          className="absolute left-2 sm:left-4 flex items-center justify-center w-6 h-6 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-white/10 transition-colors"
+          className="absolute left-2 sm:left-4 flex items-center justify-center w-6 h-6 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors"
           aria-label="Previous announcement"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -163,7 +165,7 @@ export default function AnnouncementBar() {
             <a
               href={current.link!}
               {...(current.link!.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="text-cream-50 hover:text-[#c9a96e] transition-colors"
+              className="text-white hover:text-[#c6a15b] transition-colors"
             >
               {content}
             </a>
@@ -177,7 +179,7 @@ export default function AnnouncementBar() {
       {announcements.length > 1 && (
         <button
           onClick={() => advance(1)}
-          className="absolute right-10 sm:right-12 flex items-center justify-center w-6 h-6 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-white/10 transition-colors"
+          className="absolute right-10 sm:right-12 flex items-center justify-center w-6 h-6 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors"
           aria-label="Next announcement"
         >
           <ChevronRight className="w-4 h-4" />
@@ -187,7 +189,7 @@ export default function AnnouncementBar() {
       {/* Close button */}
       <button
         onClick={handleDismiss}
-        className="absolute right-2 sm:right-4 flex items-center justify-center w-6 h-6 rounded-full text-cream-50/70 hover:text-cream-50 hover:bg-white/10 transition-colors"
+        className="absolute right-2 sm:right-4 flex items-center justify-center w-6 h-6 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors"
         aria-label="Dismiss announcements"
       >
         <X className="w-3.5 h-3.5" />
@@ -195,3 +197,4 @@ export default function AnnouncementBar() {
     </div>
   );
 }
+

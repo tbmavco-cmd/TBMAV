@@ -1,8 +1,9 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { LogOut, LayoutDashboard, FileText, Mail, Settings, Shield, Scale, Megaphone, ShoppingBag } from 'lucide-react';
+import { Seo } from '@/components/Seo';
 import { supabase, wellnessStatusLabels, contactStatusLabels } from '@/lib/supabase';
-import { siteConfig } from '@/config/site';
+import { siteConfig, BOOKING_URL } from '@/config/site';
 import { legalEntitySettings } from '@/config/legalEntity';
 import AnnouncementsView from '@/components/AnnouncementsView';
 
@@ -42,12 +43,19 @@ export function AdminPage() {
   };
 
   if (session === null) {
-    return <div className="flex min-h-screen items-center justify-center bg-nude-50"><p className="text-ink-700">Loading...</p></div>;
+    return (
+      <>
+        <Seo title="Admin — The Bare Method" description="Staff admin dashboard." noindex />
+        <div className="flex min-h-screen items-center justify-center bg-blush-50"><p className="text-ink-700">Loading...</p></div>
+      </>
+    );
   }
 
   if (!session) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-nude-50 px-4">
+      <>
+        <Seo title="Admin — The Bare Method" description="Staff admin dashboard." noindex />
+        <div className="flex min-h-screen items-center justify-center bg-blush-50 px-4">
         <div className="w-full max-w-md">
           <div className="card p-8">
             <div className="mb-6 flex items-center gap-2.5">
@@ -82,11 +90,14 @@ export function AdminPage() {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-nude-50">
+    <>
+      <Seo title="Admin — The Bare Method" description="Staff admin dashboard." noindex />
+      <div className="min-h-screen bg-blush-50">
       <div className="border-b border-ink-900/8 bg-white">
         <div className="container-bare flex h-16 items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -118,7 +129,7 @@ export function AdminPage() {
                   onClick={() => setView(item.id)}
                   className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                     view === item.id
-                      ? 'bg-ink-900 text-cream-50'
+                      ? 'bg-ink-900 text-white'
                       : 'text-ink-700 hover:bg-ink-900/5'
                   }`}
                 >
@@ -140,6 +151,7 @@ export function AdminPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
@@ -161,7 +173,7 @@ function DashboardView() {
         <StatCard label="Contact Submissions" value={contactCount} />
         <StatCard label="Pending Invoice Requests" value={null} note="Filtered in Wellness Requests" />
       </div>
-      <div className="mt-8 rounded-2xl bg-cream-100 p-6">
+      <div className="mt-8 rounded-2xl bg-blush-100 p-6">
         <h3 className="font-medium text-ink-900">Nonclinical Admin Only</h3>
         <p className="mt-2 text-sm text-ink-700">
           This dashboard handles nonclinical business administration only. Medical charting, patient
@@ -356,7 +368,7 @@ function FilterChip({ label, active, onClick }: { label: string; active: boolean
     <button
       onClick={onClick}
       className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
-        active ? 'bg-ink-900 text-cream-50' : 'border border-ink-900/15 text-ink-700 hover:bg-ink-900/5'
+        active ? 'bg-ink-900 text-white' : 'border border-ink-900/15 text-ink-700 hover:bg-ink-900/5'
       }`}
     >
       {label}
@@ -371,8 +383,8 @@ function StatusBadge({ status, labels }: { status: string; labels: Record<string
     intake_required: 'bg-blue-100 text-blue-800',
     invoice_sent: 'bg-indigo-100 text-indigo-800',
     reviewed: 'bg-blue-100 text-blue-800',
-    paid: 'bg-green-100 text-green-800',
-    responded: 'bg-green-100 text-green-800',
+    paid: 'bg-blush-100 text-gold-700',
+    responded: 'bg-blush-100 text-gold-700',
     cancelled: 'bg-red-100 text-red-800',
     archived: 'bg-gray-100 text-gray-700',
   };
@@ -490,7 +502,7 @@ function RequestDetailModal<T extends BaseRequest>({
 
           {/* Invoice (wellness only) */}
           {type === 'wellness' && (
-            <div className="rounded-xl bg-cream-100 p-4">
+            <div className="rounded-xl bg-blush-100 p-4">
               <h4 className="text-sm font-medium text-ink-900">Invoice Management</h4>
               <div className="mt-3 space-y-3">
                 <div>
@@ -522,7 +534,7 @@ function RequestDetailModal<T extends BaseRequest>({
             <h4 className="text-sm font-medium text-ink-900">Internal Notes</h4>
             <div className="mt-3 space-y-2">
               {notes.map((n) => (
-                <div key={n.id} className="rounded-lg bg-cream-100 p-3">
+                <div key={n.id} className="rounded-lg bg-blush-100 p-3">
                   <p className="text-sm text-ink-700">{n.note_body}</p>
                   <p className="mt-1 text-xs text-ink-700/50">
                     {n.created_by_email} · {new Date(n.created_at).toLocaleString()}
@@ -594,13 +606,13 @@ function ConfigView() {
       <h2 className="heading-display text-2xl text-ink-900">Configuration</h2>
       <p className="mt-1 text-sm text-ink-700">
         Review your integration URLs and settings. To update values, edit{' '}
-        <code className="rounded bg-cream-100 px-1.5 py-0.5 text-xs">src/config/site.ts</code>.
+        <code className="rounded bg-blush-100 px-1.5 py-0.5 text-xs">src/config/site.ts</code>.
       </p>
 
       <div className="mt-6 space-y-6">
         <ConfigSection title="Salon Lofts (Esthetics)">
           <ConfigItem label="Booking URL" value={siteConfig.salonLofts.bookingUrl} />
-          <ConfigItem label="Services URL" value={siteConfig.salonLofts.servicesUrl} />
+          <ConfigItem label="Services URL" value={BOOKING_URL} />
         </ConfigSection>
 
         <ConfigSection title="Legend EHR (Wellness)">
@@ -634,7 +646,7 @@ function ConfigView() {
         </ConfigSection>
       </div>
 
-      <div className="mt-8 rounded-2xl bg-cream-100 p-6">
+      <div className="mt-8 rounded-2xl bg-blush-100 p-6">
         <h3 className="font-medium text-ink-900">Where to Paste Your Credentials</h3>
         <ul className="mt-3 space-y-1.5 text-sm text-ink-700">
           <li>• Salon Lofts booking URLs → <code className="text-xs">siteConfig.salonLofts</code></li>
@@ -709,8 +721,8 @@ function LegalView() {
   const statusColors: Record<string, string> = {
     draft: 'bg-amber-100 text-amber-800',
     pending_legal_review: 'bg-blue-100 text-blue-800',
-    approved: 'bg-emerald-100 text-emerald-800',
-    published: 'bg-green-100 text-green-800',
+    approved: 'bg-blush-100 text-gold-700',
+    published: 'bg-blush-100 text-gold-700',
     archived: 'bg-gray-100 text-gray-700',
   };
 
@@ -720,9 +732,9 @@ function LegalView() {
       <p className="mt-1 text-sm text-ink-700">
         Review legal entity settings, policy version control, and attorney-review status. To update
         values, edit{' '}
-        <code className="rounded bg-cream-100 px-1.5 py-0.5 text-xs">src/config/legalEntity.ts</code>{' '}
+        <code className="rounded bg-blush-100 px-1.5 py-0.5 text-xs">src/config/legalEntity.ts</code>{' '}
         and{' '}
-        <code className="rounded bg-cream-100 px-1.5 py-0.5 text-xs">src/data/legal.ts</code>.
+        <code className="rounded bg-blush-100 px-1.5 py-0.5 text-xs">src/data/legal.ts</code>.
       </p>
 
       <div className="mt-4 rounded-2xl border border-amber-300 bg-amber-50 p-5">
@@ -857,7 +869,7 @@ function CatalogAdminView() {
     load();
   };
 
-  if (loading) return <p className="text-ink-500 text-sm">Loading catalog...</p>;
+  if (loading) return <p className="text-muted-500 text-sm">Loading catalog...</p>;
 
   const grouped = items.reduce<Record<string, any[]>>((acc, item) => {
     const cat = item.category_label || item.category || 'Uncategorized';
@@ -869,7 +881,7 @@ function CatalogAdminView() {
   return (
     <div>
       <h2 className="text-xl font-semibold text-ink-900 mb-2">Wellness Catalog</h2>
-      <p className="text-sm text-ink-600 mb-6">
+      <p className="text-sm text-muted-500 mb-6">
         Manage product visibility, approvals, and details. Products default to hidden until you set them as visible.
       </p>
 
@@ -920,13 +932,13 @@ function CatalogAdminView() {
 
       {Object.entries(grouped).map(([cat, catItems]) => (
         <div key={cat} className="mb-8">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-ink-500 mb-3">{cat}</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-500 mb-3">{cat}</h3>
           <div className="space-y-3">
             {catItems.map((item: any) => (
               <div key={item.id} className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-xl border border-ink-900/10 bg-white p-4">
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-ink-900 truncate">{item.name}</p>
-                  <p className="text-xs text-ink-500 mt-0.5">{item.format || 'No format'} • Sort: {item.sort_order}</p>
+                  <p className="text-xs text-muted-500 mt-0.5">{item.format || 'No format'} • Sort: {item.sort_order}</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                   <ToggleBtn label="Visible" active={item.visible} onClick={() => toggleField(item.id, 'visible', item.visible)} />
@@ -955,12 +967,13 @@ function ToggleBtn({ label, active, onClick }: { label: string; active: boolean;
       onClick={onClick}
       className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
         active
-          ? 'bg-green-100 text-green-800 hover:bg-green-200'
-          : 'bg-ink-100 text-ink-500 hover:bg-ink-200'
+          ? 'bg-blush-100 text-gold-700 hover:bg-blush-200'
+          : 'bg-ink-100 text-muted-500 hover:bg-ink-200'
       }`}
     >
       {label}: {active ? 'Yes' : 'No'}
     </button>
   );
 }
+
 

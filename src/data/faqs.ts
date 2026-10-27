@@ -15,7 +15,7 @@ export const faqs: Faq[] = [
     category: 'General',
     question: 'Where are you located?',
     answer:
-      'We are located at Salon Lofts Burnsville, 14109 Irving Avenue South, Loft 6, Burnsville, MN 55337, serving Burnsville, Apple Valley, Lakeville, Rosemount, Eagan, and the greater South Minneapolis–Saint Paul metro.',
+      'We are located at Salon Lofts Burnsville, 14109 Irving Ave S, Suite 6, Burnsville, MN 55337, serving Burnsville, Apple Valley, Lakeville, Rosemount, Eagan, and the greater South Minneapolis–Saint Paul metro.',
   },
   {
     category: 'General',
@@ -27,7 +27,7 @@ export const faqs: Faq[] = [
     category: 'Esthetics',
     question: 'What makes The Bare Method different from a traditional spa?',
     answer:
-      'The Bare Method is a results-driven esthetics and body sculpting experience designed to go beyond traditional spa services. We combine advanced skincare, EMS + RF body contouring, and personalized treatment planning to create a structured approach to transformation. Every visit builds on the last, so you see consistent, visible progress over time.',
+      'The Bare Method is a results-driven esthetics and body sculpting experience designed to go beyond traditional spa services. We combine advanced skincare, 4-in-1 body contouring, and personalized treatment planning to create a structured approach to transformation. Every visit builds on the last, so you see consistent, visible progress over time.',
   },
   {
     category: 'Esthetics',
@@ -180,3 +180,4 @@ export const faqs: Faq[] = [
       'You can join the waitlist and will be contacted when a seat becomes available.',
   },
 ];
+

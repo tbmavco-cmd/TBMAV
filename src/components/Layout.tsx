@@ -9,7 +9,7 @@ import { useScrollToTop } from '@/lib/useScrollToTop';
 export function Layout({ children }: { children: ReactNode }) {
   useScrollToTop();
   return (
-    <div className="flex min-h-screen flex-col bg-nude-50">
+    <div className="flex min-h-screen flex-col bg-blush-50">
       <AnnouncementBar />
       <Header />
       <main className="flex-1 pb-20 lg:pb-0">{children}</main>
@@ -19,3 +19,4 @@ export function Layout({ children }: { children: ReactNode }) {
     </div>
   );
 }
+
