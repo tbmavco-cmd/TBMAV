@@ -156,7 +156,7 @@ export function HomePage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blush-50 text-gold-700">
                   <HeartPulse className="h-6 w-6" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-2xl font-medium text-ink-900">Provider-Led Wellness</h3>
+                <h3 className="font-display text-2xl font-medium text-ink-900">My Bare Method</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-700">
                   Provider-led programs supporting weight, metabolism, hormones, longevity, recovery, and ongoing care — offered through My Bare Method, a separate company.
                 </p>
