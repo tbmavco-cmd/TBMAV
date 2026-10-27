@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo';
 import { Phone, MapPin, Mail, Instagram, Clock, ExternalLink, Star } from 'lucide-react';
 import { siteConfig, BOOKING_URL } from '@/config/site';
 import { footerDisclaimer, legalPages } from '@/data/legal';
@@ -43,7 +44,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-4">
           {/* BUSINESS */}
           <div className="lg:col-span-1">
-            <h3 className="font-display italic text-2xl font-medium text-white">The Bare Method</h3>
+            <Logo className="w-fit" />
             <p className="mt-3 text-sm leading-relaxed text-white/70">
               Your Skin. Your Wellness. Your Method. A private, personalized destination for
               specialized esthetics and provider-led wellness in Burnsville, Minnesota.
