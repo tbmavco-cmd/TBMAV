@@ -1,3 +1,4 @@
+import { ResultComparison } from '@/components/ResultComparison';
 import { useState } from 'react';
 import { Star, Info } from 'lucide-react';
 import { Seo } from '@/components/Seo';
@@ -48,44 +49,7 @@ export function ResultsPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {filtered.map((r) => (
               <div key={r.id} className="card card-hover overflow-hidden">
-                {r.image ? (
-                  <div className="relative bg-ink-900/5">
-                    <img
-                      src={r.image}
-                      alt={r.title}
-                      loading="lazy"
-                      width={800}
-                      height={600}
-                      className="aspect-[4/3] w-full object-contain"
-                    />
-                    <span className="absolute left-2 top-2 rounded-full bg-gold-500 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-900">
-                      Before & After
-                    </span>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-2">
-                    <div className="relative">
-                      <PlaceholderImage
-                        query={`spa ${r.category.toLowerCase()} before treatment`}
-                        alt={`${r.title} — before`}
-                        aspect="aspect-[3/4]"
-                      />
-                      <span className="absolute left-2 top-2 rounded-full bg-ink-900/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
-                        Before
-                      </span>
-                    </div>
-                    <div className="relative">
-                      <PlaceholderImage
-                        query={`spa ${r.category.toLowerCase()} after results glowing`}
-                        alt={`${r.title} — after`}
-                        aspect="aspect-[3/4]"
-                      />
-                      <span className="absolute left-2 top-2 rounded-full bg-gold-500 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-900">
-                        After
-                      </span>
-                    </div>
-                  </div>
-                )}
+                <ResultComparison result={r} />
                 <div className="p-5">
                   <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">
                     {r.category}
