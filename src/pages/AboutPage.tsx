@@ -52,11 +52,11 @@ export function AboutPage() {
       <section className="section">
         <div className="container-bare grid items-center gap-12 lg:grid-cols-2">
           <img
-            src="/images/studio/studio-lounge-mural.jpg"
-            alt="The private studio lounge at The Bare Method"
+            src="/images/rina-hebert-founder.png"
+            alt="Carina Rina Hebert, founder of The Bare Method"
             loading="lazy"
-            width={1070}
-            height={1650}
+            width={1122}
+            height={1402}
             className="rounded-3xl shadow-lg order-2 lg:order-1 w-full aspect-[4/5] object-cover object-top"
           />
           <div className="order-1 lg:order-2">
