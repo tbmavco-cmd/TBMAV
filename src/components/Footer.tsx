@@ -14,7 +14,7 @@ const exploreLinks = [
 
 const clientAccess = [
   { label: 'Book Esthetics', href: BOOKING_URL, external: true },
-  { label: 'Provider-Led Wellness', href: 'https://MyBareMethod.com', external: true },
+  { label: 'My Bare Method', href: 'https://MyBareMethod.com', external: true },
   { label: 'Memberships & Gift Cards', to: '/contact', external: false },
 ];
 
