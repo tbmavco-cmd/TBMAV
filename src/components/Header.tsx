@@ -116,9 +116,9 @@ export function Header() {
               href={MYBAREMETHOD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline text-sm inline-flex items-center gap-1.5"
+              className="btn-outline text-sm inline-flex items-center gap-1.5 whitespace-nowrap"
             >
-              Wellness
+              My Bare Method
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
