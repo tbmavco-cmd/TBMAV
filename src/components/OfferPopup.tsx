@@ -138,7 +138,7 @@ export default function OfferPopup() {
               <HeartPulse className="h-5 w-5 text-gold-700" strokeWidth={1.5} />
             </div>
             <div className="flex-1 text-left">
-              <span className="block font-display text-base text-white">Provider-Led Wellness</span>
+              <span className="block font-display text-base text-white">My Bare Method</span>
               <span className="inline-flex items-center gap-1 text-white/50 text-xs mt-0.5">
                 MyBareMethod.com <ExternalLink className="h-3 w-3" />
               </span>
