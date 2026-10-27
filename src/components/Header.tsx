@@ -80,7 +80,7 @@ export function Header() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full px-3.5 py-2 text-sm font-medium transition-colors text-ink-700 hover:text-ink-900 hover:bg-ink-900/5"
+                  className="rounded-full px-2.5 py-2 text-sm font-medium transition-colors text-ink-700 hover:text-ink-900 hover:bg-ink-900/5"
                 >
                   {link.label}
                 </a>
@@ -90,7 +90,7 @@ export function Header() {
                   to={link.to!}
                   end={link.to === '/'}
                   className={({ isActive }) =>
-                    `rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                    `rounded-full px-2.5 py-2 text-sm font-medium transition-colors ${
                       isActive
                         ? 'text-gold-600'
                         : 'text-ink-700 hover:text-ink-900 hover:bg-ink-900/5'
@@ -108,7 +108,7 @@ export function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold text-sm"
+              className="btn-gold text-sm whitespace-nowrap"
             >
               Book Now
             </a>
