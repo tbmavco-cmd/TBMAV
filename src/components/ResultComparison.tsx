@@ -22,11 +22,10 @@ export function ResultComparison({ result }: { result: ResultItem }) {
           <figure key={stage} className="border-b border-blush-200">
             <figcaption className="bg-black px-4 py-2 text-center text-xs font-medium uppercase tracking-[0.2em] text-gold-300">{stage}</figcaption>
             <div className="flex aspect-[2/1] items-center justify-center overflow-hidden">
-              <div className="relative h-full max-w-full overflow-hidden" style={{ aspectRatio: `${panel.width} / ${panel.height}` }}>
-                <img src={result.image} alt={`${result.title} — ${stage}`} loading="lazy" width={1400} height={layout.sourceHeight}
-                  className="absolute max-w-none"
-                  style={{ width: `${1400 / panel.width * 100}%`, height: `${layout.sourceHeight / panel.height * 100}%`, left: `${-panel.x / panel.width * 100}%`, top: `${-panel.y / panel.height * 100}%` }} />
-              </div>
+              <svg viewBox={`${panel.x} ${panel.y} ${panel.width} ${panel.height}`} preserveAspectRatio="xMidYMid meet" className="h-full w-full" role="img" aria-label={`${result.title} — ${stage}`}>
+                <defs><clipPath id={`result-${result.id}-${stage}`}><rect x={panel.x} y={panel.y} width={panel.width} height={panel.height} /></clipPath></defs>
+                <image href={result.image} width={1400} height={layout.sourceHeight} clipPath={`url(#result-${result.id}-${stage})`} />
+              </svg>
             </div>
           </figure>
         );
