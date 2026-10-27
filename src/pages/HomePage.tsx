@@ -1,3 +1,4 @@
+import { ResultComparison } from '@/components/ResultComparison';
 import { Link } from 'react-router-dom';
 import {
   Sparkles,
@@ -233,9 +234,7 @@ export function HomePage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {topResults.map((r) => (
               <div key={r.id} className="card overflow-hidden">
-                {r.image && (
-                  <img src={r.image} alt={r.title} loading="lazy" width={800} height={1000} className="aspect-[4/5] w-full object-contain bg-blush-100" />
-                )}
+                <ResultComparison result={r} />
                 <div className="p-5">
                   <h3 className="text-sm font-semibold text-ink-900">{r.title}</h3>
                   <p className="mt-1 text-xs leading-relaxed text-muted-500">{r.description}</p>
