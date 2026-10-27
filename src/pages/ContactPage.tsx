@@ -109,14 +109,20 @@ export function ContactPage() {
               </ul>
             </div>
 
-            <div className="card overflow-hidden">
-              <iframe
-                title="The Bare Method location"
-                src={siteConfig.maps.embedSrc}
-                className="h-64 w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="card p-8 text-center">
+              <MapPin className="mx-auto h-8 w-8 text-gold-500" />
+              <h3 className="mt-4 font-display text-2xl text-ink-900">Visit Our Burnsville Studio</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-700">
+                {siteConfig.business.address.line1}, {siteConfig.business.address.city}, {siteConfig.business.address.state} {siteConfig.business.address.zip}
+              </p>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${siteConfig.business.address.line1}, ${siteConfig.business.address.city}, ${siteConfig.business.address.state} ${siteConfig.business.address.zip}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold mt-6 inline-flex"
+              >
+                Get Directions
+              </a>
             </div>
 
             <div className="card p-6">
