@@ -31,7 +31,9 @@
 
 // The single booking URL for all "Book Esthetics" buttons. Change this one
 // constant to switch the booking destination everywhere on the site.
-export const BOOKING_URL = 'https://salonlofts.com/rina_tbm/schedule';
+export const BOOKING_URL = 'https://bare-ops.netlify.app/book';
+
+export const ACCOUNT_URL = 'https://bare-ops.netlify.app/account';
 
 export const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 
@@ -84,7 +86,7 @@ export const siteConfig = {
   //  that clients are sent to when they click "Book Esthetics".
   // ==========================================================================
   salonLofts: {
-    bookingUrl: 'https://salonlofts.com/rina_tbm',
+    bookingUrl: BOOKING_URL,
     servicesUrl: BOOKING_URL,
   },
 

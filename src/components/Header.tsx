@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { Logo } from './Logo';
-import { siteConfig, BOOKING_URL } from '@/config/site';
+import { siteConfig, BOOKING_URL, ACCOUNT_URL } from '@/config/site';
 
 const MYBAREMETHOD_URL = 'https://MyBareMethod.com';
 
@@ -13,6 +13,7 @@ const navLinks: { to?: string; href?: string; label: string; external?: boolean 
   { to: '/results', label: 'Results' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
+  { href: ACCOUNT_URL, label: 'My account', external: true },
 ];
 
 function MobileNavLink({ to, children }: { to: string; children: ReactNode }) {
@@ -72,7 +73,7 @@ export function Header() {
         <div className="container-bare flex h-18 items-center justify-between gap-4 py-3.5">
           <Logo />
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-1 xl:flex">
             {navLinks.map((link) =>
               link.href ? (
                 <a
@@ -103,7 +104,7 @@ export function Header() {
             )}
           </nav>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center gap-2 xl:flex">
             <a
               href={BOOKING_URL}
               target="_blank"
@@ -123,7 +124,7 @@ export function Header() {
             </a>
           </div>
 
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <button
               onClick={() => setOpen(true)}
               className="btn-ghost p-2"
@@ -137,7 +138,7 @@ export function Header() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="fixed inset-0 z-[60] lg:hidden">
+        <div className="fixed inset-0 z-[60] xl:hidden">
           <div
             className="absolute inset-0 bg-ink-900/40 backdrop-blur-sm animate-fade-in"
             onClick={() => setOpen(false)}
@@ -166,6 +167,7 @@ export function Header() {
               <div>
                 <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-muted-500">Client Access</p>
                 <div className="space-y-0.5">
+                  <MobileExtLink href={ACCOUNT_URL}>My account</MobileExtLink>
                   <MobileExtLink href={BOOKING_URL}>Book Esthetics</MobileExtLink>
                   <MobileExtLink href={MYBAREMETHOD_URL}>MyBareMethod.com</MobileExtLink>
                   <MobileNavLink to="/contact">Memberships & Gift Cards</MobileNavLink>

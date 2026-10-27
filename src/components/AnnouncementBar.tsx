@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { BOOKING_URL } from '@/config/site';
 import { supabase } from '@/lib/supabase';
 
 export type Announcement = {
@@ -18,7 +19,7 @@ const fallbackAnnouncements: Announcement[] = [
   {
     id: 'first-spa-50',
     headline: 'Now offering IPL photofacials & SHR light-pulse hair reduction',
-    link: '/esthetics',
+    link: BOOKING_URL,
     cta_text: 'Book Now',
     audience: 'all',
     priority: 5,
@@ -120,7 +121,9 @@ export default function AnnouncementBar() {
   if (!visible || announcements.length === 0) return null;
 
   const current = announcements[currentIndex];
-  const hasLink = !!current.link;
+  const bookingCta = /^book(?: now| esthetics)?$/i.test(current.cta_text?.trim() ?? '');
+  const link = bookingCta || /salonlofts[.]com/i.test(current.link ?? '') ? BOOKING_URL : current.link;
+  const hasLink = !!link;
 
   const content = (
     <span className="inline-flex items-center gap-2 text-center text-xs sm:text-sm font-medium leading-snug">
@@ -163,8 +166,8 @@ export default function AnnouncementBar() {
         >
           {hasLink ? (
             <a
-              href={current.link!}
-              {...(current.link!.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              href={link!}
+              {...(link!.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="text-white hover:text-[#c6a15b] transition-colors"
             >
               {content}

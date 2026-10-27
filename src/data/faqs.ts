@@ -21,7 +21,7 @@ export const faqs: Faq[] = [
     category: 'General',
     question: 'How do I book an appointment?',
     answer:
-      'Esthetic services (The Bare Method) are booked through Salon Lofts. Provider-led wellness services (My Bare Method) are managed through a separate platform at MyBareMethod.com.',
+      'Esthetic services (The Bare Method) are booked through Bare Ops. Provider-led wellness services (My Bare Method) are managed through a separate platform at MyBareMethod.com.',
   },
   {
     category: 'Esthetics',
@@ -51,13 +51,13 @@ export const faqs: Faq[] = [
     category: 'Esthetics',
     question: 'How do I book an esthetic service?',
     answer:
-      'All esthetic bookings are handled through Salon Lofts. Use the "Book Esthetics" button on any esthetics page to go directly to our Salon Lofts scheduling page.',
+      'All esthetic bookings are handled through Bare Ops. Use the "Book Esthetics" button on any esthetics page to go directly to our Bare Ops scheduling page.',
   },
   {
     category: 'Esthetics',
     question: 'Do you require reservation fees for esthetic appointments?',
     answer:
-      'Yes, a reservation fee may be required for certain services. Reservation fees are managed through Salon Lofts and applied to your service total.',
+      'Yes, a reservation fee may be required for certain services. Reservation fees are managed through our booking platform and applied to your service total.',
   },
   {
     category: 'Esthetics',
